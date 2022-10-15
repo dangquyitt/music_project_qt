@@ -20,7 +20,8 @@ public:
     ~FormListUser();
 private slots:
     void onClicked();
-    void changeSelect(int index);
+    void onComboIndexChanged();
+
 
 private:
     Ui::FormListUser *ui;
@@ -28,7 +29,7 @@ private:
     void loadTitle();
     void updateListUser();
     vector<Role> roles;
-    int sizeRoles;
+    int sizeRoles;    
 };
 
 #endif // FORMLISTUSER_H

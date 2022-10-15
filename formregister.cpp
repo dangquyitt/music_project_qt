@@ -89,6 +89,7 @@ void FormRegister::on_btnRegister_clicked()
         user.setName(name.toStdString());
         if(UtilDAO::getUserDAO()->save(user)) {
             // Tao tai khoan thanh cong
+
         } else {
             // Tao tai khoan that bai
         }

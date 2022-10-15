@@ -61,6 +61,8 @@ vector<Role> RoleDAO::findByProperties(string properties, string value) {
     return list;
 }
 
+
+
 bool RoleDAO::save(Role instance) {
     string sql = "INSERT INTO role(role_name, description) VALUES (:roleName, :description)";
     if(db.transaction()) {

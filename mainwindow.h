@@ -10,6 +10,9 @@
 #include "QKeyEvent"
 #include "QLineEdit"
 #include "formaddtrack.h"
+#include"qmessagebox.h"
+#include<cstdlib>
+#include<algorithm>
 
 using namespace std;
 
@@ -58,9 +61,6 @@ private slots:
 
     void on_deleteMusic_clicked();
     void on_selectCategory_currentIndexChanged(int index);
-
-    void on_btnFavorites_clicked();
-
 private:
     void loadCategory();
 
@@ -98,7 +98,6 @@ private:
 
     FormAddTrack *formAddTrack;
 
-    bool isFavorites = false;
 
 
 

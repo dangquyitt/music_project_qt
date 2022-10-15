@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(updater, SIGNAL(timeout()), this, SLOT(update()));
 
     player->setVolume(100);
-ui->btnFavorites->setChecked(true);
+
     ui->listWidget->setCurrentRow(0);
 
     if(ui->listWidget->count() != 0){
@@ -344,14 +344,5 @@ void MainWindow::on_selectCategory_currentIndexChanged(int index)
      if(shuffle) {
         shufflePlaylist();
      }
-}
-
-
-void MainWindow::on_btnFavorites_clicked()
-{
-    isFavorites = !isFavorites;
-    if(isFavorites) {
-        ui->btnFavorites->setChecked(false);
-    }
 }
 

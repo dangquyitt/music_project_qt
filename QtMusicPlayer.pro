@@ -15,7 +15,6 @@ SOURCES += main.cpp\
     basedao.cpp \
     category.cpp \
     categorydao.cpp \
-    favorites.cpp \
     formaddroletomember.cpp \
     formaddtrack.cpp \
     formlistuser.cpp \
@@ -43,7 +42,6 @@ HEADERS  += mainwindow.h \
     basedao.h \
     category.h \
     categorydao.h \
-    favorites.h \
     formaddroletomember.h \
     formaddtrack.h \
     formlistuser.h \

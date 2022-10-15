@@ -74,6 +74,7 @@ vector<UserRole> UserRoleDAO::findByIntProperties(string properties, int value) 
         query.prepare(QString::fromStdString(sql));
         query.bindValue(":value", value);
         query.exec();
+
         if(!db.commit()) {
             db.rollback();
         }

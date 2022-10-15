@@ -8,10 +8,10 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-//    MainWindow mainWindow;
-//    mainWindow.show();
-    FormListUser formListUser;
-    formListUser.show();
+    MainWindow mainWindow;
+    mainWindow.show();
+//    FormListUser formListUser;
+//    formListUser.show();
 //    FormRegister formRegister;
 //    formRegister.show();
 //    FormLogin f;

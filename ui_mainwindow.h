@@ -19,6 +19,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
+#include <QtWidgets/QSplitter>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -41,12 +42,15 @@ public:
     QLabel *imgMusic;
     QPushButton *btnLogout;
     QComboBox *selectCategory;
-    QPushButton *btnFavorites;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QGridLayout *gridLayout;
     QPushButton *addMusic;
     QPushButton *deleteMusic;
     QPushButton *editMusic;
+    QSplitter *splitter;
+    QPushButton *btnListUser;
+    QPushButton *btnProfile;
+    QPushButton *pushButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -126,7 +130,7 @@ public:
         mute->setFlat(false);
         searchBar = new QLineEdit(centralWidget);
         searchBar->setObjectName(QString::fromUtf8("searchBar"));
-        searchBar->setGeometry(QRect(1097, 10, 261, 28));
+        searchBar->setGeometry(QRect(1097, 10, 311, 28));
         searchBar->setCursor(QCursor(Qt::ArrowCursor));
         searchBar->setMouseTracking(false);
         searchBar->setCursorPosition(0);
@@ -140,32 +144,42 @@ public:
         selectCategory = new QComboBox(centralWidget);
         selectCategory->setObjectName(QString::fromUtf8("selectCategory"));
         selectCategory->setGeometry(QRect(1010, 10, 81, 28));
-        btnFavorites = new QPushButton(centralWidget);
-        btnFavorites->setObjectName(QString::fromUtf8("btnFavorites"));
-        btnFavorites->setGeometry(QRect(1360, 10, 51, 29));
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(1010, 480, 401, 41));
-        gridLayout = new QGridLayout(widget);
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(1010, 480, 401, 41));
+        gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        addMusic = new QPushButton(widget);
+        addMusic = new QPushButton(layoutWidget);
         addMusic->setObjectName(QString::fromUtf8("addMusic"));
 
         gridLayout->addWidget(addMusic, 0, 0, 1, 1);
 
-        deleteMusic = new QPushButton(widget);
+        deleteMusic = new QPushButton(layoutWidget);
         deleteMusic->setObjectName(QString::fromUtf8("deleteMusic"));
 
         gridLayout->addWidget(deleteMusic, 0, 2, 1, 1);
 
-        editMusic = new QPushButton(widget);
+        editMusic = new QPushButton(layoutWidget);
         editMusic->setObjectName(QString::fromUtf8("editMusic"));
 
         gridLayout->addWidget(editMusic, 0, 1, 1, 1);
 
+        splitter = new QSplitter(centralWidget);
+        splitter->setObjectName(QString::fromUtf8("splitter"));
+        splitter->setGeometry(QRect(1010, 530, 401, 29));
+        splitter->setOrientation(Qt::Horizontal);
+        btnListUser = new QPushButton(splitter);
+        btnListUser->setObjectName(QString::fromUtf8("btnListUser"));
+        splitter->addWidget(btnListUser);
+        btnProfile = new QPushButton(splitter);
+        btnProfile->setObjectName(QString::fromUtf8("btnProfile"));
+        splitter->addWidget(btnProfile);
+        pushButton = new QPushButton(splitter);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        splitter->addWidget(pushButton);
         MainWindow->setCentralWidget(centralWidget);
 
         retranslateUi(MainWindow);
@@ -188,10 +202,12 @@ public:
         mute->setText(QCoreApplication::translate("MainWindow", "m", nullptr));
         imgMusic->setText(QString());
         btnLogout->setText(QCoreApplication::translate("MainWindow", "Logout", nullptr));
-        btnFavorites->setText(QCoreApplication::translate("MainWindow", "*", nullptr));
         addMusic->setText(QCoreApplication::translate("MainWindow", "Add", nullptr));
         deleteMusic->setText(QCoreApplication::translate("MainWindow", "Delete", nullptr));
         editMusic->setText(QCoreApplication::translate("MainWindow", "Edit", nullptr));
+        btnListUser->setText(QCoreApplication::translate("MainWindow", "Danh s\303\241ch ng\306\260\341\273\235i d\303\271ng", nullptr));
+        btnProfile->setText(QCoreApplication::translate("MainWindow", "H\341\273\223 s\306\241", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "Th\303\252m th\341\273\203 lo\341\272\241i", nullptr));
     } // retranslateUi
 
 };

@@ -12,6 +12,7 @@ private:
     string password;
     string name;
     string email;
+
 public:
     User();
     ~User();
@@ -31,7 +32,6 @@ public:
     string getEmail();
     void setEmail(string email);
 
-    friend istream& operator>>(istream& in, User& us);
 };
 
 #endif // USER_H
