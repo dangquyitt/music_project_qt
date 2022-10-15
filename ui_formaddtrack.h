@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
-#include <QtWidgets/QDateEdit>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -29,7 +28,7 @@ public:
     QSpinBox *ratting;
     QLabel *label_5;
     QPushButton *btnAddMusic;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QFormLayout *formLayout;
     QLabel *label;
     QLabel *errorMusicName;
@@ -51,7 +50,9 @@ public:
     QComboBox *category;
     QSplitter *splitter_6;
     QLabel *label_4;
-    QDateEdit *releaseYear;
+    QSpinBox *releaseYear;
+    QLabel *statusInsert;
+    QPushButton *btnCancel;
 
     void setupUi(QWidget *FormAddTrack)
     {
@@ -66,24 +67,24 @@ public:
         label_5->setGeometry(QRect(90, 470, 60, 20));
         btnAddMusic = new QPushButton(FormAddTrack);
         btnAddMusic->setObjectName(QString::fromUtf8("btnAddMusic"));
-        btnAddMusic->setGeometry(QRect(170, 520, 80, 29));
-        widget = new QWidget(FormAddTrack);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(140, 40, 207, 84));
-        formLayout = new QFormLayout(widget);
+        btnAddMusic->setGeometry(QRect(260, 520, 80, 29));
+        layoutWidget = new QWidget(FormAddTrack);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(140, 40, 207, 84));
+        formLayout = new QFormLayout(layoutWidget);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
         formLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QString::fromUtf8("label"));
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label);
 
-        errorMusicName = new QLabel(widget);
+        errorMusicName = new QLabel(layoutWidget);
         errorMusicName->setObjectName(QString::fromUtf8("errorMusicName"));
 
         formLayout->setWidget(1, QFormLayout::SpanningRole, errorMusicName);
 
-        musicName = new QLineEdit(widget);
+        musicName = new QLineEdit(layoutWidget);
         musicName->setObjectName(QString::fromUtf8("musicName"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, musicName);
@@ -140,14 +141,20 @@ public:
         splitter_5->addWidget(category);
         splitter_6 = new QSplitter(FormAddTrack);
         splitter_6->setObjectName(QString::fromUtf8("splitter_6"));
-        splitter_6->setGeometry(QRect(110, 380, 227, 28));
+        splitter_6->setGeometry(QRect(120, 390, 227, 28));
         splitter_6->setOrientation(Qt::Horizontal);
         label_4 = new QLabel(splitter_6);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         splitter_6->addWidget(label_4);
-        releaseYear = new QDateEdit(splitter_6);
+        releaseYear = new QSpinBox(splitter_6);
         releaseYear->setObjectName(QString::fromUtf8("releaseYear"));
         splitter_6->addWidget(releaseYear);
+        statusInsert = new QLabel(FormAddTrack);
+        statusInsert->setObjectName(QString::fromUtf8("statusInsert"));
+        statusInsert->setGeometry(QRect(122, 10, 241, 20));
+        btnCancel = new QPushButton(FormAddTrack);
+        btnCancel->setObjectName(QString::fromUtf8("btnCancel"));
+        btnCancel->setGeometry(QRect(120, 520, 83, 29));
 
         retranslateUi(FormAddTrack);
 
@@ -158,7 +165,7 @@ public:
     {
         FormAddTrack->setWindowTitle(QCoreApplication::translate("FormAddTrack", "Form", nullptr));
         label_5->setText(QCoreApplication::translate("FormAddTrack", "\304\220\303\241nh gi\303\241", nullptr));
-        btnAddMusic->setText(QCoreApplication::translate("FormAddTrack", "Th\303\252m", nullptr));
+        btnAddMusic->setText(QCoreApplication::translate("FormAddTrack", "Save", nullptr));
         label->setText(QCoreApplication::translate("FormAddTrack", "T\303\252n b\303\240i h\303\241t", nullptr));
         errorMusicName->setText(QString());
         label_6->setText(QCoreApplication::translate("FormAddTrack", "Nh\341\272\241c", nullptr));
@@ -168,10 +175,11 @@ public:
         label_2->setText(QCoreApplication::translate("FormAddTrack", "\341\272\242nh", nullptr));
         btnImgUrl->setText(QCoreApplication::translate("FormAddTrack", "Th\303\252m", nullptr));
         musicImg->setText(QString());
-        errorMusicImg->setText(QCoreApplication::translate("FormAddTrack", "Kh\303\264n", nullptr));
+        errorMusicImg->setText(QString());
         label_3->setText(QCoreApplication::translate("FormAddTrack", "Th\341\273\203 lo\341\272\241i", nullptr));
         label_4->setText(QCoreApplication::translate("FormAddTrack", "N\304\203m ph\303\241t h\303\240nh", nullptr));
-        releaseYear->setDisplayFormat(QCoreApplication::translate("FormAddTrack", "d/M/yyyy", nullptr));
+        statusInsert->setText(QString());
+        btnCancel->setText(QCoreApplication::translate("FormAddTrack", "Cancel", nullptr));
     } // retranslateUi
 
 };

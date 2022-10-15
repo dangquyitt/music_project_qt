@@ -1,9 +1,8 @@
 #include "roledao.h"
 
 vector<Role> RoleDAO::findAll() {
-    db.transaction();
     vector<Role> list;
-    if(db.open()) {
+    if(db.transaction()) {
         string sql = "SELECT * FROM role";
         QSqlQuery query(db);
         query.exec(QString::fromStdString(sql));
@@ -23,10 +22,9 @@ vector<Role> RoleDAO::findAll() {
 
 
 Role RoleDAO::findById(int id) {
-    db.transaction();
     Role role;
     string sql = "SELECT * FROM role WHERE id = :id";
-    if(db.open()) {
+    if(db.transaction()) {
         QSqlQuery query(db);
         query.prepare(QString::fromStdString(sql));
         query.bindValue(":id", id);
@@ -42,10 +40,9 @@ Role RoleDAO::findById(int id) {
 }
 
 vector<Role> RoleDAO::findByProperties(string properties, string value) {
-    db.transaction();
     vector<Role> list;
     string sql = "SELECT * FROM role WHERE " + properties + " = :value";
-    if(db.open()) {
+    if(db.transaction()) {
         QSqlQuery query(db);
         query.prepare(QString::fromStdString(sql));
         query.bindValue(":value", QString::fromStdString(value));
@@ -66,8 +63,7 @@ vector<Role> RoleDAO::findByProperties(string properties, string value) {
 
 bool RoleDAO::save(Role instance) {
     string sql = "INSERT INTO role(role_name, description) VALUES (:roleName, :description)";
-    db.transaction();
-    if(db.open()) {
+    if(db.transaction()) {
         QSqlQuery query(db);
         query.prepare(QString::fromStdString(sql));
         query.bindValue(":roleName", QString::fromStdString(instance.getRoleName()));
@@ -82,9 +78,8 @@ bool RoleDAO::save(Role instance) {
     return false;
 }
 bool RoleDAO::update(Role instance) {
-    db.transaction();
     string sql = "UPDATE user SET role_name = :roleName, description = :description WHERE id = :id";
-    if(db.open()) {
+    if(db.transaction()) {
         QSqlQuery query(db);
         query.prepare(QString::fromStdString(sql));
         query.bindValue(":roleName", QString::fromStdString(instance.getRoleName()));
@@ -101,8 +96,8 @@ bool RoleDAO::update(Role instance) {
 }
 bool RoleDAO::remove(int id) {
     string sql = "DELETE FROM role WHERE id = :id";
-    db.transaction();
-    if(db.open()) {
+
+    if(db.transaction()) {
         QSqlQuery query(db);
         query.prepare(QString::fromStdString(sql));
         query.bindValue(":id", id);

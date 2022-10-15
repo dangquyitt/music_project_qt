@@ -4,6 +4,11 @@
 #include "QDesktopServices"
 #include <iostream>
 #include <string>
+#include"formlogin.h"
+
+
+
+Music MainWindow::musicEdit;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -13,12 +18,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
     this->setFixedSize(this->geometry().width(),this->geometry().height());
 
+    loadCategory();
     updateList();
 
     connect(updater, SIGNAL(timeout()), this, SLOT(update()));
 
     player->setVolume(100);
-
+ui->btnFavorites->setChecked(true);
     ui->listWidget->setCurrentRow(0);
 
     if(ui->listWidget->count() != 0){
@@ -35,42 +41,6 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-void MainWindow::on_add_clicked()
-{
-    bool startUpdater = false;
-    if(ui->listWidget->count() == 0) {
-        startUpdater = true;
-    }
-    QStringList files = QFileDialog::getOpenFileNames(this, tr("Select Music Files"));
-    if(!files.empty())
-    {
-        playlist.add(files);
-        updateList();
-        ui->save->setChecked(false);
-        if(shuffle) shufflePlaylist();
-        if(startUpdater) updater->start();
-    }
-}
-
-void MainWindow::on_remove_clicked()
-{
-    int index = getIndex();
-    if(index != -1)
-    {
-       playlist.remove(index);
-       updateList();
-       ui->listWidget->setCurrentRow(index);
-       ui->save->setChecked(false);
-       if(shuffle) shufflePlaylist();
-    }
-}
-
-void MainWindow::on_save_clicked()
-{
-    playlist.save();
-    ui->save->setChecked(true);
 }
 
 
@@ -138,6 +108,7 @@ void MainWindow::on_volumeBar_valueChanged(int value)
 void MainWindow::on_seekBar_sliderMoved(int position)
 {
     player->setPosition(player->duration() / 1000 * position);
+
 }
 
 void MainWindow::on_mute_clicked()
@@ -156,8 +127,9 @@ void MainWindow::on_repeat_clicked()
 void MainWindow::on_shuffle_clicked()
 {
     shuffle = !shuffle;
-    if(shuffle)
+    if(shuffle) {
         shufflePlaylist();
+    }
 }
 
 void MainWindow::update()
@@ -174,8 +146,17 @@ void MainWindow::update()
 
 void MainWindow::updateList()
 {
+
     ui->listWidget->clear();
-    ui->listWidget->addItems(playlist.getTracksNameList());
+    if(idCateogry == 0) {
+        playlist.musics = UtilDAO::getMusicDAO()->findAll();
+    } else {
+        playlist.musics = UtilDAO::getMusicDAO()->findByIntProperties("category_id", idCateogry);
+    }
+    int size = playlist.musics.size();
+    for(int i =0; i < size; i++) {
+        ui->listWidget->addItem(QString::fromStdString(playlist.musics[i].getMusicName()));
+    }
 }
 
 int MainWindow::getIndex()
@@ -273,10 +254,11 @@ void MainWindow::shufflePlaylist()
 
 void MainWindow::loadTrack()
 {
-     QString qstr = QString::fromStdString(playlist.tracks[getIndex()].getLocation());
+     QString qstr = QString::fromStdString(playlist.musics[getIndex()].getMusicUrl());
      player->setMedia(QUrl::fromLocalFile(qstr));
-     qstr = QString::fromStdString(playlist.tracks[getIndex()].getName());
+     qstr = QString::fromStdString(playlist.musics[getIndex()].getMusicName());
      ui->currentSong->setText(qstr);
+     ui->imgMusic->setPixmap(QPixmap(QString::fromStdString(playlist.musics[getIndex()].getImgUrl())));
 }
 
 void MainWindow::on_searchBar_textChanged(const QString &arg1)
@@ -293,3 +275,83 @@ void MainWindow::on_searchBar_textChanged(const QString &arg1)
     }
 
 }
+
+void MainWindow::on_addMusic_clicked()
+{
+    musicEdit.setId(0);
+    cout << "Show"<<endl;
+    formAddTrack =  new FormAddTrack();
+    formAddTrack->show();
+    cout << "Done Show"<<endl;
+    updateList();
+    bool startUpdater = false;
+    if(ui->listWidget->count() == 0) {
+        startUpdater = true;
+    }
+    if(shuffle) {
+        shufflePlaylist();
+    }
+    if(startUpdater){
+        updater->start();
+    }
+    ui->listWidget->setCurrentRow(getIndex());
+
+}
+
+
+void MainWindow::on_btnLogout_clicked()
+{
+
+}
+
+
+void MainWindow::on_editMusic_clicked()
+{
+    musicEdit = UtilDAO::getMusicDAO()->findById(playlist.musics[getIndex()].getId());
+    formAddTrack = new FormAddTrack();
+    formAddTrack->show();
+    updateList();
+}
+
+
+void MainWindow::on_deleteMusic_clicked()
+{
+    int index = getIndex();
+    if(index != -1)
+    {
+       playlist.remove(index);
+       updateList();
+       ui->listWidget->setCurrentRow(index);
+       if(shuffle) shufflePlaylist();
+    }
+}
+
+void MainWindow::loadCategory() {
+    vector<Category> listCategory = UtilDAO::getCategoryDAO()->findAll();
+    int size = listCategory.size();
+    ui->selectCategory->addItem("All", 0);
+    for(int i = 0; i < size; i++ ) {
+        ui->selectCategory->addItem(QString::fromStdString(listCategory[i].getCategoryName()), listCategory[i].getId());
+    }
+}
+
+
+void MainWindow::on_selectCategory_currentIndexChanged(int index)
+{
+     idCateogry = ui->selectCategory->itemData(index).value<int>();
+     updateList();
+     ui->listWidget->setCurrentRow(0);
+     if(shuffle) {
+        shufflePlaylist();
+     }
+}
+
+
+void MainWindow::on_btnFavorites_clicked()
+{
+    isFavorites = !isFavorites;
+    if(isFavorites) {
+        ui->btnFavorites->setChecked(false);
+    }
+}
+

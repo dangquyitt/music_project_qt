@@ -3,7 +3,7 @@
 
 #include "QStringList"
 #include <vector>
-#include "track.h"
+#include "music.h"
 
 
 class Playlist
@@ -11,15 +11,10 @@ class Playlist
 public:
     Playlist();
 
-    void add(QStringList files);
-
     void remove(int index);
+    void edit(int index);
 
-    void save();
-
-    QStringList getTracksNameList();
-
-    std::vector<Track> tracks;
+    vector<Music> musics;
 
 private:
 

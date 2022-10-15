@@ -1,18 +1,63 @@
-#include "auth.h"
 #include "formlogin.h"
-#include "ui_formlogin.h"
-#include "userrole.h"
 
-#include<iostream>
 
 FormLogin::FormLogin(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::FormLogin)
+
 {
-    ui->setupUi(this);
-    User user = UtilDAO::getUserDAO()->findById(1);
-    user.setPassword("12345");
-    UtilDAO::getUserDAO()->remove(5);
+    ui->setupUi(this);  
+        ui->inputPassword->setEchoMode(QLineEdit::Password);
+        animation = new QPropertyAnimation(ui->btnLogin,"geometry");
+        animation -> setDuration(1000);
+        animation-> setStartValue(QRect(200,200,100,50));
+        animation ->setEndValue(ui->btnLogin->geometry());
+        animation->start();
+
+        animation = new QPropertyAnimation(ui->btnRegister,"geometry");
+        animation -> setDuration(1000);
+        animation-> setStartValue(QRect(200,200,100,50));
+        animation ->setEndValue(ui->btnRegister->geometry());
+        animation->start();
+
+        animation = new QPropertyAnimation(ui->inputPassword,"geometry");
+        animation -> setDuration(1000);
+        animation-> setStartValue(QRect(200,200,100,50));
+        animation ->setEndValue(ui->inputPassword->geometry());
+        animation->start();
+
+        animation = new QPropertyAnimation(ui->inputUserName,"geometry");
+        animation -> setDuration(1000);
+        animation-> setStartValue(QRect(200,200,100,50));
+        animation ->setEndValue(ui->inputUserName->geometry());
+        animation->start();
+
+        animation = new QPropertyAnimation(ui->labelUserName,"geometry");
+        animation -> setDuration(1000);
+        animation-> setStartValue(QRect(200,200,100,50));
+        animation ->setEndValue(ui->labelUserName->geometry());
+        animation->start();
+
+        animation = new QPropertyAnimation(ui->labelpassword,"geometry");
+        animation -> setDuration(1000);
+        animation-> setStartValue(QRect(200,200,100,50));
+        animation ->setEndValue(ui->labelpassword->geometry());
+        animation->start();
+
+        animation = new QPropertyAnimation(ui->question,"geometry");
+        animation -> setDuration(1000);
+        animation-> setStartValue(QRect(200,200,100,50));
+        animation ->setEndValue(ui->question->geometry());
+        animation->start();
+
+        animation = new QPropertyAnimation(ui->title,"geometry");
+        animation -> setDuration(1000);
+        animation-> setStartValue(QRect(200,200,100,50));
+        animation ->setEndValue(ui->title->geometry());
+        animation->start();
+
+        hidePassword = true;
+
 }
 
 FormLogin::~FormLogin()
@@ -58,11 +103,13 @@ void FormLogin::on_btnLogin_clicked()
                         }
                         return;
                     }else {
-                        ui->errorPassword->setText("Sai mật khẩu");
+                        ui->errorPassword->setText("Invalid password");
+
                     }
                 }
                 else {
-                    ui->errorUserName->setText("Tên đăng nhập không tồn tại");
+                    ui->errorUserName->setText("Invalid username");
+
                 }
     }
 }
@@ -77,6 +124,7 @@ void FormLogin::on_inputUserName_textChanged(const QString &arg1)
 void FormLogin::on_inputPassword_textChanged(const QString &arg1)
 {
     ui->errorPassword->setText("");
+
 }
 
 void FormLogin::keyPressEvent(QKeyEvent *event) {
@@ -87,6 +135,26 @@ void FormLogin::keyPressEvent(QKeyEvent *event) {
         break;
     }
     }
+
+}
+
+
+void FormLogin::on_hidePasswordbt_clicked()
+{
+    hidePassword = !hidePassword;
+    if(hidePassword == false){
+        ui->inputPassword->setEchoMode(QLineEdit::Normal);
+    }
+    else{
+        ui->inputPassword->setEchoMode(QLineEdit::Password);
+    }
+}
+
+
+
+
+void FormLogin::on_btnRegister_clicked()
+{
 
 }
 

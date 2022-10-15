@@ -26,8 +26,9 @@ private slots:
 
     void on_btnImgUrl_clicked();
 
+    void renderMusicEdit();
 
-    void on_category_activated(int index);
+    void on_btnCancel_clicked();
 
 private:
     Ui::FormAddTrack *ui;

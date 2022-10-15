@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormRegister</class>
+ <widget class="QWidget" name="FormRegister">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>932</width>
+    <height>647</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="btnRegister">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>568</y>
+     <width>83</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	padding: 0 8px;
+	border:20px;
+	color:rgb(10,100,180);
+font: 600 italic 11pt &quot;Sitka Banner Semibold&quot;;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Register</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>-590</x>
+     <y>10</y>
+     <width>1621</width>
+     <height>641</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>C:/Users/Dang Quy/Downloads/backgroundlogin (2).jpg</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>140</y>
+     <width>211</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>24</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+}</string>
+   </property>
+   <property name="text">
+    <string>Register</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>250</y>
+     <width>99</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+font: 600 italic 11pt &quot;Sitka Banner Semibold&quot;;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Username:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="userName">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>250</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+	padding: 0 8px;
+	border:20px;
+	color:rgb(10,100,180);
+	background:black;
+	font: 600 italic 11pt &quot;Sitka Banner Semibold&quot;;
+}
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>username</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>320</y>
+     <width>101</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+font: 600 italic 11pt &quot;Sitka Banner Semibold&quot;;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Password:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="password">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>310</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+	padding: 0 8px;
+	border:20px;
+	color:rgb(10,100,180);
+	background:black;
+	font: 600 italic 11pt &quot;Sitka Banner Semibold&quot;;
+}
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>password</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>380</y>
+     <width>154</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+font: 600 italic 11pt &quot;Sitka Banner Semibold&quot;;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Confirm:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="passwordCheck">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>380</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+	padding: 0 8px;
+	border:20px;
+	color:rgb(10,100,180);
+	background:black;
+	font: 600 italic 11pt &quot;Sitka Banner Semibold&quot;;
+}
+</string>
+   </property>
+   <property name="maxLength">
+    <number>32766</number>
+   </property>
+   <property name="placeholderText">
+    <string>comfirm</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>440</y>
+     <width>90</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+font: 600 italic 11pt &quot;Sitka Banner Semibold&quot;;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Fullname:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="name">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>440</y>
+     <width>94</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+	padding: 0 8px;
+	border:20px;
+	color:rgb(10,100,180);
+	background:black;
+	font: 600 italic 11pt &quot;Sitka Banner Semibold&quot;;
+}
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>fullname</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>500</y>
+     <width>66</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+font: 600 italic 11pt &quot;Sitka Banner Semibold&quot;;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Email</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="email">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>500</y>
+     <width>131</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+	padding: 0 8px;
+	border:20px;
+	color:rgb(10,100,180);
+	background:black;
+	font: 600 italic 11pt &quot;Sitka Banner Semibold&quot;;
+}
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>email</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="errorUserName">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>280</y>
+     <width>211</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	padding: 0 8px;
+	border:20px;
+	color:rgb(10,100,180);
+	background:black;
+	font: 600 italic 11pt &quot;Sitka Banner Semibold&quot;;
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="errorPassword">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>350</y>
+     <width>191</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	padding: 0 8px;
+	border:20px;
+	color:rgb(10,100,180);
+	background:black;
+	font: 600 italic 11pt &quot;Sitka Banner Semibold&quot;;
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="errorName">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>470</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	padding: 0 8px;
+	border:20px;
+	color:rgb(10,100,180);
+	background:black;
+	font: 600 italic 11pt &quot;Sitka Banner Semibold&quot;;
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="errorEmail">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>530</y>
+     <width>171</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	padding: 0 8px;
+	border:20px;
+	color:rgb(10,100,180);
+	background:black;
+	font: 600 italic 11pt &quot;Sitka Banner Semibold&quot;;
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="errorPasswordCheck">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>410</y>
+     <width>181</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	padding: 0 8px;
+	border:20px;
+	color:rgb(10,100,180);
+	background:black;
+	font: 600 italic 11pt &quot;Sitka Banner Semibold&quot;;
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_6</zorder>
+  <zorder>splitter_2</zorder>
+  <zorder>splitter_4</zorder>
+  <zorder>splitter_6</zorder>
+  <zorder>splitter_8</zorder>
+  <zorder>splitter_10</zorder>
+  <zorder>label_7</zorder>
+  <zorder>label</zorder>
+  <zorder>userName</zorder>
+  <zorder>label_2</zorder>
+  <zorder>password</zorder>
+  <zorder>label_5</zorder>
+  <zorder>passwordCheck</zorder>
+  <zorder>label_4</zorder>
+  <zorder>name</zorder>
+  <zorder>label_3</zorder>
+  <zorder>email</zorder>
+  <zorder>btnRegister</zorder>
+  <zorder>errorUserName</zorder>
+  <zorder>errorPassword</zorder>
+  <zorder>errorName</zorder>
+  <zorder>errorEmail</zorder>
+  <zorder>errorPasswordCheck</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

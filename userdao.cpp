@@ -2,8 +2,8 @@
 
 vector<User> UserDAO::findAll() {
     vector<User> list;
-    db.transaction();
-    if(db.open()) {
+
+    if(db.transaction()) {
         QSqlQuery query(db);
         string sql = "SELECT * FROM user";
         query.exec(QString::fromStdString(sql));
@@ -25,9 +25,9 @@ vector<User> UserDAO::findAll() {
     return list;
 }
 User UserDAO::findById(int id) {
-    db.transaction();
+
     User user;
-    if(db.open()) {
+    if(db.transaction()) {
         QSqlQuery query(db);
         string sql = "SELECT * FROM user WHERE id = :id";
         query.prepare(QString::fromStdString(sql));
@@ -49,9 +49,9 @@ User UserDAO::findById(int id) {
 }
 
 vector<User> UserDAO::findByProperties(string properties, string value) {
-    db.transaction();
+
     vector<User> list;
-    if(db.open()) {
+    if(db.transaction()) {
         QSqlQuery query(db);
         string sql = "SELECT * FROM user WHERE " + properties + " = :value";
         query.prepare(QString::fromStdString(sql));
@@ -77,8 +77,8 @@ vector<User> UserDAO::findByProperties(string properties, string value) {
 
 bool UserDAO::save(User instance) {
 
-        db.transaction();
-        if(db.open()) {
+
+        if(db.transaction()) {
             QSqlQuery query(db);
             string sql = "INSERT INTO user(user_name, password, name, email) VALUES (:userName, :password, :name, :email)";
             query.prepare(QString::fromStdString(sql));
@@ -97,8 +97,8 @@ bool UserDAO::save(User instance) {
         return false;
 }
 bool UserDAO::update(User instance) {
-    db.transaction();
-    if(db.open()) {
+
+    if(db.transaction()) {
         QSqlQuery query(db);
         string sql = "UPDATE user SET user_name = :userName, password = :password, name = :name, email = :email WHERE id = :id";
         query.prepare(QString::fromStdString(sql));
@@ -118,8 +118,8 @@ bool UserDAO::update(User instance) {
 
 }
 bool UserDAO::remove(int id) {
-    db.transaction();
-    if(db.open()) {
+
+    if(db.transaction()) {
         QSqlQuery query(db);
         string sql = "DELETE FROM user WHERE id = :id";
         query.prepare(QString::fromStdString(sql));

@@ -11,6 +11,7 @@ public:
     vector<Music> findAll();
     Music findById(int id);
     vector<Music> findByProperties(string properties, string value);
+    vector<Music> findByIntProperties(string properties, int value);
     bool save(Music instance);
     bool update(Music instance);
     bool remove(int id);

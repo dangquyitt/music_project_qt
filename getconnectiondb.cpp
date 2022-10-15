@@ -9,6 +9,7 @@ QSqlDatabase GetConnectionDB::getDB() {
         db = QSqlDatabase::addDatabase("QSQLITE");
         db.setDatabaseName("D:\\DBMusicProject\\project_music.db");
     }
+    db.open();
     cout << "Return db"<<endl;
     return db;
 }

@@ -1,4 +1,5 @@
 #include "categorydao.h"
+#include <iostream>
 
 CategoryDAO::CategoryDAO() {
     db = GetConnectionDB::getDB();
@@ -7,14 +8,15 @@ CategoryDAO::~CategoryDAO() {
     db.close();
 }
 vector<Category> CategoryDAO::findAll() {
-    db.transaction();
+
     vector<Category> list;
-    if(db.open()) {
+    if( db.transaction()) {
         QSqlQuery query(db);
         string sql = "SELECT * FROM category";
         query.exec(QString::fromStdString(sql));
         if(!db.commit()) {
             db.rollback();
+            cout << "Rollback";
         }
         while(query.next()) {
             Category category;
@@ -23,12 +25,13 @@ vector<Category> CategoryDAO::findAll() {
             list.push_back(category);
         }
     }
+    cout << "List is empty";
     return list;
 }
 Category CategoryDAO::findById(int id) {
-    db.transaction();
+
     Category category;
-    if(db.open()) {
+    if( db.transaction()) {
         QSqlQuery query(db);
         string sql = "SELECT * FROM category WHERE id = :id";
         query.prepare(QString::fromStdString(sql));
@@ -45,9 +48,9 @@ Category CategoryDAO::findById(int id) {
     return category;
 }
 vector<Category> CategoryDAO::findByProperties(string properties, string value) {
-    db.transaction();
+
     vector<Category> list;
-    if(db.open()) {
+    if( db.transaction()) {
         QSqlQuery query(db);
         string sql = "SELECT * FROM category WHERE " + properties +" = :value";
         query.prepare(QString::fromStdString(sql));
@@ -67,8 +70,8 @@ vector<Category> CategoryDAO::findByProperties(string properties, string value) 
 }
 
 bool CategoryDAO::save(Category instance) {
-    db.transaction();
-    if(db.open()) {
+
+    if( db.transaction()) {
         QSqlQuery query(db);
         string sql = "INSERT INTO category(category_name) VALUES(:categoryName)";
         query.prepare(QString::fromStdString(sql));
@@ -83,8 +86,8 @@ bool CategoryDAO::save(Category instance) {
     return false;
 }
 bool CategoryDAO::update(Category instance) {
-    db.transaction();
-    if(db.open()) {
+
+    if( db.transaction()) {
         QSqlQuery query(db);
         string sql = "UPDATE category SET category_name = :categoryName WHERE id=:id";
         query.prepare(QString::fromStdString(sql));
@@ -100,8 +103,8 @@ bool CategoryDAO::update(Category instance) {
     return false;
 }
 bool CategoryDAO::remove(int id) {
-    db.transaction();
-    if(db.open()) {
+
+    if( db.transaction()) {
         string sql = "DELETE FROM category WHERE id = :id";
         QSqlQuery query(db);
         query.prepare(QString::fromStdString(sql));

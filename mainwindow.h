@@ -9,6 +9,7 @@
 #include <vector>
 #include "QKeyEvent"
 #include "QLineEdit"
+#include "formaddtrack.h"
 
 using namespace std;
 
@@ -23,13 +24,9 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
+    friend class FormAddTrack;
+    static Music musicEdit;
 private slots:
-    void on_add_clicked();
-
-    void on_remove_clicked();
-
-    void on_save_clicked();
 
     void on_play_clicked();
 
@@ -53,7 +50,20 @@ private slots:
 
     void on_searchBar_textChanged(const QString &arg1);
 
+    void on_addMusic_clicked();
+
+    void on_btnLogout_clicked();
+
+    void on_editMusic_clicked();
+
+    void on_deleteMusic_clicked();
+    void on_selectCategory_currentIndexChanged(int index);
+
+    void on_btnFavorites_clicked();
+
 private:
+    void loadCategory();
+
     void updateList();
 
     void loadTrack();
@@ -74,6 +84,8 @@ private:
 
     int lCounter = 0;
 
+    int idCateogry = 0;
+
     Playlist playlist;
 
     Ui::MainWindow *ui;
@@ -82,7 +94,13 @@ private:
 
     QMediaPlayer *player = new QMediaPlayer();
 
-    vector<unsigned short int> shuffledPlaylist;
+    vector<int> shuffledPlaylist;
+
+    FormAddTrack *formAddTrack;
+
+    bool isFavorites = false;
+
+
 
 protected:
     void keyPressEvent(QKeyEvent *event);

@@ -3,7 +3,7 @@
 vector<Menu> MenuDAO::findAll() {
     db.transaction();
     vector<Menu> list;
-    if(db.open()) {
+    if(db.transaction()) {
         string sql = "SELECT * FROM menu";
         QSqlQuery query(db);
         query.exec(QString::fromStdString(sql));
@@ -23,7 +23,7 @@ vector<Menu> MenuDAO::findAll() {
 Menu MenuDAO::findById(int id) {
     db.transaction();
     Menu menu;
-    if(db.open()) {
+    if(db.transaction()) {
         string sql = "SELECT * FROM menu WHERE id = :id";
         QSqlQuery query(db);
         query.prepare(QString::fromStdString(sql));
@@ -42,7 +42,7 @@ vector<Menu> MenuDAO::findByProperties(string properties, string value) {
     db.transaction();
     string sql = "SELECT * FROM menu WHERE " + properties + " = :value";
     vector<Menu> list;
-    if(db.open()) {
+    if(db.transaction()) {
         QSqlQuery query(db);
         query.prepare(QString::fromStdString(sql));
         query.bindValue(":value", QString::fromStdString(value));
@@ -63,7 +63,7 @@ vector<Menu> MenuDAO::findByProperties(string properties, string value) {
 
 bool MenuDAO::save(Menu instance) {
     db.transaction();
-    if(db.open()) {
+    if(db.transaction()) {
         QSqlQuery query(db);
         string sql = "INSERT INTO menu(url, name) VALUES (:url, :name)";
         query.prepare(QString::fromStdString(sql));
@@ -80,7 +80,7 @@ bool MenuDAO::save(Menu instance) {
 }
 bool MenuDAO::update(Menu instance) {
     db.transaction();
-    if(db.open()) {
+    if(db.transaction()) {
         string sql = "UPDATE menu SET url = :url, name = :name WHERE id = :id";
         QSqlQuery query(db);
         query.prepare(QString::fromStdString(sql));
@@ -97,8 +97,8 @@ bool MenuDAO::update(Menu instance) {
     return false;
 }
 bool MenuDAO::remove(int id) {
-    db.transaction();
-    if(db.open()) {
+
+    if(db.transaction()) {
         string sql = "DELETE FROM role WHERE id = :id";
         QSqlQuery query(db);
         query.prepare(QString::fromStdString(sql));

@@ -16,8 +16,11 @@ SOURCES += main.cpp\
     category.cpp \
     categorydao.cpp \
     favorites.cpp \
+    formaddroletomember.cpp \
     formaddtrack.cpp \
+    formlistuser.cpp \
     formlogin.cpp \
+    formregister.cpp \
     getconnectiondb.cpp \
         mainwindow.cpp \
     menu.cpp \
@@ -28,7 +31,6 @@ SOURCES += main.cpp\
     role.cpp \
     roledao.cpp \
     session.cpp \
-    track.cpp \
     user.cpp \
     userdao.cpp \
     userrole.cpp \
@@ -42,8 +44,11 @@ HEADERS  += mainwindow.h \
     category.h \
     categorydao.h \
     favorites.h \
+    formaddroletomember.h \
     formaddtrack.h \
+    formlistuser.h \
     formlogin.h \
+    formregister.h \
     getconnectiondb.h \
     menu.h \
     menudao.h \
@@ -53,7 +58,6 @@ HEADERS  += mainwindow.h \
     role.h \
     roledao.h \
     session.h \
-    track.h \
     user.h \
     userdao.h \
     userrole.h \
@@ -62,5 +66,11 @@ HEADERS  += mainwindow.h \
     utils.h
 
 FORMS    += mainwindow.ui \
+    formaddroletomember.ui \
     formaddtrack.ui \
-    formlogin.ui
+    formlistuser.ui \
+    formlogin.ui \
+    formregister.ui
+
+RESOURCES += \
+    resources.qrc

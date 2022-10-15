@@ -2,8 +2,8 @@
 
 vector<UserRole> UserRoleDAO::findAll() {
     vector<UserRole> list;
-    db.transaction();
-    if(db.open()) {
+
+    if(db.transaction()) {
         QSqlQuery query(db);
         string sql = "SELECT * FROM user_role";
         query.exec(QString::fromStdString(sql));
@@ -21,9 +21,9 @@ vector<UserRole> UserRoleDAO::findAll() {
     return list;
 }
 UserRole UserRoleDAO::findById(int id) {
-    db.transaction();
+
     UserRole userRole;
-    if(db.open()) {
+    if(db.transaction()) {
         QSqlQuery query(db);
         string sql = "SELECT * FROM user_role WHERE id = :id";
         query.prepare(QString::fromStdString(sql));
@@ -42,11 +42,11 @@ UserRole UserRoleDAO::findById(int id) {
 }
 
 vector<UserRole> UserRoleDAO::findByProperties(string properties, string value) {
-    db.transaction();
+
     vector<UserRole> list;
     QSqlQuery query(db);
     string sql = "SELECT * FROM user_role WHERE " + properties + " = :value";
-    if(db.open()) {
+    if(db.transaction()) {
         query.prepare(QString::fromStdString(sql));
         query.bindValue(":value", QString::fromStdString(value));
         query.exec();
@@ -66,11 +66,11 @@ vector<UserRole> UserRoleDAO::findByProperties(string properties, string value) 
 }
 
 vector<UserRole> UserRoleDAO::findByIntProperties(string properties, int value) {
-    db.transaction();
+
     vector<UserRole> list;
     QSqlQuery query(db);
     string sql = "SELECT * FROM user_role WHERE " + properties + " = :value";
-    if(db.open()) {
+    if(db.transaction()) {
         query.prepare(QString::fromStdString(sql));
         query.bindValue(":value", value);
         query.exec();
@@ -91,13 +91,13 @@ vector<UserRole> UserRoleDAO::findByIntProperties(string properties, int value) 
 
 
 bool UserRoleDAO::save(UserRole instance) {
-    db.transaction();
-    if(db.open()) {
+
+    if(db.transaction()) {
         QSqlQuery query(db);
         string sql = "INSERT INTO user_role(user_id, role_id) VALUES (:userId, :roleId)";
         query.prepare(QString::fromStdString(sql));
-        query.bindValue("userId", instance.getUserId());
-        query.bindValue("roleId", instance.getRoleId());
+        query.bindValue(":userId", instance.getUserId());
+        query.bindValue(":roleId", instance.getRoleId());
         query.exec();
         if(!db.commit()) {
             db.rollback();
@@ -108,8 +108,8 @@ bool UserRoleDAO::save(UserRole instance) {
     return false;
 }
 bool UserRoleDAO::update(UserRole instance) {
-    db.transaction();
-    if(db.open()) {
+
+    if(db.transaction()) {
         string sql = "UPDATE user_role SET user_id = :userId, role_id = :roleId WHERE id = :id";
         QSqlQuery query(db);
         query.prepare(QString::fromStdString(sql));
@@ -126,8 +126,8 @@ bool UserRoleDAO::update(UserRole instance) {
     return false;
 }
 bool UserRoleDAO::remove(int id) {
-    db.transaction();
-    if(db.open()) {
+
+    if(db.transaction()) {
         string sql = "DELETE FROM user_role WHERE id = :id";
         QSqlQuery query(db);
         query.prepare(QString::fromStdString(sql)) ;

@@ -1,12 +1,18 @@
 #ifndef FORMLOGIN_H
 #define FORMLOGIN_H
-
-#include "mainwindow.h"
 #include "userdao.h"
 #include"utildao.h"
 #include"qstring.h"
 #include <QWidget>
 #include"session.h"
+#include "auth.h"
+#include "qevent.h"
+#include "ui_formlogin.h"
+#include "userrole.h"
+#include"QPropertyAnimation"
+#include <FormRegister.h>
+#include<iostream>
+
 
 namespace Ui {
 class FormLogin;
@@ -27,8 +33,15 @@ private slots:
 
     void on_inputPassword_textChanged(const QString &arg1);
 
+
+    void on_hidePasswordbt_clicked();
+
+    void on_btnRegister_clicked();
+
 private:
     Ui::FormLogin *ui;
+    QPropertyAnimation *animation;
+    bool hidePassword;
 
 protected:
     void keyPressEvent(QKeyEvent *event);
