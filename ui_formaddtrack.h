@@ -131,13 +131,13 @@ public:
         musicName = new QLineEdit(FormAddTrack);
         musicName->setObjectName(QString::fromUtf8("musicName"));
         musicName->setGeometry(QRect(530, 160, 125, 28));
-        musicName->setStyleSheet(QString::fromUtf8("QLabel{\n"
-"	font: 10pt \"Showcard Gothic\";\n"
-"	padding: 0 8px;\n"
+        musicName->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
 "\n"
+"\n"
+"	padding: 0 8px;\n"
+"	background:white;\n"
 "	color:rgb(10,100,180);\n"
-"}\n"
-""));
+"}"));
         errorMusicName = new QLabel(FormAddTrack);
         errorMusicName->setObjectName(QString::fromUtf8("errorMusicName"));
         errorMusicName->setGeometry(QRect(330, 190, 191, 20));
@@ -303,6 +303,7 @@ public:
         label_8->setText(QString());
         label_9->setText(QCoreApplication::translate("FormAddTrack", "ADDTrack", nullptr));
         label->setText(QCoreApplication::translate("FormAddTrack", "Name:", nullptr));
+        musicName->setText(QCoreApplication::translate("FormAddTrack", "asd", nullptr));
         errorMusicName->setText(QString());
         errorMusicUrl->setText(QString());
         musicUrl->setText(QString());

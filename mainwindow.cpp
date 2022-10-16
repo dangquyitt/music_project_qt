@@ -428,3 +428,16 @@ void MainWindow::on_btnProfile_clicked()
     formProfileMain->show();
 }
 
+
+void MainWindow::on_btnListUser_clicked()
+{
+    if(::find(Session::LIST_URL_MENU.begin(), Session::LIST_URL_MENU.end(), "list_user") != Session::LIST_URL_MENU.end()) {
+        formListUserMain  = new FormListUser;
+        formListUserMain->show();
+     }else {
+         QMessageBox::warning(this, "Message", "Không có quyền truy cập");
+         return;
+     }
+
+}
+

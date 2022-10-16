@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>340</x>
-     <y>190</y>
+     <y>200</y>
      <width>118</width>
      <height>22</height>
     </rect>
@@ -40,7 +40,7 @@
    <property name="geometry">
     <rect>
      <x>340</x>
-     <y>330</y>
+     <y>350</y>
      <width>83</width>
      <height>22</height>
     </rect>
@@ -63,7 +63,7 @@
    <property name="geometry">
     <rect>
      <x>340</x>
-     <y>260</y>
+     <y>280</y>
      <width>121</width>
      <height>22</height>
     </rect>
@@ -86,7 +86,7 @@
    <property name="geometry">
     <rect>
      <x>530</x>
-     <y>190</y>
+     <y>200</y>
      <width>141</width>
      <height>24</height>
     </rect>
@@ -108,7 +108,7 @@
    <property name="geometry">
     <rect>
      <x>340</x>
-     <y>390</y>
+     <y>430</y>
      <width>128</width>
      <height>22</height>
     </rect>
@@ -162,9 +162,9 @@
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>400</x>
+     <x>420</x>
      <y>80</y>
-     <width>261</width>
+     <width>200</width>
      <height>51</height>
     </rect>
    </property>
@@ -186,7 +186,7 @@
    <property name="geometry">
     <rect>
      <x>530</x>
-     <y>260</y>
+     <y>280</y>
      <width>141</width>
      <height>24</height>
     </rect>
@@ -211,7 +211,7 @@
    <property name="geometry">
     <rect>
      <x>530</x>
-     <y>330</y>
+     <y>350</y>
      <width>141</width>
      <height>24</height>
     </rect>
@@ -233,7 +233,7 @@
    <property name="geometry">
     <rect>
      <x>530</x>
-     <y>390</y>
+     <y>430</y>
      <width>141</width>
      <height>24</height>
     </rect>
@@ -301,48 +301,6 @@ border:10px;
     <string>Save</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>450</y>
-     <width>111</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel{
-	
-	padding: 0 8px;
-
-	color:rgb(10,100,180);
-	font: 10pt &quot;Showcard Gothic&quot;;
-}
-</string>
-   </property>
-   <property name="text">
-    <string>Confirm:</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="confirmPassword">
-   <property name="geometry">
-    <rect>
-     <x>530</x>
-     <y>450</y>
-     <width>140</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLineEdit{
-
-
-	padding: 0 8px;
-	background:white;
-	color:rgb(10,100,180);
-}</string>
-   </property>
-  </widget>
   <zorder>SRC</zorder>
   <zorder>label_9</zorder>
   <zorder>label_2</zorder>
@@ -352,12 +310,10 @@ border:10px;
   <zorder>label_10</zorder>
   <zorder>btnCancel</zorder>
   <zorder>btnSave</zorder>
-  <zorder>label</zorder>
   <zorder>name</zorder>
   <zorder>userName</zorder>
   <zorder>email</zorder>
   <zorder>password</zorder>
-  <zorder>confirmPassword</zorder>
  </widget>
  <resources/>
  <connections/>

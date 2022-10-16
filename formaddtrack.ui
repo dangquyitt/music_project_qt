@@ -208,13 +208,16 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QLabel{
-	font: 10pt &quot;Showcard Gothic&quot;;
-	padding: 0 8px;
+    <string notr="true">QLineEdit{
 
+
+	padding: 0 8px;
+	background:white;
 	color:rgb(10,100,180);
-}
-</string>
+}</string>
+   </property>
+   <property name="text">
+    <string>asd</string>
    </property>
   </widget>
   <widget class="QLabel" name="errorMusicName">

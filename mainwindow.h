@@ -16,6 +16,7 @@
 #include "QFileDialog"
 #include "QDesktopServices"
 #include "formprofile.h"
+#include <formlistuser.h>
 #include <iostream>
 #include <qtimer.h>
 #include <string>
@@ -72,6 +73,8 @@ private slots:
 
     void on_btnProfile_clicked();
 
+    void on_btnListUser_clicked();
+
 private:
     void renderIcon();
     void loadCategory();
@@ -112,7 +115,7 @@ private:
 
     FormProfile *formProfileMain;
 
-
+    FormListUser *formListUserMain;
 
 protected:
     void keyPressEvent(QKeyEvent *event);

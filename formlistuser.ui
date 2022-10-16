@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1110</width>
-    <height>641</height>
+    <height>794</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <x>120</x>
      <y>170</y>
      <width>901</width>
-     <height>411</height>
+     <height>481</height>
     </rect>
    </property>
   </widget>
@@ -29,7 +29,7 @@
      <x>120</x>
      <y>70</y>
      <width>901</width>
-     <height>511</height>
+     <height>661</height>
     </rect>
    </property>
    <property name="text">
@@ -63,10 +63,10 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>-60</x>
      <y>-10</y>
-     <width>1121</width>
-     <height>661</height>
+     <width>1181</width>
+     <height>811</height>
     </rect>
    </property>
    <property name="text">
@@ -76,10 +76,42 @@
     <pixmap>../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg</pixmap>
    </property>
   </widget>
+  <widget class="QSplitter" name="splitter">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>680</y>
+     <width>841</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <widget class="QPushButton" name="pushButton">
+    <property name="text">
+     <string>Cancel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="text">
+     <string>Reload</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="text">
+     <string>Role</string>
+    </property>
+   </widget>
+  </widget>
   <zorder>label_2</zorder>
   <zorder>label</zorder>
   <zorder>label_3</zorder>
   <zorder>tableWidget</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>pushButton_2</zorder>
+  <zorder>pushButton_3</zorder>
+  <zorder>splitter</zorder>
  </widget>
  <resources/>
  <connections/>

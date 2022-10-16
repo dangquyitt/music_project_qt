@@ -1,6 +1,7 @@
 #include "formprofile.h"
 #include "session.h"
 #include "ui_formprofile.h"
+#include "utildao.h"
 
 FormProfile::FormProfile(QWidget *parent) :
     QWidget(parent),
@@ -103,8 +104,11 @@ void FormProfile::updateProfile() {
     ui->email->setText(QString::fromStdString(Session::USER_INFO->getEmail()));
     ui->email->setReadOnly(true);
 
-    ui->userName->setText(QString::fromStdString(Session::USER_INFO->getName()));
-    ui->userName->setReadOnly(true);
+    ui->name->setText(QString::fromStdString(Session::USER_INFO->getName()));
+    ui->name->setReadOnly(true);
+
+    ui->password->setText(QString::fromStdString(Session::USER_INFO->getPassword()));
+    ui->password->setReadOnly(true);
 }
 
 FormProfile::~FormProfile()
@@ -116,4 +120,5 @@ void FormProfile::on_btnCancel_clicked()
 {
     close( );
 }
+
 
