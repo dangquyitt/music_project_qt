@@ -45,9 +45,9 @@ public:
     QPushButton *addMusic;
     QPushButton *deleteMusic;
     QPushButton *editMusic;
-    QLabel *rcs;
+    QLabel *bgContainer;
     QLabel *label;
-    QLabel *rcs2;
+    QLabel *bgContent;
     QComboBox *selectCategory;
     QLineEdit *searchBar;
     QPushButton *btnReload;
@@ -230,17 +230,17 @@ public:
 "	border-radius:10px;\n"
 "	background:white;\n"
 "}"));
-        rcs = new QLabel(centralWidget);
-        rcs->setObjectName(QString::fromUtf8("rcs"));
-        rcs->setGeometry(QRect(0, 450, 2391, 201));
-        rcs->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
+        bgContainer = new QLabel(centralWidget);
+        bgContainer->setObjectName(QString::fromUtf8("bgContainer"));
+        bgContainer->setGeometry(QRect(0, 450, 2391, 201));
+        bgContainer->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
         label = new QLabel(centralWidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(380, 530, 63, 20));
-        rcs2 = new QLabel(centralWidget);
-        rcs2->setObjectName(QString::fromUtf8("rcs2"));
-        rcs2->setGeometry(QRect(1010, 0, 441, 451));
-        rcs2->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
+        bgContent = new QLabel(centralWidget);
+        bgContent->setObjectName(QString::fromUtf8("bgContent"));
+        bgContent->setGeometry(QRect(1010, 0, 441, 451));
+        bgContent->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
         selectCategory = new QComboBox(centralWidget);
         selectCategory->setObjectName(QString::fromUtf8("selectCategory"));
         selectCategory->setGeometry(QRect(1020, 10, 131, 31));
@@ -278,9 +278,9 @@ public:
         roleInfo->setStyleSheet(QString::fromUtf8("font: 600 italic 12pt \"Sitka Display Semibold\";\n"
 "color:black;"));
         MainWindow->setCentralWidget(centralWidget);
-        rcs2->raise();
+        bgContent->raise();
         imgMusic->raise();
-        rcs->raise();
+        bgContainer->raise();
         btnListUser->raise();
         btnProfile->raise();
         addMusic->raise();
@@ -334,9 +334,9 @@ public:
         addMusic->setText(QString());
         deleteMusic->setText(QString());
         editMusic->setText(QString());
-        rcs->setText(QString());
+        bgContainer->setText(QString());
         label->setText(QString());
-        rcs2->setText(QString());
+        bgContent->setText(QString());
         btnReload->setText(QString());
         userInfo->setText(QString());
         label_3->setText(QCoreApplication::translate("MainWindow", "Role:", nullptr));

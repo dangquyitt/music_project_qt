@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="bgContainer">
    <property name="geometry">
     <rect>
      <x>-120</x>
@@ -336,7 +336,7 @@ font: 9pt &quot;Showcard Gothic&quot;;
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="bgContent">
    <property name="geometry">
     <rect>
      <x>280</x>
@@ -357,8 +357,8 @@ border-radius:10px;
     <pixmap>../../Image/Hinh-Nen-Trang-10.webp</pixmap>
    </property>
   </widget>
-  <zorder>label</zorder>
-  <zorder>label_2</zorder>
+  <zorder>bgContainer</zorder>
+  <zorder>bgContent</zorder>
   <zorder>btnLogin</zorder>
   <zorder>errorPassword</zorder>
   <zorder>errorUserName</zorder>

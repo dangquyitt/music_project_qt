@@ -22,7 +22,7 @@ class Ui_FormRegister
 {
 public:
     QPushButton *btnRegister;
-    QLabel *label_6;
+    QLabel *bgContainer;
     QLabel *label_7;
     QLabel *label;
     QLineEdit *userName;
@@ -39,7 +39,7 @@ public:
     QLabel *errorEmail;
     QLabel *errorPasswordCheck;
     QPushButton *btnBack;
-    QLabel *label_8;
+    QLabel *bgContent;
     QLabel *stataus;
     QLabel *errorPassword;
     QPushButton *btnHidenPassword;
@@ -60,10 +60,10 @@ public:
 "font: 12pt \"Showcard Gothic\";\n"
 "}\n"
 ""));
-        label_6 = new QLabel(FormRegister);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(-130, 0, 1621, 671));
-        label_6->setPixmap(QPixmap(QString::fromUtf8("../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg")));
+        bgContainer = new QLabel(FormRegister);
+        bgContainer->setObjectName(QString::fromUtf8("bgContainer"));
+        bgContainer->setGeometry(QRect(-130, 0, 1621, 671));
+        bgContainer->setPixmap(QPixmap(QString::fromUtf8("../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg")));
         label_7 = new QLabel(FormRegister);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(350, 130, 231, 81));
@@ -247,10 +247,10 @@ public:
 "	font: 12pt \"Showcard Gothic\";\n"
 "}\n"
 ""));
-        label_8 = new QLabel(FormRegister);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setGeometry(QRect(250, 90, 441, 501));
-        label_8->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
+        bgContent = new QLabel(FormRegister);
+        bgContent->setObjectName(QString::fromUtf8("bgContent"));
+        bgContent->setGeometry(QRect(250, 90, 441, 501));
+        bgContent->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
         stataus = new QLabel(FormRegister);
         stataus->setObjectName(QString::fromUtf8("stataus"));
         stataus->setGeometry(QRect(390, 110, 141, 20));
@@ -278,8 +278,8 @@ public:
         btnHidenPassword->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background:white;\n"
 "}"));
-        label_6->raise();
-        label_8->raise();
+        bgContainer->raise();
+        bgContent->raise();
         label_7->raise();
         label->raise();
         userName->raise();
@@ -310,7 +310,7 @@ public:
     {
         FormRegister->setWindowTitle(QCoreApplication::translate("FormRegister", "Form", nullptr));
         btnRegister->setText(QCoreApplication::translate("FormRegister", "Register", nullptr));
-        label_6->setText(QString());
+        bgContainer->setText(QString());
         label_7->setText(QCoreApplication::translate("FormRegister", "Register", nullptr));
         label->setText(QCoreApplication::translate("FormRegister", "Username:", nullptr));
         userName->setPlaceholderText(QCoreApplication::translate("FormRegister", "username", nullptr));
@@ -327,7 +327,7 @@ public:
         errorEmail->setText(QString());
         errorPasswordCheck->setText(QString());
         btnBack->setText(QCoreApplication::translate("FormRegister", "Back", nullptr));
-        label_8->setText(QString());
+        bgContent->setText(QString());
         stataus->setText(QString());
         errorPassword->setText(QString());
         btnHidenPassword->setText(QString());

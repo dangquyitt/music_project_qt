@@ -127,7 +127,7 @@
     <string>Password:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="SRC">
+  <widget class="QLabel" name="bgContainer">
    <property name="geometry">
     <rect>
      <x>-10</x>
@@ -143,7 +143,7 @@
     <pixmap>../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg</pixmap>
    </property>
   </widget>
-  <widget class="QLabel" name="label_9">
+  <widget class="QLabel" name="bgContent">
    <property name="geometry">
     <rect>
      <x>250</x>
@@ -301,8 +301,8 @@ border:10px;
     <string>Save</string>
    </property>
   </widget>
-  <zorder>SRC</zorder>
-  <zorder>label_9</zorder>
+  <zorder>bgContainer</zorder>
+  <zorder>bgContent</zorder>
   <zorder>label_2</zorder>
   <zorder>label_3</zorder>
   <zorder>label_4</zorder>

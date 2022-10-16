@@ -10,7 +10,6 @@
 #define UI_FORMADDTRACK_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QLabel>
@@ -29,8 +28,8 @@ public:
     QPushButton *btnAddMusic;
     QLabel *statusInsert;
     QPushButton *btnCancel;
-    QLabel *label_7;
-    QLabel *label_8;
+    QLabel *bgContainer;
+    QLabel *bgContent;
     QLabel *label_9;
     QLabel *label;
     QLineEdit *musicName;
@@ -107,14 +106,14 @@ public:
 "	border:10px;\n"
 "	color:rgb(10,100,180);\n"
 "}"));
-        label_7 = new QLabel(FormAddTrack);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setGeometry(QRect(-20, 0, 1001, 721));
-        label_7->setPixmap(QPixmap(QString::fromUtf8("../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg")));
-        label_8 = new QLabel(FormAddTrack);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setGeometry(QRect(220, 30, 521, 631));
-        label_8->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
+        bgContainer = new QLabel(FormAddTrack);
+        bgContainer->setObjectName(QString::fromUtf8("bgContainer"));
+        bgContainer->setGeometry(QRect(-20, 0, 1001, 721));
+        bgContainer->setPixmap(QPixmap(QString::fromUtf8("../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg")));
+        bgContent = new QLabel(FormAddTrack);
+        bgContent->setObjectName(QString::fromUtf8("bgContent"));
+        bgContent->setGeometry(QRect(220, 30, 521, 631));
+        bgContent->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
         label_9 = new QLabel(FormAddTrack);
         label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setGeometry(QRect(380, 80, 241, 51));
@@ -176,9 +175,6 @@ public:
 "	border:10px;\n"
 "	color:rgb(10,100,180);\n"
 "}"));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8("img/folder.png"), QSize(), QIcon::Normal, QIcon::Off);
-        btnMusicUrl->setIcon(icon);
         label_6 = new QLabel(FormAddTrack);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(260, 220, 461, 31));
@@ -220,7 +216,6 @@ public:
 "	border:10px;\n"
 "	color:rgb(10,100,180);\n"
 "}"));
-        btnImgUrl->setIcon(icon);
         label_3 = new QLabel(FormAddTrack);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(260, 410, 141, 31));
@@ -290,8 +285,8 @@ public:
 "	border-color: rgb(165, 165, 165);\n"
 "	color:rgb(10,100,180);\n"
 "}"));
-        label_7->raise();
-        label_8->raise();
+        bgContainer->raise();
+        bgContent->raise();
         label->raise();
         musicName->raise();
         label_6->raise();
@@ -326,8 +321,8 @@ public:
         btnAddMusic->setText(QCoreApplication::translate("FormAddTrack", "Save", nullptr));
         statusInsert->setText(QString());
         btnCancel->setText(QCoreApplication::translate("FormAddTrack", "Cancel", nullptr));
-        label_7->setText(QString());
-        label_8->setText(QString());
+        bgContainer->setText(QString());
+        bgContent->setText(QString());
         label_9->setText(QCoreApplication::translate("FormAddTrack", "ADDTrack", nullptr));
         label->setText(QCoreApplication::translate("FormAddTrack", "Name", nullptr));
         musicName->setText(QString());

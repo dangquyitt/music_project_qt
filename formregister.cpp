@@ -13,6 +13,8 @@ FormRegister::FormRegister(QWidget *parent) :
     ui->password->setEchoMode(QLineEdit::Password);
     ui->passwordCheck->setEchoMode(QLineEdit::Password);
     ui->btnHidenPassword->setIcon(QIcon(":/resources/img/hidden.png"));
+    ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-bule.jpg"));
+    ui->bgContent->setPixmap(QPixmap(":/resources/img/background-while.webp"));
 //    ui->btn->setIcon(QIcon(":/resources/img/hidden.png"));
 //    ui->inputPassword->setEchoMode(QLineEdit::Password);
 //    ui->hidePasswordbt->setIcon(QIcon(":/resources/img/hidden.png"));

@@ -15,6 +15,8 @@ FormListUser::FormListUser(QWidget *parent) :
     sizeRoles = roles.size();
     updateListUser();
     setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
+    ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-bule.jpg"));
+    ui->bgContent->setPixmap(QPixmap(":/resources/img/background-while.webp"));
 //    animation = new QPropertyAnimation(ui->label,"geometry");
 //    animation -> setDuration(1000);
 //    animation-> setStartValue(QRect(200,200,100,50));

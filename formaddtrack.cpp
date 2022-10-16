@@ -9,6 +9,10 @@ FormAddTrack::FormAddTrack(QWidget *parent) :
     ui(new Ui::FormAddTrack)
 {
     ui->setupUi(this);
+    ui->btnImgUrl->setIcon(QIcon(":/resources/img/folder.png"));
+    ui->btnMusicUrl->setIcon(QIcon(":/resources/img/folder.png"));
+    ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-bule.jpg"));
+    ui->bgContent->setPixmap(QPixmap(":/resources/img/background-while.webp"));
     setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
     connect(ui->btnCancel, SIGNAL(clicked()), this, SLOT(close()));
     ui->releaseYear->setMaximum(QDateTime::currentDateTime().date().year());

@@ -13,6 +13,8 @@ FormLogin::FormLogin(QWidget *parent) :
         setWindowTitle("Đăng nhập");
         ui->inputPassword->setEchoMode(QLineEdit::Password);
         ui->hidePasswordbt->setIcon(QIcon(":/resources/img/hidden.png"));
+        ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-bule.jpg"));
+        ui->bgContent->setPixmap(QPixmap(":/resources/img/background-while.webp"));
 //        animation = new QPropertyAnimation(ui->btnLogin,"geometry");
 //        animation -> setDuration(1000);
 //        animation-> setStartValue(QRect(200,200,100,50));

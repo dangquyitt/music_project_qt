@@ -10,6 +10,8 @@ FormProfile::FormProfile(QWidget *parent) :
     ui->setupUi(this);
     setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
     updateProfile();
+    ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-bule.jpg"));
+    ui->bgContent->setPixmap(QPixmap(":/resources/img/background-while.webp"));
 //    animation = new QPropertyAnimation(ui->label_2,"geometry");
 //    animation -> setDuration(1000);
 //    animation-> setStartValue(QRect(200,200,100,50));

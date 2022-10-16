@@ -23,9 +23,9 @@ class Ui_FormListUser
 {
 public:
     QTableWidget *tableWidget;
-    QLabel *label;
+    QLabel *bgContent;
     QLabel *label_3;
-    QLabel *label_2;
+    QLabel *bgContainer;
     QPushButton *btnCancel;
 
     void setupUi(QWidget *FormListUser)
@@ -36,10 +36,10 @@ public:
         tableWidget = new QTableWidget(FormListUser);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
         tableWidget->setGeometry(QRect(30, 170, 941, 481));
-        label = new QLabel(FormListUser);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(30, 70, 941, 661));
-        label->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
+        bgContent = new QLabel(FormListUser);
+        bgContent->setObjectName(QString::fromUtf8("bgContent"));
+        bgContent->setGeometry(QRect(30, 70, 941, 661));
+        bgContent->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
         label_3 = new QLabel(FormListUser);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(420, 80, 211, 51));
@@ -49,15 +49,15 @@ public:
 "\n"
 "	color:rgb(10,100,180);\n"
 "}"));
-        label_2 = new QLabel(FormListUser);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(-60, -10, 1201, 811));
-        label_2->setPixmap(QPixmap(QString::fromUtf8("../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg")));
+        bgContainer = new QLabel(FormListUser);
+        bgContainer->setObjectName(QString::fromUtf8("bgContainer"));
+        bgContainer->setGeometry(QRect(-60, -10, 1201, 811));
+        bgContainer->setPixmap(QPixmap(QString::fromUtf8("../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg")));
         btnCancel = new QPushButton(FormListUser);
         btnCancel->setObjectName(QString::fromUtf8("btnCancel"));
         btnCancel->setGeometry(QRect(80, 680, 841, 29));
-        label_2->raise();
-        label->raise();
+        bgContainer->raise();
+        bgContent->raise();
         label_3->raise();
         tableWidget->raise();
         btnCancel->raise();
@@ -70,9 +70,9 @@ public:
     void retranslateUi(QWidget *FormListUser)
     {
         FormListUser->setWindowTitle(QCoreApplication::translate("FormListUser", "Form", nullptr));
-        label->setText(QString());
+        bgContent->setText(QString());
         label_3->setText(QCoreApplication::translate("FormListUser", "UserList", nullptr));
-        label_2->setText(QString());
+        bgContainer->setText(QString());
         btnCancel->setText(QCoreApplication::translate("FormListUser", "Cancel", nullptr));
     } // retranslateUi
 

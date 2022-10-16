@@ -26,8 +26,8 @@ public:
     QLabel *label_4;
     QLineEdit *name;
     QLabel *label_5;
-    QLabel *SRC;
-    QLabel *label_9;
+    QLabel *bgContainer;
+    QLabel *bgContent;
     QLabel *label_10;
     QLineEdit *userName;
     QLineEdit *email;
@@ -94,14 +94,14 @@ public:
 "	font: 10pt \"Showcard Gothic\";\n"
 "}\n"
 ""));
-        SRC = new QLabel(FormProfile);
-        SRC->setObjectName(QString::fromUtf8("SRC"));
-        SRC->setGeometry(QRect(-10, 0, 1021, 631));
-        SRC->setPixmap(QPixmap(QString::fromUtf8("../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg")));
-        label_9 = new QLabel(FormProfile);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setGeometry(QRect(250, 20, 541, 581));
-        label_9->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
+        bgContainer = new QLabel(FormProfile);
+        bgContainer->setObjectName(QString::fromUtf8("bgContainer"));
+        bgContainer->setGeometry(QRect(-10, 0, 1021, 631));
+        bgContainer->setPixmap(QPixmap(QString::fromUtf8("../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg")));
+        bgContent = new QLabel(FormProfile);
+        bgContent->setObjectName(QString::fromUtf8("bgContent"));
+        bgContent->setGeometry(QRect(250, 20, 541, 581));
+        bgContent->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
         label_10 = new QLabel(FormProfile);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(420, 80, 200, 51));
@@ -166,8 +166,8 @@ public:
 "	color:rgb(10,100,180);\n"
 "border:10px;\n"
 "}"));
-        SRC->raise();
-        label_9->raise();
+        bgContainer->raise();
+        bgContent->raise();
         label_2->raise();
         label_3->raise();
         label_4->raise();
@@ -193,8 +193,8 @@ public:
         label_4->setText(QCoreApplication::translate("FormProfile", "Username:", nullptr));
         name->setText(QString());
         label_5->setText(QCoreApplication::translate("FormProfile", "Password:", nullptr));
-        SRC->setText(QString());
-        label_9->setText(QString());
+        bgContainer->setText(QString());
+        bgContent->setText(QString());
         label_10->setText(QCoreApplication::translate("FormProfile", "PROFILE", nullptr));
         userName->setText(QString());
         email->setText(QString());

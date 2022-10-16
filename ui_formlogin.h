@@ -21,7 +21,7 @@ QT_BEGIN_NAMESPACE
 class Ui_FormLogin
 {
 public:
-    QLabel *label;
+    QLabel *bgContainer;
     QLineEdit *inputUserName;
     QLabel *labelpassword;
     QLabel *title;
@@ -33,18 +33,18 @@ public:
     QLabel *labelUserName;
     QLineEdit *inputPassword;
     QPushButton *hidePasswordbt;
-    QLabel *label_2;
+    QLabel *bgContent;
 
     void setupUi(QWidget *FormLogin)
     {
         if (FormLogin->objectName().isEmpty())
             FormLogin->setObjectName(QString::fromUtf8("FormLogin"));
         FormLogin->resize(918, 610);
-        label = new QLabel(FormLogin);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(-120, 0, 1581, 621));
-        label->setStyleSheet(QString::fromUtf8("border-radius:10px;"));
-        label->setPixmap(QPixmap(QString::fromUtf8("../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg")));
+        bgContainer = new QLabel(FormLogin);
+        bgContainer->setObjectName(QString::fromUtf8("bgContainer"));
+        bgContainer->setGeometry(QRect(-120, 0, 1581, 621));
+        bgContainer->setStyleSheet(QString::fromUtf8("border-radius:10px;"));
+        bgContainer->setPixmap(QPixmap(QString::fromUtf8("../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg")));
         inputUserName = new QLineEdit(FormLogin);
         inputUserName->setObjectName(QString::fromUtf8("inputUserName"));
         inputUserName->setGeometry(QRect(420, 230, 161, 31));
@@ -182,15 +182,15 @@ public:
         hidePasswordbt->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background:white;\n"
 "}"));
-        label_2 = new QLabel(FormLogin);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(280, 60, 371, 481));
-        label_2->setStyleSheet(QString::fromUtf8("QPixmap{\n"
+        bgContent = new QLabel(FormLogin);
+        bgContent->setObjectName(QString::fromUtf8("bgContent"));
+        bgContent->setGeometry(QRect(280, 60, 371, 481));
+        bgContent->setStyleSheet(QString::fromUtf8("QPixmap{\n"
 "border-radius:10px;\n"
 "}"));
-        label_2->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
-        label->raise();
-        label_2->raise();
+        bgContent->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
+        bgContainer->raise();
+        bgContent->raise();
         btnLogin->raise();
         errorPassword->raise();
         errorUserName->raise();
@@ -211,7 +211,7 @@ public:
     void retranslateUi(QWidget *FormLogin)
     {
         FormLogin->setWindowTitle(QCoreApplication::translate("FormLogin", "Form", nullptr));
-        label->setText(QString());
+        bgContainer->setText(QString());
         inputUserName->setPlaceholderText(QCoreApplication::translate("FormLogin", "username", nullptr));
         labelpassword->setText(QCoreApplication::translate("FormLogin", "Password:", nullptr));
         title->setText(QCoreApplication::translate("FormLogin", "OOP MUSIC", nullptr));
@@ -223,7 +223,7 @@ public:
         labelUserName->setText(QCoreApplication::translate("FormLogin", "Username:", nullptr));
         inputPassword->setPlaceholderText(QCoreApplication::translate("FormLogin", "password", nullptr));
         hidePasswordbt->setText(QString());
-        label_2->setText(QString());
+        bgContent->setText(QString());
     } // retranslateUi
 
 };

@@ -493,7 +493,7 @@ color:black;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="rcs">
+   <widget class="QLabel" name="bgContainer">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -522,7 +522,7 @@ color:black;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="rcs2">
+   <widget class="QLabel" name="bgContent">
     <property name="geometry">
      <rect>
       <x>1010</x>
@@ -650,9 +650,9 @@ color:black;</string>
      <string/>
     </property>
    </widget>
-   <zorder>rcs2</zorder>
+   <zorder>bgContent</zorder>
    <zorder>imgMusic</zorder>
-   <zorder>rcs</zorder>
+   <zorder>bgContainer</zorder>
    <zorder>btnListUser</zorder>
    <zorder>btnProfile</zorder>
    <zorder>addMusic</zorder>

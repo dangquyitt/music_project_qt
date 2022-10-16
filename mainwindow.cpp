@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     cout <<"New window"<<endl;
     ui->setupUi(this);
+    ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-while.webp"));
+    ui->bgContent->setPixmap(QPixmap(":/resources/img/background-while.webp"));
 
     this->setFixedSize(this->geometry().width(),this->geometry().height());
 
@@ -368,7 +370,10 @@ void MainWindow::on_editMusic_clicked()
 
 void MainWindow::on_deleteMusic_clicked()
 {
-    if(::find(Session::LIST_URL_MENU.begin(), Session::LIST_URL_MENU.end(), "remove ") != Session::LIST_URL_MENU.end()) {
+    for(string item : Session::LIST_URL_MENU) {
+        cout << item<<endl;
+    }
+    if(::find(Session::LIST_URL_MENU.begin(), Session::LIST_URL_MENU.end(), "remove") != Session::LIST_URL_MENU.end()) {
         int index = getIndex();
         if(index != -1)
         {

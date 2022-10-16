@@ -23,7 +23,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="bgContent">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -60,7 +60,7 @@
     <string>UserList</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="bgContainer">
    <property name="geometry">
     <rect>
      <x>-60</x>
@@ -89,11 +89,10 @@
     <string>Cancel</string>
    </property>
   </widget>
-  <zorder>label_2</zorder>
-  <zorder>label</zorder>
+  <zorder>bgContainer</zorder>
+  <zorder>bgContent</zorder>
   <zorder>label_3</zorder>
   <zorder>tableWidget</zorder>
-  <zorder>splitter</zorder>
   <zorder>btnCancel</zorder>
  </widget>
  <resources/>
