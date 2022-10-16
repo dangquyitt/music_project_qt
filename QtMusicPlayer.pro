@@ -15,10 +15,11 @@ SOURCES += main.cpp\
     basedao.cpp \
     category.cpp \
     categorydao.cpp \
-    formaddroletomember.cpp \
+    formaddcategory.cpp \
     formaddtrack.cpp \
     formlistuser.cpp \
     formlogin.cpp \
+    formprofile.cpp \
     formregister.cpp \
     getconnectiondb.cpp \
         mainwindow.cpp \
@@ -42,10 +43,11 @@ HEADERS  += mainwindow.h \
     basedao.h \
     category.h \
     categorydao.h \
-    formaddroletomember.h \
+    formaddcategory.h \
     formaddtrack.h \
     formlistuser.h \
     formlogin.h \
+    formprofile.h \
     formregister.h \
     getconnectiondb.h \
     menu.h \
@@ -60,14 +62,14 @@ HEADERS  += mainwindow.h \
     userdao.h \
     userrole.h \
     userroledao.h \
-    utildao.h \
-    utils.h
+    utildao.h
 
 FORMS    += mainwindow.ui \
-    formaddroletomember.ui \
+    formaddcategory.ui \
     formaddtrack.ui \
     formlistuser.ui \
     formlogin.ui \
+    formprofile.ui \
     formregister.ui
 
 RESOURCES += \

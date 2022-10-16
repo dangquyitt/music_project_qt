@@ -21,7 +21,6 @@ vector<Menu> MenuDAO::findAll() {
     return list;
 }
 Menu MenuDAO::findById(int id) {
-    db.transaction();
     Menu menu;
     if(db.transaction()) {
         string sql = "SELECT * FROM menu WHERE id = :id";
@@ -29,6 +28,9 @@ Menu MenuDAO::findById(int id) {
         query.prepare(QString::fromStdString(sql));
         query.bindValue(":id", id);
         query.exec();
+        if(!db.commit()) {
+            db.rollback();
+        }
         while(query.next()) {
             menu.setId(query.value("id").toInt());
             menu.setUrl(query.value("url").toString().toStdString());
@@ -39,7 +41,6 @@ Menu MenuDAO::findById(int id) {
 }
 
 vector<Menu> MenuDAO::findByProperties(string properties, string value) {
-    db.transaction();
     string sql = "SELECT * FROM menu WHERE " + properties + " = :value";
     vector<Menu> list;
     if(db.transaction()) {

@@ -1,15 +1,125 @@
-
+#include "formlogin.h"
 #include "formregister.h"
 #include "ui_formregister.h"
-#include "user.h"
-#include"utildao.h"
 
-#include <regex>
+FormLogin *formLoginRegister;
 FormRegister::FormRegister(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::FormRegister)
 {
     ui->setupUi(this);
+
+//    animation = new QPropertyAnimation(ui->label_2,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label_2->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label_3,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label_3->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label_4,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label_4->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label_5,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label_5->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->btnBack,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->btnBack->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label_7,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label_7->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label_8,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label_8->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->btnRegister,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->btnRegister->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->email,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->email->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->errorEmail,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->errorEmail->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->errorName,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->errorName->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->errorPasswordCheck,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->errorPasswordCheck->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->errorUserName,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->errorUserName->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->userName,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->userName->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->passwordCheck,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->passwordCheck->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->password,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->password->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->name,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->name->geometry());
+//    animation->start();
+
+
+
+
 }
 
 FormRegister::~FormRegister()
@@ -56,7 +166,7 @@ void FormRegister::on_btnRegister_clicked()
     }
 
     if(password.isEmpty() || password.isNull() || !validatorPassword(password.toStdString())) {
-        ui->errorPassword->setText("Mật khẩu không hợp lệ");
+        ui->errorPasswordCheck->setText("Mật khẩu không hợp lệ");
         isPassed = false;
     }
 
@@ -89,12 +199,19 @@ void FormRegister::on_btnRegister_clicked()
         user.setName(name.toStdString());
         if(UtilDAO::getUserDAO()->save(user)) {
             // Tao tai khoan thanh cong
-
+            User newUser = UtilDAO::getUserDAO()->findByProperties("user_name", user.getUserName())[0];
+            UserRole userRole;
+            userRole.setRoleId(2);
+            userRole.setUserId(newUser.getId());
+            UtilDAO::getUserRoleDAO()->save(userRole);
+            ui->stataus->setText("Register success");
         } else {
             // Tao tai khoan that bai
+            ui->stataus->setText("Register error");
         }
     } else {
         // Tao tai khoan that bai
+        ui->stataus->setText("Register error");
     }
 }
 
@@ -109,8 +226,9 @@ void FormRegister::on_userName_textChanged(const QString &arg1)
 
 void FormRegister::on_password_textChanged(const QString &arg1)
 {
-    ui->errorPassword->setText("");
     ui->errorPasswordCheck->setText("");
+    ui->errorPasswordCheck->setText("");
+    ui->stataus->setText("");
 }
 
 
@@ -121,16 +239,27 @@ void FormRegister::on_passwordCheck_textChanged(const QString &arg1)
     } else {
         ui->errorPasswordCheck->setText("");
     }
+    ui->stataus->setText("");
 }
 
 
 void FormRegister::on_name_textChanged(const QString &arg1)
 {
     ui->errorName->setText("");
+    ui->stataus->setText("");
 }
 
 void FormRegister::on_email_textChanged(const QString &arg1)
 {
     ui->errorEmail->setText("");
+    ui->stataus->setText("");
+}
+
+
+void FormRegister::on_btnBack_clicked()
+{
+    hide();
+    formLoginRegister = new FormLogin();
+    formLoginRegister->show();
 }
 

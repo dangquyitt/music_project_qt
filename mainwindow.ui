@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1427</width>
-    <height>756</height>
+    <width>1447</width>
+    <height>560</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -30,7 +30,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>480</y>
+      <y>460</y>
       <width>971</width>
       <height>20</height>
      </rect>
@@ -54,33 +54,51 @@
    <widget class="QPushButton" name="back">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>510</y>
+      <x>429</x>
+      <y>490</y>
       <width>41</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>OpenHandCursor</cursorShape>
+    </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius:10px;
+	background:white;
+}</string>
+    </property>
     <property name="text">
-     <string>&lt;</string>
+     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="play">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>510</y>
+      <x>503</x>
+      <y>490</y>
       <width>41</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>OpenHandCursor</cursorShape>
+    </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius:10px;
+	background:white;
+}</string>
+    </property>
     <property name="text">
-     <string>O</string>
+     <string/>
     </property>
     <property name="checkable">
      <bool>true</bool>
@@ -92,27 +110,39 @@
    <widget class="QPushButton" name="forward">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>510</y>
+      <x>572</x>
+      <y>490</y>
       <width>41</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>OpenHandCursor</cursorShape>
+    </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius:10px;
+	background:white;
+}</string>
+    </property>
     <property name="text">
-     <string>&gt;</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="currentSong">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>10</y>
-      <width>971</width>
-      <height>21</height>
+      <x>84</x>
+      <y>11</y>
+      <width>881</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 600 12pt &quot;Segoe UI Variable Text Semibold&quot;;</string>
     </property>
     <property name="text">
      <string>Song</string>
@@ -155,17 +185,26 @@
    <widget class="QPushButton" name="repeat">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>510</y>
+      <x>658</x>
+      <y>490</y>
       <width>41</width>
-      <height>21</height>
+      <height>30</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>OpenHandCursor</cursorShape>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius:10px;
+	background:white;
+}</string>
+    </property>
     <property name="text">
-     <string>r</string>
+     <string/>
     </property>
     <property name="checkable">
      <bool>true</bool>
@@ -174,17 +213,26 @@
    <widget class="QPushButton" name="shuffle">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>510</y>
+      <x>340</x>
+      <y>490</y>
       <width>41</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>OpenHandCursor</cursorShape>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius:10px;
+	background:white;
+}</string>
+    </property>
     <property name="text">
-     <string>s</string>
+     <string/>
     </property>
     <property name="checkable">
      <bool>true</bool>
@@ -193,14 +241,20 @@
    <widget class="QSlider" name="volumeBar">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>510</y>
-      <width>181</width>
-      <height>16</height>
+      <x>109</x>
+      <y>496</y>
+      <width>191</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSlider{
+	color:white;
+
+}</string>
     </property>
     <property name="maximum">
      <number>100</number>
@@ -221,17 +275,26 @@
    <widget class="QPushButton" name="mute">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>510</y>
+      <x>30</x>
+      <y>490</y>
       <width>41</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>OpenHandCursor</cursorShape>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius:10px;
+	background:white;
+}</string>
+    </property>
     <property name="text">
-     <string>m</string>
+     <string/>
     </property>
     <property name="checkable">
      <bool>true</bool>
@@ -246,13 +309,258 @@
      <bool>false</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="imgMusic">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>40</y>
+      <width>871</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnLogout">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>400</y>
+      <width>41</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>OpenHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius:10px;
+	background:white;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>200</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>OpenHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius:10px;
+	background:white;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="userOnl">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>480</y>
+      <width>130</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 600 italic 12pt &quot;Sitka Display Semibold&quot;;
+color:black;</string>
+    </property>
+    <property name="text">
+     <string>User:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnListUser">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>350</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>OpenHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius:10px;
+	background:white;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnProfile">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>300</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>OpenHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius:10px;
+	background:white;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addMusic">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>100</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>OpenHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius:10px;
+	background:white;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="deleteMusic">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>150</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>OpenHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius:10px;
+	background:white;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="editMusic">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>250</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>OpenHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius:10px;
+	background:white;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="rcs">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>450</y>
+      <width>2391</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../Image/Hinh-Nen-Trang-10.webp</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>530</y>
+      <width>63</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="rcs2">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>0</y>
+      <width>441</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../Image/Hinh-Nen-Trang-10.webp</pixmap>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="selectCategory">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>10</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>OpenHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 600 italic 10pt &quot;Sitka Display Semibold&quot;;</string>
+    </property>
+   </widget>
    <widget class="QLineEdit" name="searchBar">
     <property name="geometry">
      <rect>
-      <x>1097</x>
+      <x>1170</x>
       <y>10</y>
-      <width>311</width>
-      <height>28</height>
+      <width>191</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="cursor">
@@ -268,103 +576,108 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="imgMusic">
+   <widget class="QPushButton" name="btnReload">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>50</y>
-      <width>961</width>
-      <height>421</height>
+      <x>1372</x>
+      <y>20</y>
+      <width>24</width>
+      <height>21</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>OpenHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius:10px;
+	background:white;
+}</string>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnLogout">
+   <widget class="QLabel" name="userInfo">
     <property name="geometry">
      <rect>
-      <x>1330</x>
-      <y>700</y>
-      <width>83</width>
-      <height>29</height>
+      <x>1149</x>
+      <y>480</y>
+      <width>261</width>
+      <height>20</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 600 italic 12pt &quot;Sitka Display Semibold&quot;;
+color:black;</string>
     </property>
     <property name="text">
-     <string>Logout</string>
+     <string>TextLabel</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="selectCategory">
+   <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
       <x>1010</x>
-      <y>10</y>
-      <width>81</width>
-      <height>28</height>
+      <y>502</y>
+      <width>130</width>
+      <height>17</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 600 italic 12pt &quot;Sitka Display Semibold&quot;;
+color:black;
+</string>
+    </property>
+    <property name="text">
+     <string>Role:</string>
+    </property>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QLabel" name="roleInfo">
     <property name="geometry">
      <rect>
-      <x>1010</x>
-      <y>480</y>
-      <width>401</width>
-      <height>41</height>
+      <x>1148</x>
+      <y>502</y>
+      <width>260</width>
+      <height>17</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QPushButton" name="addMusic">
-       <property name="text">
-        <string>Add</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="2">
-      <widget class="QPushButton" name="deleteMusic">
-       <property name="text">
-        <string>Delete</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QPushButton" name="editMusic">
-       <property name="text">
-        <string>Edit</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QSplitter" name="splitter">
-    <property name="geometry">
-     <rect>
-      <x>1010</x>
-      <y>530</y>
-      <width>401</width>
-      <height>29</height>
-     </rect>
+    <property name="styleSheet">
+     <string notr="true">font: 600 italic 12pt &quot;Sitka Display Semibold&quot;;
+color:black;</string>
     </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
+    <property name="text">
+     <string>TextLabel</string>
     </property>
-    <widget class="QPushButton" name="btnListUser">
-     <property name="text">
-      <string>Danh sách người dùng</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="btnProfile">
-     <property name="text">
-      <string>Hồ sơ</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton">
-     <property name="text">
-      <string>Thêm thể loại</string>
-     </property>
-    </widget>
    </widget>
+   <zorder>rcs2</zorder>
+   <zorder>imgMusic</zorder>
+   <zorder>rcs</zorder>
+   <zorder>btnListUser</zorder>
+   <zorder>btnProfile</zorder>
+   <zorder>addMusic</zorder>
+   <zorder>deleteMusic</zorder>
+   <zorder>editMusic</zorder>
+   <zorder>seekBar</zorder>
+   <zorder>back</zorder>
+   <zorder>play</zorder>
+   <zorder>forward</zorder>
+   <zorder>currentSong</zorder>
+   <zorder>listWidget</zorder>
+   <zorder>repeat</zorder>
+   <zorder>shuffle</zorder>
+   <zorder>volumeBar</zorder>
+   <zorder>mute</zorder>
+   <zorder>btnLogout</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>userOnl</zorder>
+   <zorder>label</zorder>
+   <zorder>selectCategory</zorder>
+   <zorder>searchBar</zorder>
+   <zorder>btnReload</zorder>
+   <zorder>userInfo</zorder>
+   <zorder>label_3</zorder>
+   <zorder>roleInfo</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

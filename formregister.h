@@ -3,6 +3,13 @@
 
 #include <QWidget>
 #include <string>
+#include "user.h"
+#include"utildao.h"
+#include <regex>
+#include "QDesktopServices"
+#include <iostream>
+#include <string>
+#include"QPropertyAnimation"
 
 using namespace std;
 
@@ -31,6 +38,8 @@ private slots:
 
     void on_email_textChanged(const QString &arg1);
 
+    void on_btnBack_clicked();
+
 private:
     Ui::FormRegister *ui;
 
@@ -39,6 +48,8 @@ private:
     bool validatorUserName(string userName);
 
     bool validatorPassword(string password);
+
+     QPropertyAnimation *animation;
 
 };
 

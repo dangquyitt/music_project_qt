@@ -1,15 +1,9 @@
 #include "formaddtrack.h"
-#include "mainwindow.h"
+
 #include "ui_formaddtrack.h"
-
-#include <qfiledialog.h>
-#include   <iostream>
-#include <category.h>
-#include <qvariant.h>
-#include <qdatetime.h>
-
+#include "mainwindow.h"
 using namespace std;
-
+MainWindow *mainWindowTrack;
 FormAddTrack::FormAddTrack(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::FormAddTrack)
@@ -24,6 +18,66 @@ FormAddTrack::FormAddTrack(QWidget *parent) :
     ui->ratting->setMaximum(5);
     ui->ratting->setMinimum(1);
     renderMusicEdit();
+
+//    animation = new QPropertyAnimation(ui->label,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label_2,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label_2->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label_3,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label_3->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label_4,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label_5,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label_5->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label_6,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label_6->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label_7,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label_7->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label_8,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label_8->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label_9,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label_9->geometry());
+//    animation->start();
 }
 
 FormAddTrack::~FormAddTrack()
@@ -119,6 +173,6 @@ void FormAddTrack::renderMusicEdit() {
 
 void FormAddTrack::on_btnCancel_clicked()
 {
-
+    close();
 }
 

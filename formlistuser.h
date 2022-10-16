@@ -6,7 +6,7 @@
 
 #include <QWidget>
 #include <qstandarditemmodel.h>
-
+#include"QPropertyAnimation"
 namespace Ui {
 class FormListUser;
 }
@@ -30,6 +30,7 @@ private:
     void updateListUser();
     vector<Role> roles;
     int sizeRoles;    
+      QPropertyAnimation *animation;
 };
 
 #endif // FORMLISTUSER_H

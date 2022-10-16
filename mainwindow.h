@@ -13,6 +13,12 @@
 #include"qmessagebox.h"
 #include<cstdlib>
 #include<algorithm>
+#include "QFileDialog"
+#include "QDesktopServices"
+#include "formprofile.h"
+#include <iostream>
+#include <qtimer.h>
+#include <string>
 
 using namespace std;
 
@@ -25,7 +31,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     friend class FormAddTrack;
     static Music musicEdit;
@@ -61,7 +67,13 @@ private slots:
 
     void on_deleteMusic_clicked();
     void on_selectCategory_currentIndexChanged(int index);
+
+    void on_btnReload_clicked();
+
+    void on_btnProfile_clicked();
+
 private:
+    void renderIcon();
     void loadCategory();
 
     void updateList();
@@ -96,8 +108,9 @@ private:
 
     vector<int> shuffledPlaylist;
 
-    FormAddTrack *formAddTrack;
+    FormAddTrack *formAddTrackMain;
 
+    FormProfile *formProfileMain;
 
 
 

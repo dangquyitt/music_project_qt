@@ -7,6 +7,14 @@
 #include"utildao.h"
 #include"music.h"
 
+#include <qfiledialog.h>
+#include   <iostream>
+#include <category.h>
+#include <qvariant.h>
+
+#include <qdatetime.h>
+#include"QPropertyAnimation"
+
 namespace Ui {
 class FormAddTrack;
 }
@@ -34,6 +42,7 @@ private:
     Ui::FormAddTrack *ui;
 
     void renderCategory();
+      QPropertyAnimation *animation;
 };
 
 #endif // FORMADDTRACK_H

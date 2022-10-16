@@ -10,7 +10,8 @@
 #include "ui_formlogin.h"
 #include "userrole.h"
 #include"QPropertyAnimation"
-#include <FormRegister.h>
+#include "mainwindow.h"
+#include "formregister.h"
 #include<iostream>
 
 
@@ -42,6 +43,8 @@ private:
     Ui::FormLogin *ui;
     QPropertyAnimation *animation;
     bool hidePassword;
+    MainWindow *mainWindowLogin;
+    FormRegister *formRegister;
 
 protected:
     void keyPressEvent(QKeyEvent *event);

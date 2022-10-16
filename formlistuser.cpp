@@ -15,6 +15,30 @@ FormListUser::FormListUser(QWidget *parent) :
     sizeRoles = roles.size();
     loadTitle();
     updateListUser();
+
+//    animation = new QPropertyAnimation(ui->label,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label_2,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label_2->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->label_3,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->label_3->geometry());
+//    animation->start();
+
+//    animation = new QPropertyAnimation(ui->tableWidget,"geometry");
+//    animation -> setDuration(1000);
+//    animation-> setStartValue(QRect(200,200,100,50));
+//    animation ->setEndValue(ui->tableWidget->geometry());
+//    animation->start();
 }
 
 FormListUser::~FormListUser()

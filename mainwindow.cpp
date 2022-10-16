@@ -1,19 +1,17 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "QFileDialog"
-#include "QDesktopServices"
-#include <iostream>
-#include <string>
+
 #include"formlogin.h"
 
 
+FormLogin *formLoginMain;
 
 Music MainWindow::musicEdit;
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    cout <<"New window"<<endl;
     ui->setupUi(this);
 
     this->setFixedSize(this->geometry().width(),this->geometry().height());
@@ -33,6 +31,8 @@ MainWindow::MainWindow(QWidget *parent) :
         updater->start();
 
     }
+    ui->searchBar->setFocus();
+    renderIcon();
 
 }
 
@@ -43,16 +43,37 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::renderIcon(){
+     ui->userInfo->setText(QString::fromStdString(Session::USER_INFO->getName()));
+     ui->roleInfo->setText(QString::fromStdString(Session::ROLE_SYSTEM->getDescription()));
+     ui->addMusic->setIcon(QIcon(":/resources/img/add-music.png"));
+     ui->deleteMusic->setIcon(QIcon(":/resources/img/delete.png"));
+     ui->pushButton->setIcon(QIcon(":/resources/img/add-music.png"));
+     ui->editMusic->setIcon(QIcon(":/resources/img/fix.png"));
+     ui->btnListUser->setIcon(QIcon(":/resources/img/manager-user.png"));
+     ui->btnProfile->setIcon(QIcon(":/resources/img/profile.png"));
+     ui->btnLogout->setIcon(QIcon(":/resources/img/logout.png"));
+     ui->btnReload->setIcon(QIcon(":/resources/img/reload.png"));
+     ui->play->setIcon(QIcon(":/resources/img/pause.png"));
+     ui->back->setIcon(QIcon(":/resources/img/back.png"));
+     ui->forward->setIcon(QIcon(""));
+     ui->shuffle->setIcon(QIcon(":/resources/img/shuffle.png"));
+     ui->repeat->setIcon(QIcon(":/resources/img/replay.png"));
+     ui->forward->setIcon(QIcon(":/resources/img/forward.png"));
+     ui->mute->setIcon(QIcon(":/resources/img/volume.png"));
+}
+
 
 void MainWindow::on_listWidget_doubleClicked(const QModelIndex &index)
 {
     lCounter = getIndex();
 
-    ui->play->setChecked(false);
+
     ui->searchBar->clear();
 
     loadTrack();
     player->play();
+    ui->play->setIcon(QIcon(":/resources/img/play.png"));
 }
 
 
@@ -62,10 +83,12 @@ void MainWindow::on_play_clicked()
         if(player->state() == QMediaPlayer::PlayingState)
         {
             player->pause();
+            ui->play->setIcon(QIcon(":/resources/img/pause.png"));
         }
         else
         {
             player->play();
+            ui->play->setIcon(QIcon(":/resources/img/play.png"));
             updater->start();
         }
     }
@@ -102,7 +125,13 @@ void MainWindow::on_back_clicked()
 void MainWindow::on_volumeBar_valueChanged(int value)
 {
     player->setVolume(value);
-    (value != 0)?ui->mute->setChecked(false):ui->mute->setChecked(true);
+    if(value != 0) {
+
+        ui->mute->setIcon(QIcon(":/resources/img/volume.png"));
+    } else {
+
+        ui->mute->setIcon(QIcon(":/resources/img/mute.png"));
+    }
 }
 
 void MainWindow::on_seekBar_sliderMoved(int position)
@@ -114,13 +143,24 @@ void MainWindow::on_seekBar_sliderMoved(int position)
 void MainWindow::on_mute_clicked()
 {
     muted = !muted;
-    (muted)?player->setVolume(0):player->setVolume(ui->volumeBar->value());
+    if(muted) {
+        player->setVolume(0);
+        ui->mute->setIcon(QIcon(":/resources/img/mute.png"));
+    } else {
+        player->setVolume(ui->volumeBar->value());
+        ui->mute->setIcon(QIcon(":/resources/img/volume.png"));
+    }
 }
 
 
 void MainWindow::on_repeat_clicked()
 {
      repeat = !repeat;
+     if(repeat) {
+         ui->repeat->setIcon(QIcon(":/resources/img/on-repeat.png"));
+     } else{
+        ui->repeat->setIcon(QIcon(":/resources/img/replay.png"));
+     }
 }
 
 
@@ -129,6 +169,9 @@ void MainWindow::on_shuffle_clicked()
     shuffle = !shuffle;
     if(shuffle) {
         shufflePlaylist();
+        ui->shuffle->setIcon(QIcon(":/resources/img/on-shuffle.png"));
+    } else {
+        ui->shuffle->setIcon(QIcon(":/resources/img/shuffle.png"));
     }
 }
 
@@ -172,11 +215,12 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         lCounter = getIndex();
         if(lCounter != -1)
         {
-            ui->play->setChecked(false);
+
             ui->searchBar->clear();
 
            loadTrack();
            player->play();
+           ui->play->setIcon(QIcon(":/resources/img/play.png"));
         }
         break;
     }
@@ -215,7 +259,7 @@ void MainWindow::next()
 
     (!shuffle || repeat) ? ui->listWidget->setCurrentRow(lCounter) : ui->listWidget->setCurrentRow(shuffledPlaylist[lCounter]);
 
-    ui->play->setChecked(false);
+
     ui->searchBar->clear();
 
     loadTrack();
@@ -233,7 +277,7 @@ void MainWindow::back()
 
      (!shuffle) ? ui->listWidget->setCurrentRow(lCounter) : ui->listWidget->setCurrentRow(shuffledPlaylist[lCounter]);
 
-     ui->play->setChecked(false);
+
      ui->searchBar->clear();
 
      loadTrack();
@@ -279,51 +323,65 @@ void MainWindow::on_searchBar_textChanged(const QString &arg1)
 void MainWindow::on_addMusic_clicked()
 {
     musicEdit.setId(0);
-    cout << "Show"<<endl;
-    formAddTrack =  new FormAddTrack();
-    formAddTrack->show();
-    cout << "Done Show"<<endl;
-    updateList();
-    bool startUpdater = false;
-    if(ui->listWidget->count() == 0) {
-        startUpdater = true;
-    }
-    if(shuffle) {
-        shufflePlaylist();
-    }
-    if(startUpdater){
-        updater->start();
-    }
     ui->listWidget->setCurrentRow(getIndex());
+    if(::find(Session::LIST_URL_MENU.begin(), Session::LIST_URL_MENU.end(), "add") != Session::LIST_URL_MENU.end()) {
+        cout << "Show"<<endl;
+        formAddTrackMain = new FormAddTrack;
+        formAddTrackMain->show();
+        cout << "Done Show"<<endl;
+    } else {
+        QMessageBox::warning(this, "Message", "Không có quyền truy cập");
+        return;
+    }
+
 
 }
 
 
 void MainWindow::on_btnLogout_clicked()
 {
+    Session::LIST_MENU.clear();
+    Session::LIST_URL_MENU.clear();
+    delete Session::USER_INFO;
+    delete Session::ROLE_SYSTEM;
+    formLoginMain = new FormLogin();
+    formLoginMain->show();
+    close();
 
 }
 
 
 void MainWindow::on_editMusic_clicked()
 {
-    musicEdit = UtilDAO::getMusicDAO()->findById(playlist.musics[getIndex()].getId());
-    formAddTrack = new FormAddTrack();
-    formAddTrack->show();
-    updateList();
+    if(::find(Session::LIST_URL_MENU.begin(), Session::LIST_URL_MENU.end(), "edit") != Session::LIST_URL_MENU.end()) {
+        musicEdit = UtilDAO::getMusicDAO()->findById(playlist.musics[getIndex()].getId());
+        formAddTrackMain = new FormAddTrack();
+        formAddTrackMain->show();
+     }else {
+         QMessageBox::warning(this, "Message", "Không có quyền truy cập");
+         return;
+     }
+
 }
 
 
 void MainWindow::on_deleteMusic_clicked()
 {
-    int index = getIndex();
-    if(index != -1)
-    {
-       playlist.remove(index);
-       updateList();
-       ui->listWidget->setCurrentRow(index);
-       if(shuffle) shufflePlaylist();
-    }
+    if(::find(Session::LIST_URL_MENU.begin(), Session::LIST_URL_MENU.end(), "remove ") != Session::LIST_URL_MENU.end()) {
+        int index = getIndex();
+        if(index != -1)
+        {
+           playlist.remove(index);
+           updateList();
+           ui->listWidget->setCurrentRow(index);
+           if(shuffle) shufflePlaylist();
+        }
+     }else {
+         QMessageBox::warning(this, "Message", "Không có quyền truy cập");
+         return;
+     }
+
+
 }
 
 void MainWindow::loadCategory() {
@@ -344,5 +402,29 @@ void MainWindow::on_selectCategory_currentIndexChanged(int index)
      if(shuffle) {
         shufflePlaylist();
      }
+}
+
+void MainWindow::on_btnReload_clicked()
+{
+    updateList();
+    bool startUpdater = false;
+    if(ui->listWidget->count() == 0) {
+        startUpdater = true;
+    }
+    if(shuffle) {
+        shufflePlaylist();
+    }
+    if(startUpdater){
+        updater->start();
+    }
+    ui->searchBar->setFocus();
+    ui->listWidget->setCurrentRow(0);
+}
+
+
+void MainWindow::on_btnProfile_clicked()
+{
+    formProfileMain =new FormProfile;
+    formProfileMain->show();
 }
 

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>515</width>
+    <width>985</width>
     <height>592</height>
    </rect>
   </property>
@@ -16,190 +16,84 @@
   <widget class="QSpinBox" name="ratting">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>470</y>
-     <width>48</width>
-     <height>29</height>
+     <x>580</x>
+     <y>399</y>
+     <width>71</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QSpinBox{
+	font: 9pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+	background:white;
+	border:10px;
+	color:rgb(10,100,180);
+}</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>470</y>
-     <width>60</width>
+     <x>322</x>
+     <y>405</y>
+     <width>111</width>
      <height>20</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font: 10pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+}</string>
+   </property>
    <property name="text">
-    <string>Đánh giá</string>
+    <string>Rate</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btnAddMusic">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>520</y>
-     <width>80</width>
-     <height>29</height>
+     <x>610</x>
+     <y>500</y>
+     <width>101</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	font: 12pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+	background:white;
+	border:10px;
+	color:rgb(10,100,180);
+}</string>
    </property>
    <property name="text">
     <string>Save</string>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>40</y>
-     <width>207</width>
-     <height>84</height>
-    </rect>
-   </property>
-   <layout class="QFormLayout" name="formLayout">
-    <item row="0" column="0">
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>Tên bài hát</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0" colspan="2">
-     <widget class="QLabel" name="errorMusicName">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="musicName"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QSplitter" name="splitter_2">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>130</y>
-     <width>218</width>
-     <height>69</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Vertical</enum>
-   </property>
-   <widget class="QSplitter" name="splitter">
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-    <widget class="QLabel" name="label_6">
-     <property name="text">
-      <string>Nhạc</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="btnMusicUrl">
-     <property name="text">
-      <string>Thêm</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QLabel" name="musicUrl">
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="errorMusicUrl">
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QSplitter" name="splitter_4">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>230</y>
-     <width>221</width>
-     <height>69</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Vertical</enum>
-   </property>
-   <widget class="QSplitter" name="splitter_3">
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Ảnh</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="btnImgUrl">
-     <property name="text">
-      <string>Thêm</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QLabel" name="musicImg">
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="errorMusicImg">
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QSplitter" name="splitter_5">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>340</y>
-     <width>221</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <widget class="QLabel" name="label_3">
-    <property name="text">
-     <string>Thể loại</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="category"/>
-  </widget>
-  <widget class="QSplitter" name="splitter_6">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>390</y>
-     <width>227</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <widget class="QLabel" name="label_4">
-    <property name="text">
-     <string>Năm phát hành</string>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="releaseYear"/>
-  </widget>
   <widget class="QLabel" name="statusInsert">
    <property name="geometry">
     <rect>
-     <x>122</x>
-     <y>10</y>
+     <x>360</x>
+     <y>40</y>
      <width>241</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font: 10pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+}</string>
    </property>
    <property name="text">
     <string/>
@@ -208,16 +102,425 @@
   <widget class="QPushButton" name="btnCancel">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>520</y>
-     <width>83</width>
-     <height>29</height>
+     <x>242</x>
+     <y>490</y>
+     <width>101</width>
+     <height>61</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	font: 12pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+	background:white;
+	border:10px;
+	color:rgb(10,100,180);
+}</string>
    </property>
    <property name="text">
     <string>Cancel</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>-20</x>
+     <y>0</y>
+     <width>1001</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>30</y>
+     <width>521</width>
+     <height>531</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../Image/Hinh-Nen-Trang-10.webp</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>60</y>
+     <width>241</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font: 24pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+}</string>
+   </property>
+   <property name="text">
+    <string>ADDTrack</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>160</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font: 10pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+}</string>
+   </property>
+   <property name="text">
+    <string>Name:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="musicName">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>160</y>
+     <width>125</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font: 10pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+}
+</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="errorMusicName">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>190</y>
+     <width>191</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font: 10pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="errorMusicUrl">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>240</y>
+     <width>218</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font: 10pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="musicUrl">
+   <property name="geometry">
+    <rect>
+     <x>584</x>
+     <y>211</y>
+     <width>130</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font: 10pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnMusicUrl">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>210</y>
+     <width>149</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	font: 9pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+	background:white;
+	border:10px;
+	color:rgb(10,100,180);
+}</string>
+   </property>
+   <property name="text">
+    <string>add</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>210</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font: 10pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+}</string>
+   </property>
+   <property name="text">
+    <string>Mucsic:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="musicImg">
+   <property name="geometry">
+    <rect>
+     <x>583</x>
+     <y>259</y>
+     <width>130</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font: 10pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="errorMusicImg">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>280</y>
+     <width>221</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font: 10pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>260</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font: 10pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+}</string>
+   </property>
+   <property name="text">
+    <string>Image:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnImgUrl">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>260</y>
+     <width>163</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	font: 9pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+	background:white;
+	border:10px;
+	color:rgb(10,100,180);
+}</string>
+   </property>
+   <property name="text">
+    <string>add</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>310</y>
+     <width>121</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font: 10pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+}</string>
+   </property>
+   <property name="text">
+    <string>Category:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="category">
+   <property name="geometry">
+    <rect>
+     <x>497</x>
+     <y>307</y>
+     <width>201</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox{
+	font: 9pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+	background:white;
+	border:10px;
+	color:rgb(10,100,180);
+}</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>354</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font: 10pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+
+	color:rgb(10,100,180);
+}</string>
+   </property>
+   <property name="text">
+    <string>release year</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="releaseYear">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>344</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QSpinBox{
+	font: 9pt &quot;Showcard Gothic&quot;;
+	padding: 0 8px;
+	background:white;
+	border:10px;
+	color:rgb(10,100,180);
+}</string>
+   </property>
+  </widget>
+  <zorder>label_7</zorder>
+  <zorder>label_8</zorder>
+  <zorder>label</zorder>
+  <zorder>musicName</zorder>
+  <zorder>errorMusicUrl</zorder>
+  <zorder>musicUrl</zorder>
+  <zorder>btnMusicUrl</zorder>
+  <zorder>label_6</zorder>
+  <zorder>musicImg</zorder>
+  <zorder>label_2</zorder>
+  <zorder>btnImgUrl</zorder>
+  <zorder>label_3</zorder>
+  <zorder>category</zorder>
+  <zorder>label_4</zorder>
+  <zorder>releaseYear</zorder>
+  <zorder>ratting</zorder>
+  <zorder>label_5</zorder>
+  <zorder>btnAddMusic</zorder>
+  <zorder>statusInsert</zorder>
+  <zorder>btnCancel</zorder>
+  <zorder>label_9</zorder>
+  <zorder>errorMusicImg</zorder>
+  <zorder>errorMusicName</zorder>
  </widget>
  <resources/>
  <connections/>

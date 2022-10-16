@@ -6,55 +6,62 @@ FormLogin::FormLogin(QWidget *parent) :
     ui(new Ui::FormLogin)
 
 {
-    ui->setupUi(this);  
+    cout <<"New form login"<<endl;
+        ui->setupUi(this);
         ui->inputPassword->setEchoMode(QLineEdit::Password);
-        animation = new QPropertyAnimation(ui->btnLogin,"geometry");
-        animation -> setDuration(1000);
-        animation-> setStartValue(QRect(200,200,100,50));
-        animation ->setEndValue(ui->btnLogin->geometry());
-        animation->start();
+//        animation = new QPropertyAnimation(ui->btnLogin,"geometry");
+//        animation -> setDuration(1000);
+//        animation-> setStartValue(QRect(200,200,100,50));
+//        animation ->setEndValue(ui->btnLogin->geometry());
+//        animation->start();
 
-        animation = new QPropertyAnimation(ui->btnRegister,"geometry");
-        animation -> setDuration(1000);
-        animation-> setStartValue(QRect(200,200,100,50));
-        animation ->setEndValue(ui->btnRegister->geometry());
-        animation->start();
+//        animation = new QPropertyAnimation(ui->btnRegister,"geometry");
+//        animation -> setDuration(1000);
+//        animation-> setStartValue(QRect(200,200,100,50));
+//        animation ->setEndValue(ui->btnRegister->geometry());
+//        animation->start();
 
-        animation = new QPropertyAnimation(ui->inputPassword,"geometry");
-        animation -> setDuration(1000);
-        animation-> setStartValue(QRect(200,200,100,50));
-        animation ->setEndValue(ui->inputPassword->geometry());
-        animation->start();
+//        animation = new QPropertyAnimation(ui->inputPassword,"geometry");
+//        animation -> setDuration(1000);
+//        animation-> setStartValue(QRect(200,200,100,50));
+//        animation ->setEndValue(ui->inputPassword->geometry());
+//        animation->start();
 
-        animation = new QPropertyAnimation(ui->inputUserName,"geometry");
-        animation -> setDuration(1000);
-        animation-> setStartValue(QRect(200,200,100,50));
-        animation ->setEndValue(ui->inputUserName->geometry());
-        animation->start();
+//        animation = new QPropertyAnimation(ui->inputUserName,"geometry");
+//        animation -> setDuration(1000);
+//        animation-> setStartValue(QRect(200,200,100,50));
+//        animation ->setEndValue(ui->inputUserName->geometry());
+//        animation->start();
 
-        animation = new QPropertyAnimation(ui->labelUserName,"geometry");
-        animation -> setDuration(1000);
-        animation-> setStartValue(QRect(200,200,100,50));
-        animation ->setEndValue(ui->labelUserName->geometry());
-        animation->start();
+//        animation = new QPropertyAnimation(ui->labelUserName,"geometry");
+//        animation -> setDuration(1000);
+//        animation-> setStartValue(QRect(200,200,100,50));
+//        animation ->setEndValue(ui->labelUserName->geometry());
+//        animation->start();
 
-        animation = new QPropertyAnimation(ui->labelpassword,"geometry");
-        animation -> setDuration(1000);
-        animation-> setStartValue(QRect(200,200,100,50));
-        animation ->setEndValue(ui->labelpassword->geometry());
-        animation->start();
+//        animation = new QPropertyAnimation(ui->labelpassword,"geometry");
+//        animation -> setDuration(1000);
+//        animation-> setStartValue(QRect(200,200,100,50));
+//        animation ->setEndValue(ui->labelpassword->geometry());
+//        animation->start();
 
-        animation = new QPropertyAnimation(ui->question,"geometry");
-        animation -> setDuration(1000);
-        animation-> setStartValue(QRect(200,200,100,50));
-        animation ->setEndValue(ui->question->geometry());
-        animation->start();
+//        animation = new QPropertyAnimation(ui->question,"geometry");
+//        animation -> setDuration(1000);
+//        animation-> setStartValue(QRect(200,200,100,50));
+//        animation ->setEndValue(ui->question->geometry());
+//        animation->start();
 
-        animation = new QPropertyAnimation(ui->title,"geometry");
-        animation -> setDuration(1000);
-        animation-> setStartValue(QRect(200,200,100,50));
-        animation ->setEndValue(ui->title->geometry());
-        animation->start();
+//        animation = new QPropertyAnimation(ui->title,"geometry");
+//        animation -> setDuration(1000);
+//        animation-> setStartValue(QRect(200,200,100,50));
+//        animation ->setEndValue(ui->title->geometry());
+//        animation->start();
+
+//        animation = new QPropertyAnimation(ui->hidePasswordbt,"geometry");
+//        animation -> setDuration(1000);
+//        animation-> setStartValue(QRect(200,200,100,50));
+//        animation ->setEndValue(ui->hidePasswordbt->geometry());
+//        animation->start();
 
         hidePassword = true;
 
@@ -69,6 +76,10 @@ void FormLogin::on_btnLogin_clicked()
 {
     string userName = ui->inputUserName->text().trimmed().toStdString();
     string password = ui->inputPassword->text().toStdString();
+
+    if(password.empty()) {
+        ui->errorPassword->setText("Password is empty");
+    }
     if(!userName.empty()) {
         vector<User> users = UtilDAO::getUserDAO()->findByProperties("user_name", userName);
         if (!users.empty()) {
@@ -83,25 +94,30 @@ void FormLogin::on_btnLogin_clicked()
                         cout << "ID User info = " << Session::USER_INFO->getId() << endl;
                         vector<UserRole> userRoles = UtilDAO::getUserRoleDAO()->findByIntProperties("user_id", user.getId());
                         if (!userRoles.empty()) {
+                            cout << userRoles[0].getRoleId()<<endl;
                             Role role = UtilDAO::getRoleDAO()->findById(userRoles[0].getRoleId());
+                            Session::ROLE_SYSTEM = new Role;
+                            Session::ROLE_SYSTEM->setId(role.getId());
+                            Session::ROLE_SYSTEM->setRoleName(role.getRoleName());
+                            Session::ROLE_SYSTEM->setDescription(role.getDescription());
                             vector<Auth> auths = UtilDAO::getAuthDAO()->findByIntProperties("role_id", role.getId());
-                            cout << "Role: " << endl;
-                            cout << "Role name: " << role.getRoleName() << endl;
-                            cout << "Description: " << role.getDescription() << endl;
+
                             for (Auth item : auths) {
-                                Menu menu = UtilDAO::getMenuDAO()->findById(item.getId());
+                                Menu menu = UtilDAO::getMenuDAO()->findById(item.getMenuId());
                                 Session::LIST_MENU.push_back(menu);
                             }
 
                             for (Menu item : Session::LIST_MENU) {
                                 Session::LIST_URL_MENU.push_back(item.getUrl());
-                                cout << "ID: " << item.getId() << endl;
-                                cout << "Url: " << item.getUrl() << endl;
-                                cout << "Name: " << item.getName() << endl;
                             }
 
                         }
-                        return;
+
+                        // Login success
+                        hide();
+                        mainWindowLogin = new MainWindow;
+                        mainWindowLogin->show();
+
                     }else {
                         ui->errorPassword->setText("Invalid password");
 
@@ -111,6 +127,8 @@ void FormLogin::on_btnLogin_clicked()
                     ui->errorUserName->setText("Invalid username");
 
                 }
+    } else {
+        ui->errorUserName->setText("User name is empty");
     }
 }
 
@@ -155,6 +173,8 @@ void FormLogin::on_hidePasswordbt_clicked()
 
 void FormLogin::on_btnRegister_clicked()
 {
-
+    hide();
+    formRegister = new FormRegister();
+    formRegister->show();
 }
 
