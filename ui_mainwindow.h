@@ -187,7 +187,7 @@ public:
 "}"));
         userOnl = new QLabel(centralWidget);
         userOnl->setObjectName(QString::fromUtf8("userOnl"));
-        userOnl->setGeometry(QRect(1010, 480, 130, 17));
+        userOnl->setGeometry(QRect(1010, 480, 130, 31));
         userOnl->setStyleSheet(QString::fromUtf8("font: 600 italic 12pt \"Sitka Display Semibold\";\n"
 "color:black;"));
         btnListUser = new QPushButton(centralWidget);
@@ -263,18 +263,18 @@ public:
 "}"));
         userInfo = new QLabel(centralWidget);
         userInfo->setObjectName(QString::fromUtf8("userInfo"));
-        userInfo->setGeometry(QRect(1149, 480, 261, 20));
+        userInfo->setGeometry(QRect(1149, 480, 261, 31));
         userInfo->setStyleSheet(QString::fromUtf8("font: 600 italic 12pt \"Sitka Display Semibold\";\n"
 "color:black;"));
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(1010, 502, 130, 17));
+        label_3->setGeometry(QRect(1010, 520, 130, 31));
         label_3->setStyleSheet(QString::fromUtf8("font: 600 italic 12pt \"Sitka Display Semibold\";\n"
 "color:black;\n"
 ""));
         roleInfo = new QLabel(centralWidget);
         roleInfo->setObjectName(QString::fromUtf8("roleInfo"));
-        roleInfo->setGeometry(QRect(1148, 502, 260, 17));
+        roleInfo->setGeometry(QRect(1150, 520, 260, 31));
         roleInfo->setStyleSheet(QString::fromUtf8("font: 600 italic 12pt \"Sitka Display Semibold\";\n"
 "color:black;"));
         MainWindow->setCentralWidget(centralWidget);
@@ -338,9 +338,9 @@ public:
         label->setText(QString());
         rcs2->setText(QString());
         btnReload->setText(QString());
-        userInfo->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        userInfo->setText(QString());
         label_3->setText(QCoreApplication::translate("MainWindow", "Role:", nullptr));
-        roleInfo->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        roleInfo->setText(QString());
     } // retranslateUi
 
 };

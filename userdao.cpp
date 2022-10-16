@@ -1,4 +1,5 @@
 #include"userdao.h"
+#include "utildao.h"
 
 vector<User> UserDAO::findAll() {
     vector<User> list;
@@ -118,7 +119,12 @@ bool UserDAO::update(User instance) {
 
 }
 bool UserDAO::remove(int id) {
-
+      vector<UserRole> userRoles = UtilDAO::getUserRoleDAO()->findByIntProperties("user_id", id);
+       if(!userRoles.empty()) {
+            for(UserRole item : userRoles) {
+                UtilDAO::getUserRoleDAO()->remove(item.getId());
+            }
+       }
     if(db.transaction()) {
         QSqlQuery query(db);
         string sql = "DELETE FROM user WHERE id = :id";

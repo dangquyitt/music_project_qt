@@ -26,7 +26,6 @@ private slots:
 
 private:
     Ui::FormAddCategory *ui;
-    QPropertyAnimation *animation;
 
 };
 

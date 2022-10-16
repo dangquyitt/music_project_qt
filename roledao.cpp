@@ -29,6 +29,9 @@ Role RoleDAO::findById(int id) {
         query.prepare(QString::fromStdString(sql));
         query.bindValue(":id", id);
         query.exec();
+        if(db.commit()) {
+            db.rollback();
+        }
         while (query.next()) {
             role.setId(query.value("id").toInt());
             role.setRoleName(query.value("role_name").toString().toStdString());

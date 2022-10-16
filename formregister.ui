@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>939</width>
-    <height>639</height>
+    <height>663</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,10 @@
   <widget class="QPushButton" name="btnRegister">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>500</y>
+     <x>580</x>
+     <y>540</y>
      <width>111</width>
-     <height>91</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="cursor">
@@ -86,9 +86,9 @@ font: 12pt &quot;Showcard Gothic&quot;;
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>300</x>
      <y>230</y>
-     <width>121</width>
+     <width>141</width>
      <height>31</height>
     </rect>
    </property>
@@ -111,7 +111,7 @@ font: 12pt &quot;Showcard Gothic&quot;;
     <rect>
      <x>440</x>
      <y>230</y>
-     <width>141</width>
+     <width>211</width>
      <height>31</height>
     </rect>
    </property>
@@ -132,10 +132,10 @@ font: 12pt &quot;Showcard Gothic&quot;;
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>300</x>
      <y>300</y>
-     <width>101</width>
-     <height>18</height>
+     <width>141</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -157,7 +157,7 @@ font: 12pt &quot;Showcard Gothic&quot;;
     <rect>
      <x>440</x>
      <y>300</y>
-     <width>141</width>
+     <width>211</width>
      <height>31</height>
     </rect>
    </property>
@@ -178,10 +178,10 @@ font: 12pt &quot;Showcard Gothic&quot;;
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>300</x>
      <y>360</y>
-     <width>161</width>
-     <height>20</height>
+     <width>141</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -203,7 +203,7 @@ font: 12pt &quot;Showcard Gothic&quot;;
     <rect>
      <x>440</x>
      <y>360</y>
-     <width>141</width>
+     <width>211</width>
      <height>31</height>
     </rect>
    </property>
@@ -227,10 +227,10 @@ font: 12pt &quot;Showcard Gothic&quot;;
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>410</y>
-     <width>90</width>
-     <height>18</height>
+     <x>299</x>
+     <y>420</y>
+     <width>141</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -251,8 +251,8 @@ font: 12pt &quot;Showcard Gothic&quot;;
    <property name="geometry">
     <rect>
      <x>440</x>
-     <y>410</y>
-     <width>141</width>
+     <y>420</y>
+     <width>211</width>
      <height>31</height>
     </rect>
    </property>
@@ -273,10 +273,10 @@ font: 12pt &quot;Showcard Gothic&quot;;
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>300</x>
      <y>480</y>
-     <width>81</width>
-     <height>20</height>
+     <width>141</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -298,7 +298,7 @@ font: 12pt &quot;Showcard Gothic&quot;;
     <rect>
      <x>440</x>
      <y>480</y>
-     <width>141</width>
+     <width>211</width>
      <height>31</height>
     </rect>
    </property>
@@ -319,21 +319,20 @@ font: 12pt &quot;Showcard Gothic&quot;;
   <widget class="QLabel" name="errorUserName">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>270</y>
-     <width>231</width>
+     <x>440</x>
+     <y>260</y>
+     <width>211</width>
      <height>16</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QLabel{
+	font: 6pt &quot;Segoergb(255, 21, 72) UI&quot;;
+	
+	color: rgb(191, 0, 0);
+	
 	padding: 0 8px;
-
-	color:rgb(10,100,180);
-	background:white;
-	font: 600 bold 10pt &quot;Sitka Banner Semibold&quot;;
-}
-</string>
+}</string>
    </property>
    <property name="text">
     <string/>
@@ -342,21 +341,20 @@ font: 12pt &quot;Showcard Gothic&quot;;
   <widget class="QLabel" name="errorName">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>440</x>
      <y>450</y>
      <width>211</width>
-     <height>21</height>
+     <height>16</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QLabel{
+	font: 6pt &quot;Segoergb(255, 21, 72) UI&quot;;
+	
+	color: rgb(191, 0, 0);
+	
 	padding: 0 8px;
-
-	color:rgb(10,100,180);
-	background:white;
-	font: 600 bold 10pt &quot;Sitka Banner Semibold&quot;;
-}
-</string>
+}</string>
    </property>
    <property name="text">
     <string/>
@@ -365,29 +363,28 @@ font: 12pt &quot;Showcard Gothic&quot;;
   <widget class="QLabel" name="errorEmail">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>520</y>
-     <width>231</width>
-     <height>20</height>
+     <x>440</x>
+     <y>510</y>
+     <width>211</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Sitka Banner Semibold</family>
-     <pointsize>10</pointsize>
+     <family>Segoergb(255, 21, 72) UI</family>
+     <pointsize>6</pointsize>
      <italic>false</italic>
-     <bold>true</bold>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
     <string notr="true">QLabel{
+	font: 6pt &quot;Segoergb(255, 21, 72) UI&quot;;
+	
+	color: rgb(191, 0, 0);
+	
 	padding: 0 8px;
-
-	color:rgb(10,100,180);
-	background:white;
-	font: 600 bold 10pt &quot;Sitka Banner Semibold&quot;;
-}
-</string>
+}</string>
    </property>
    <property name="text">
     <string/>
@@ -396,21 +393,20 @@ font: 12pt &quot;Showcard Gothic&quot;;
   <widget class="QLabel" name="errorPasswordCheck">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>340</y>
-     <width>221</width>
+     <x>440</x>
+     <y>390</y>
+     <width>211</width>
      <height>16</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QLabel{
+	font: 6pt &quot;Segoergb(255, 21, 72) UI&quot;;
+	
+	color: rgb(191, 0, 0);
+	
 	padding: 0 8px;
-
-	color:rgb(10,100,180);
-	background:white;
-	font: 600 bold 10pt &quot;Sitka Banner Semibold&quot;;
-}
-</string>
+}</string>
    </property>
    <property name="text">
     <string/>
@@ -419,10 +415,10 @@ font: 12pt &quot;Showcard Gothic&quot;;
   <widget class="QPushButton" name="btnBack">
    <property name="geometry">
     <rect>
-     <x>242</x>
-     <y>528</y>
+     <x>250</x>
+     <y>540</y>
      <width>91</width>
-     <height>41</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="cursor">
@@ -447,7 +443,7 @@ font: 12pt &quot;Showcard Gothic&quot;;
      <x>250</x>
      <y>90</y>
      <width>441</width>
-     <height>481</height>
+     <height>501</height>
     </rect>
    </property>
    <property name="text">
@@ -480,6 +476,46 @@ font: 12pt &quot;Showcard Gothic&quot;;
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="errorPassword">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>330</y>
+     <width>211</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font: 6pt &quot;Segoergb(255, 21, 72) UI&quot;;
+	
+	color: rgb(191, 0, 0);
+	
+	padding: 0 8px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnHidenPassword">
+   <property name="geometry">
+    <rect>
+     <x>623</x>
+     <y>306</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background:white;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <zorder>label_6</zorder>
   <zorder>label_8</zorder>
   <zorder>label_7</zorder>
@@ -500,6 +536,8 @@ font: 12pt &quot;Showcard Gothic&quot;;
   <zorder>errorPasswordCheck</zorder>
   <zorder>btnBack</zorder>
   <zorder>stataus</zorder>
+  <zorder>errorPassword</zorder>
+  <zorder>btnHidenPassword</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -8,7 +8,14 @@ FormRegister::FormRegister(QWidget *parent) :
     ui(new Ui::FormRegister)
 {
     ui->setupUi(this);
-
+    setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
+    hidePassword = true;
+    ui->password->setEchoMode(QLineEdit::Password);
+    ui->passwordCheck->setEchoMode(QLineEdit::Password);
+    ui->btnHidenPassword->setIcon(QIcon(":/resources/img/hidden.png"));
+//    ui->btn->setIcon(QIcon(":/resources/img/hidden.png"));
+//    ui->inputPassword->setEchoMode(QLineEdit::Password);
+//    ui->hidePasswordbt->setIcon(QIcon(":/resources/img/hidden.png"));
 //    animation = new QPropertyAnimation(ui->label_2,"geometry");
 //    animation -> setDuration(1000);
 //    animation-> setStartValue(QRect(200,200,100,50));
@@ -166,7 +173,7 @@ void FormRegister::on_btnRegister_clicked()
     }
 
     if(password.isEmpty() || password.isNull() || !validatorPassword(password.toStdString())) {
-        ui->errorPasswordCheck->setText("Mật khẩu không hợp lệ");
+        ui->errorPassword->setText("Mật khẩu không hợp lệ");
         isPassed = false;
     }
 
@@ -227,7 +234,7 @@ void FormRegister::on_userName_textChanged(const QString &arg1)
 void FormRegister::on_password_textChanged(const QString &arg1)
 {
     ui->errorPasswordCheck->setText("");
-    ui->errorPasswordCheck->setText("");
+    ui->errorPassword->setText("");
     ui->stataus->setText("");
 }
 
@@ -258,8 +265,25 @@ void FormRegister::on_email_textChanged(const QString &arg1)
 
 void FormRegister::on_btnBack_clicked()
 {
-    hide();
     formLoginRegister = new FormLogin();
     formLoginRegister->show();
+    close();
+}
+
+
+
+
+void FormRegister::on_btnHidenPassword_clicked()
+{
+    hidePassword = !hidePassword;
+    if(hidePassword) {
+        ui->password->setEchoMode(QLineEdit::Password);
+        ui->passwordCheck->setEchoMode(QLineEdit::Password);
+        ui->btnHidenPassword->setIcon(QIcon(":/resources/img/hidden.png"));
+    } else {
+        ui->password->setEchoMode(QLineEdit::Normal);
+        ui->passwordCheck->setEchoMode(QLineEdit::Normal);
+        ui->btnHidenPassword->setIcon(QIcon(":/resources/img/show.png"));
+    }
 }
 

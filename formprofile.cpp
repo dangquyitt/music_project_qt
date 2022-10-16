@@ -8,7 +8,7 @@ FormProfile::FormProfile(QWidget *parent) :
     ui(new Ui::FormProfile)
 {
     ui->setupUi(this);
-
+    setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
     updateProfile();
 //    animation = new QPropertyAnimation(ui->label_2,"geometry");
 //    animation -> setDuration(1000);
@@ -121,4 +121,10 @@ void FormProfile::on_btnCancel_clicked()
     close( );
 }
 
+
+
+void FormProfile::on_btnSave_clicked()
+{
+
+}
 

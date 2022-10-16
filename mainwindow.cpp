@@ -346,6 +346,7 @@ void MainWindow::on_btnLogout_clicked()
     delete Session::ROLE_SYSTEM;
     formLoginMain = new FormLogin();
     formLoginMain->show();
+    player->pause();
     close();
 
 }

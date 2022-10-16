@@ -9,7 +9,7 @@ FormAddTrack::FormAddTrack(QWidget *parent) :
     ui(new Ui::FormAddTrack)
 {
     ui->setupUi(this);
-    this->setFixedSize(this->geometry().width(),this->geometry().height());
+    setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
     connect(ui->btnCancel, SIGNAL(clicked()), this, SLOT(close()));
     ui->releaseYear->setMaximum(QDateTime::currentDateTime().date().year());
     ui->releaseYear->setMinimum(1900);
@@ -18,7 +18,7 @@ FormAddTrack::FormAddTrack(QWidget *parent) :
     ui->ratting->setMaximum(5);
     ui->ratting->setMinimum(1);
     renderMusicEdit();
-
+    ui->musicName->setFocus();
 //    animation = new QPropertyAnimation(ui->label,"geometry");
 //    animation -> setDuration(1000);
 //    animation-> setStartValue(QRect(200,200,100,50));

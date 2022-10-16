@@ -7,8 +7,12 @@ FormLogin::FormLogin(QWidget *parent) :
 
 {
     cout <<"New form login"<<endl;
+    setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
         ui->setupUi(this);
+        hidePassword = true;
+        setWindowTitle("Đăng nhập");
         ui->inputPassword->setEchoMode(QLineEdit::Password);
+        ui->hidePasswordbt->setIcon(QIcon(":/resources/img/hidden.png"));
 //        animation = new QPropertyAnimation(ui->btnLogin,"geometry");
 //        animation -> setDuration(1000);
 //        animation-> setStartValue(QRect(200,200,100,50));
@@ -63,7 +67,7 @@ FormLogin::FormLogin(QWidget *parent) :
 //        animation ->setEndValue(ui->hidePasswordbt->geometry());
 //        animation->start();
 
-        hidePassword = true;
+
 
 }
 
@@ -115,7 +119,7 @@ void FormLogin::on_btnLogin_clicked()
 
                         // Login success
                         hide();
-                        mainWindowLogin = new MainWindow;
+                        mainWindowLogin = new MainWindow();
                         mainWindowLogin->show();
 
                     }else {
@@ -162,9 +166,11 @@ void FormLogin::on_hidePasswordbt_clicked()
     hidePassword = !hidePassword;
     if(hidePassword == false){
         ui->inputPassword->setEchoMode(QLineEdit::Normal);
+        ui->hidePasswordbt->setIcon(QIcon(":/resources/img/show.png"));
     }
     else{
         ui->inputPassword->setEchoMode(QLineEdit::Password);
+        ui->hidePasswordbt->setIcon(QIcon(":/resources/img/hidden.png"));
     }
 }
 

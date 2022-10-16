@@ -22,10 +22,11 @@ private slots:
     void on_btnCancel_clicked();
 
 
+    void on_btnSave_clicked();
+
 private:
     void updateProfile();
     Ui::FormProfile *ui;
-      QPropertyAnimation *animation;
 
 };
 

@@ -13,9 +13,8 @@ FormListUser::FormListUser(QWidget *parent) :
     ui->setupUi(this);
     roles = UtilDAO::getRoleDAO()->findAll();
     sizeRoles = roles.size();
-    loadTitle();
     updateListUser();
-
+    setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
 //    animation = new QPropertyAnimation(ui->label,"geometry");
 //    animation -> setDuration(1000);
 //    animation-> setStartValue(QRect(200,200,100,50));
@@ -47,6 +46,10 @@ FormListUser::~FormListUser()
 }
 
 void FormListUser::updateListUser() {
+    QStringList labes;
+    ui->tableWidget->setColumnCount(7);
+    labes<<"ID"<<"Họ và tên"<<"Email"<<"Tên đăng nhập"<<"Mật khẩu"<<"Xóa"<<"Role";
+    ui->tableWidget->setHorizontalHeaderLabels(labes);
     listUser.clear();
     listUser =  UtilDAO::getUserDAO()->findAll();
     int size = listUser.size();
@@ -59,6 +62,11 @@ void FormListUser::updateListUser() {
         QTableWidgetItem *email = new QTableWidgetItem;
         QTableWidgetItem *userName = new QTableWidgetItem;
         QTableWidgetItem *password = new QTableWidgetItem;
+        id->setFlags(Qt::ItemIsSelectable);
+        name->setFlags(Qt::ItemIsSelectable);
+        email->setFlags(Qt::ItemIsSelectable);
+        userName->setFlags(Qt::ItemIsSelectable);
+        password->setFlags(Qt::ItemIsSelectable);
         id->setText(QString::number(user.getId()));
         name->setText(QString::fromStdString(user.getName()));
         email->setText(QString::fromStdString(user.getEmail()));
@@ -85,19 +93,18 @@ void FormListUser::updateListUser() {
         for(int j = 0; j < sizeRoles; j++) {
             combo->addItem(QString::fromStdString(roles[j].getRoleName()), roles[j].getId());
         }
+        vector<UserRole> userRoles = UtilDAO::getUserRoleDAO()->findByIntProperties("user_id", listUser[i].getId());
+        if(!userRoles.empty()) {
+            UserRole userRole =userRoles[0];
+            Role role = UtilDAO::getRoleDAO()->findById(userRole.getRoleId());
+            combo->setCurrentIndex(combo->findText(QString::fromStdString(role.getRoleName())));
+        }
+
+        ui->tableWidget->setCellWidget(i,6,combo);
         combo->setProperty("row", i);
         combo->setProperty("col", 6);
-        ui->tableWidget->setCellWidget(i,6,combo);
         connect(combo, SIGNAL(currentIndexChanged(int)), this, SLOT(onComboIndexChanged()));
     }
-}
-
-
-void FormListUser::loadTitle() {
-    QStringList labes;
-    ui->tableWidget->setColumnCount(7);
-    labes<<"ID"<<"Họ và tên"<<"Email"<<"Tên đăng nhập"<<"Mật khẩu"<<"Xóa"<<"Role";
-    ui->tableWidget->setHorizontalHeaderLabels(labes);
 }
 
 
@@ -105,7 +112,6 @@ void FormListUser::onClicked() {
 
     QWidget *w = qobject_cast<QWidget *>(sender()->parent());
         if(w){
-            cout <<"Signal"<<endl;
             int row = ui->tableWidget->indexAt(w->pos()).row();
             UtilDAO::getUserDAO()->remove(listUser[row].getId());
             listUser.erase(listUser.begin() + row);
@@ -126,11 +132,14 @@ void FormListUser::onComboIndexChanged() {
             userRole.setRoleId(idRole);
             userRole.setUserId(idUser);
             UtilDAO::getUserRoleDAO()->update(userRole);
-//            cout <<"Done"<<endl;
-
         }
-//        cout <<"User id: "<<idUser<<endl;
-//        cout << "Row: "<<row<<endl;
-//        cout << "Role id: "<<idRole<<endl;
     }
 }
+
+
+
+void FormListUser::on_btnCancel_clicked()
+{
+    close();
+}
+

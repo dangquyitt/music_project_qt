@@ -23,14 +23,14 @@ private slots:
     void onComboIndexChanged();
 
 
+    void on_btnCancel_clicked();
+
 private:
     Ui::FormListUser *ui;
     vector<User> listUser;
-    void loadTitle();
     void updateListUser();
     vector<Role> roles;
     int sizeRoles;    
-      QPropertyAnimation *animation;
 };
 
 #endif // FORMLISTUSER_H

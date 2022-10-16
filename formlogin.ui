@@ -56,6 +56,7 @@
 	padding: 0 8px;
 	background:white;
 	color:rgb(10,100,180);
+
 }</string>
    </property>
    <property name="placeholderText">
@@ -65,10 +66,10 @@
   <widget class="QLabel" name="labelpassword">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>310</x>
      <y>300</y>
      <width>111</width>
-     <height>20</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
@@ -94,7 +95,7 @@
   <widget class="QLabel" name="title">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>340</x>
      <y>120</y>
      <width>281</width>
      <height>51</height>
@@ -123,10 +124,10 @@
   <widget class="QPushButton" name="btnRegister">
    <property name="geometry">
     <rect>
-     <x>490</x>
-     <y>360</y>
+     <x>500</x>
+     <y>380</y>
      <width>111</width>
-     <height>71</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
@@ -158,8 +159,8 @@ font: 9pt &quot;Showcard Gothic&quot;;
   <widget class="QLabel" name="question">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>380</y>
+     <x>320</x>
+     <y>390</y>
      <width>181</width>
      <height>31</height>
     </rect>
@@ -214,17 +215,19 @@ font: 9pt &quot;Showcard Gothic&quot;;
   <widget class="QLabel" name="errorPassword">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>340</y>
-     <width>261</width>
-     <height>21</height>
+     <x>420</x>
+     <y>330</y>
+     <width>161</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QLabel{
+	font: 6pt &quot;Segoergb(255, 21, 72) UI&quot;;
+	
+	color: rgb(191, 0, 0);
+	
 	padding: 0 8px;
-
-	color:rgb(10,100,180);
 }</string>
    </property>
    <property name="text">
@@ -234,17 +237,19 @@ font: 9pt &quot;Showcard Gothic&quot;;
   <widget class="QLabel" name="errorUserName">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>269</y>
-     <width>271</width>
+     <x>420</x>
+     <y>260</y>
+     <width>161</width>
      <height>16</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QLabel{
+	font: 6pt &quot;Segoergb(255, 21, 72) UI&quot;;
+	
+	color: rgb(191, 0, 0);
+	
 	padding: 0 8px;
-
-	color:rgb(10,100,180);
 }</string>
    </property>
    <property name="text">
@@ -254,10 +259,10 @@ font: 9pt &quot;Showcard Gothic&quot;;
   <widget class="QLabel" name="labelUserName">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>310</x>
      <y>230</y>
      <width>111</width>
-     <height>21</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
@@ -303,6 +308,7 @@ font: 9pt &quot;Showcard Gothic&quot;;
 	padding: 0 8px;
 	background:white;
 	color:rgb(10,100,180);
+
 }</string>
    </property>
    <property name="placeholderText">
@@ -323,18 +329,11 @@ font: 9pt &quot;Showcard Gothic&quot;;
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{
-	
-	border-radius:10px;
-	color :red;
 	background:white;
 }</string>
    </property>
    <property name="text">
     <string/>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>C:/Users/Dang Quy/Downloads/272425575_1339657069812848_5737658808820476326_n.png</normaloff>C:/Users/Dang Quy/Downloads/272425575_1339657069812848_5737658808820476326_n.png</iconset>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">

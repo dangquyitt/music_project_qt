@@ -40,6 +40,8 @@ private slots:
 
     void on_btnBack_clicked();
 
+    void on_btnHidenPassword_clicked();
+
 private:
     Ui::FormRegister *ui;
 
@@ -49,7 +51,7 @@ private:
 
     bool validatorPassword(string password);
 
-     QPropertyAnimation *animation;
+     bool hidePassword;
 
 };
 

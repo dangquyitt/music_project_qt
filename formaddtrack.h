@@ -42,7 +42,6 @@ private:
     Ui::FormAddTrack *ui;
 
     void renderCategory();
-      QPropertyAnimation *animation;
 };
 
 #endif // FORMADDTRACK_H

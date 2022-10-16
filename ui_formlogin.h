@@ -10,7 +10,6 @@
 #define UI_FORMLOGIN_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -61,10 +60,11 @@ public:
 "	padding: 0 8px;\n"
 "	background:white;\n"
 "	color:rgb(10,100,180);\n"
+"\n"
 "}"));
         labelpassword = new QLabel(FormLogin);
         labelpassword->setObjectName(QString::fromUtf8("labelpassword"));
-        labelpassword->setGeometry(QRect(300, 300, 111, 20));
+        labelpassword->setGeometry(QRect(310, 300, 111, 31));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Showcard Gothic"));
         font1.setPointSize(9);
@@ -79,7 +79,7 @@ public:
 "}"));
         title = new QLabel(FormLogin);
         title->setObjectName(QString::fromUtf8("title"));
-        title->setGeometry(QRect(330, 120, 281, 51));
+        title->setGeometry(QRect(340, 120, 281, 51));
         QFont font2;
         font2.setFamily(QString::fromUtf8("Showcard Gothic"));
         font2.setPointSize(24);
@@ -94,7 +94,7 @@ public:
 "}"));
         btnRegister = new QPushButton(FormLogin);
         btnRegister->setObjectName(QString::fromUtf8("btnRegister"));
-        btnRegister->setGeometry(QRect(490, 360, 111, 71));
+        btnRegister->setGeometry(QRect(500, 380, 111, 51));
         btnRegister->setFont(font1);
         btnRegister->setCursor(QCursor(Qt::OpenHandCursor));
         btnRegister->setStyleSheet(QString::fromUtf8("QPushButton{\n"
@@ -108,7 +108,7 @@ public:
 ""));
         question = new QLabel(FormLogin);
         question->setObjectName(QString::fromUtf8("question"));
-        question->setGeometry(QRect(300, 380, 181, 31));
+        question->setGeometry(QRect(320, 390, 181, 31));
         question->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 9pt \"Segoe UI\";\n"
 "	border-radius:20px;\n"
@@ -136,23 +136,27 @@ public:
 "}"));
         errorPassword = new QLabel(FormLogin);
         errorPassword->setObjectName(QString::fromUtf8("errorPassword"));
-        errorPassword->setGeometry(QRect(310, 340, 261, 21));
+        errorPassword->setGeometry(QRect(420, 330, 161, 16));
         errorPassword->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"	font: 6pt \"Segoergb(255, 21, 72) UI\";\n"
+"	\n"
+"	color: rgb(191, 0, 0);\n"
+"	\n"
 "	padding: 0 8px;\n"
-"\n"
-"	color:rgb(10,100,180);\n"
 "}"));
         errorUserName = new QLabel(FormLogin);
         errorUserName->setObjectName(QString::fromUtf8("errorUserName"));
-        errorUserName->setGeometry(QRect(310, 269, 271, 16));
+        errorUserName->setGeometry(QRect(420, 260, 161, 16));
         errorUserName->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"	font: 6pt \"Segoergb(255, 21, 72) UI\";\n"
+"	\n"
+"	color: rgb(191, 0, 0);\n"
+"	\n"
 "	padding: 0 8px;\n"
-"\n"
-"	color:rgb(10,100,180);\n"
 "}"));
         labelUserName = new QLabel(FormLogin);
         labelUserName->setObjectName(QString::fromUtf8("labelUserName"));
-        labelUserName->setGeometry(QRect(300, 230, 111, 21));
+        labelUserName->setGeometry(QRect(310, 230, 111, 31));
         labelUserName->setFont(font1);
         labelUserName->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 9pt \"Showcard Gothic\";\n"
@@ -169,20 +173,15 @@ public:
 "	padding: 0 8px;\n"
 "	background:white;\n"
 "	color:rgb(10,100,180);\n"
+"\n"
 "}"));
         hidePasswordbt = new QPushButton(FormLogin);
         hidePasswordbt->setObjectName(QString::fromUtf8("hidePasswordbt"));
         hidePasswordbt->setGeometry(QRect(550, 305, 24, 21));
         hidePasswordbt->setCursor(QCursor(Qt::OpenHandCursor));
         hidePasswordbt->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	\n"
-"	border-radius:10px;\n"
-"	color :red;\n"
 "	background:white;\n"
 "}"));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8("C:/Users/Dang Quy/Downloads/272425575_1339657069812848_5737658808820476326_n.png"), QSize(), QIcon::Normal, QIcon::Off);
-        hidePasswordbt->setIcon(icon);
         label_2 = new QLabel(FormLogin);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(280, 60, 371, 481));
