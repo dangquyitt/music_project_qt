@@ -17,6 +17,7 @@ SOURCES += main.cpp\
     categorydao.cpp \
     formaddcategory.cpp \
     formaddtrack.cpp \
+    formchangepassword.cpp \
     formlistuser.cpp \
     formlogin.cpp \
     formprofile.cpp \
@@ -45,6 +46,7 @@ HEADERS  += mainwindow.h \
     categorydao.h \
     formaddcategory.h \
     formaddtrack.h \
+    formchangepassword.h \
     formlistuser.h \
     formlogin.h \
     formprofile.h \
@@ -67,6 +69,7 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui \
     formaddcategory.ui \
     formaddtrack.ui \
+    formchangepassword.ui \
     formlistuser.ui \
     formlogin.ui \
     formprofile.ui \
@@ -74,3 +77,5 @@ FORMS    += mainwindow.ui \
 
 RESOURCES += \
     resources.qrc
+
+RC_ICONS = itunes.ico

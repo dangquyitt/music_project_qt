@@ -53,6 +53,10 @@ private:
 
      bool hidePassword;
 
+protected:
+    void keyPressEvent(QKeyEvent *event);
+
+
 };
 
 #endif // FORMREGISTER_H

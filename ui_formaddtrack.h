@@ -51,10 +51,10 @@ public:
     {
         if (FormAddTrack->objectName().isEmpty())
             FormAddTrack->setObjectName(QString::fromUtf8("FormAddTrack"));
-        FormAddTrack->resize(980, 698);
+        FormAddTrack->resize(637, 698);
         ratting = new QSpinBox(FormAddTrack);
         ratting->setObjectName(QString::fromUtf8("ratting"));
-        ratting->setGeometry(QRect(400, 470, 321, 31));
+        ratting->setGeometry(QRect(240, 470, 321, 31));
         ratting->setStyleSheet(QString::fromUtf8("QSpinBox{\n"
 "	padding: 0 8px;\n"
 "	background:white;\n"
@@ -66,7 +66,7 @@ public:
 ""));
         label_5 = new QLabel(FormAddTrack);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(260, 470, 141, 31));
+        label_5->setGeometry(QRect(100, 470, 141, 31));
         label_5->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 10pt \"Showcard Gothic\";\n"
 "	padding: 0 8px;\n"
@@ -77,7 +77,7 @@ public:
 "}"));
         btnAddMusic = new QPushButton(FormAddTrack);
         btnAddMusic->setObjectName(QString::fromUtf8("btnAddMusic"));
-        btnAddMusic->setGeometry(QRect(630, 590, 101, 61));
+        btnAddMusic->setGeometry(QRect(470, 590, 101, 61));
         btnAddMusic->setCursor(QCursor(Qt::OpenHandCursor));
         btnAddMusic->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 12pt \"Showcard Gothic\";\n"
@@ -88,7 +88,7 @@ public:
 "}"));
         statusInsert = new QLabel(FormAddTrack);
         statusInsert->setObjectName(QString::fromUtf8("statusInsert"));
-        statusInsert->setGeometry(QRect(383, 40, 271, 20));
+        statusInsert->setGeometry(QRect(223, 40, 271, 20));
         statusInsert->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 10pt \"Showcard Gothic\";\n"
 "	padding: 0 8px;\n"
@@ -97,7 +97,7 @@ public:
 "}"));
         btnCancel = new QPushButton(FormAddTrack);
         btnCancel->setObjectName(QString::fromUtf8("btnCancel"));
-        btnCancel->setGeometry(QRect(230, 590, 101, 61));
+        btnCancel->setGeometry(QRect(70, 590, 101, 61));
         btnCancel->setCursor(QCursor(Qt::OpenHandCursor));
         btnCancel->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 12pt \"Showcard Gothic\";\n"
@@ -108,15 +108,15 @@ public:
 "}"));
         bgContainer = new QLabel(FormAddTrack);
         bgContainer->setObjectName(QString::fromUtf8("bgContainer"));
-        bgContainer->setGeometry(QRect(-20, 0, 1001, 721));
+        bgContainer->setGeometry(QRect(-180, 0, 1001, 721));
         bgContainer->setPixmap(QPixmap(QString::fromUtf8("../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg")));
         bgContent = new QLabel(FormAddTrack);
         bgContent->setObjectName(QString::fromUtf8("bgContent"));
-        bgContent->setGeometry(QRect(220, 30, 521, 631));
+        bgContent->setGeometry(QRect(60, 30, 521, 631));
         bgContent->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
         label_9 = new QLabel(FormAddTrack);
         label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setGeometry(QRect(380, 80, 241, 51));
+        label_9->setGeometry(QRect(220, 80, 241, 51));
         label_9->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 24pt \"Showcard Gothic\";\n"
 "	padding: 0 8px;\n"
@@ -125,7 +125,7 @@ public:
 "}"));
         label = new QLabel(FormAddTrack);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(260, 140, 461, 31));
+        label->setGeometry(QRect(100, 140, 461, 31));
         label->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 10pt \"Showcard Gothic\";\n"
 "	padding: 0 8px;\n"
@@ -135,7 +135,7 @@ public:
 "}"));
         musicName = new QLineEdit(FormAddTrack);
         musicName->setObjectName(QString::fromUtf8("musicName"));
-        musicName->setGeometry(QRect(260, 170, 461, 31));
+        musicName->setGeometry(QRect(100, 170, 461, 31));
         musicName->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
 "\n"
 "	border: 1px solid black;\n"
@@ -146,7 +146,7 @@ public:
 "}"));
         errorMusicName = new QLabel(FormAddTrack);
         errorMusicName->setObjectName(QString::fromUtf8("errorMusicName"));
-        errorMusicName->setGeometry(QRect(260, 200, 461, 20));
+        errorMusicName->setGeometry(QRect(100, 200, 461, 20));
         errorMusicName->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 6pt \"Segoergb(255, 21, 72) UI\";\n"
 "	\n"
@@ -156,7 +156,7 @@ public:
 "}"));
         errorMusicUrl = new QLabel(FormAddTrack);
         errorMusicUrl->setObjectName(QString::fromUtf8("errorMusicUrl"));
-        errorMusicUrl->setGeometry(QRect(260, 280, 461, 16));
+        errorMusicUrl->setGeometry(QRect(100, 280, 461, 16));
         errorMusicUrl->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 6pt \"Segoergb(255, 21, 72) UI\";\n"
 "	\n"
@@ -166,7 +166,7 @@ public:
 "}"));
         btnMusicUrl = new QPushButton(FormAddTrack);
         btnMusicUrl->setObjectName(QString::fromUtf8("btnMusicUrl"));
-        btnMusicUrl->setGeometry(QRect(655, 255, 61, 21));
+        btnMusicUrl->setGeometry(QRect(495, 255, 61, 21));
         btnMusicUrl->setCursor(QCursor(Qt::OpenHandCursor));
         btnMusicUrl->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 9pt \"Showcard Gothic\";\n"
@@ -177,7 +177,7 @@ public:
 "}"));
         label_6 = new QLabel(FormAddTrack);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(260, 220, 461, 31));
+        label_6->setGeometry(QRect(100, 220, 461, 31));
         label_6->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 10pt \"Showcard Gothic\";\n"
 "	padding: 0 8px;\n"
@@ -187,7 +187,7 @@ public:
 "}"));
         errorMusicImg = new QLabel(FormAddTrack);
         errorMusicImg->setObjectName(QString::fromUtf8("errorMusicImg"));
-        errorMusicImg->setGeometry(QRect(260, 370, 461, 16));
+        errorMusicImg->setGeometry(QRect(100, 370, 461, 16));
         errorMusicImg->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 6pt \"Segoergb(255, 21, 72) UI\";\n"
 "	\n"
@@ -197,7 +197,7 @@ public:
 "}"));
         label_2 = new QLabel(FormAddTrack);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(260, 310, 461, 31));
+        label_2->setGeometry(QRect(100, 310, 461, 31));
         label_2->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 10pt \"Showcard Gothic\";\n"
 "	padding: 0 8px;\n"
@@ -207,7 +207,7 @@ public:
 "}"));
         btnImgUrl = new QPushButton(FormAddTrack);
         btnImgUrl->setObjectName(QString::fromUtf8("btnImgUrl"));
-        btnImgUrl->setGeometry(QRect(655, 345, 61, 21));
+        btnImgUrl->setGeometry(QRect(495, 345, 61, 21));
         btnImgUrl->setCursor(QCursor(Qt::OpenHandCursor));
         btnImgUrl->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 9pt \"Showcard Gothic\";\n"
@@ -218,7 +218,7 @@ public:
 "}"));
         label_3 = new QLabel(FormAddTrack);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(260, 410, 141, 31));
+        label_3->setGeometry(QRect(100, 410, 141, 31));
         label_3->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 10pt \"Showcard Gothic\";\n"
 "	padding: 0 8px;\n"
@@ -229,7 +229,7 @@ public:
 "}"));
         category = new QComboBox(FormAddTrack);
         category->setObjectName(QString::fromUtf8("category"));
-        category->setGeometry(QRect(400, 410, 321, 31));
+        category->setGeometry(QRect(240, 410, 321, 31));
         category->setCursor(QCursor(Qt::OpenHandCursor));
         category->setStyleSheet(QString::fromUtf8("QComboBox{\n"
 "\n"
@@ -242,7 +242,7 @@ public:
 "}"));
         label_4 = new QLabel(FormAddTrack);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(260, 530, 141, 31));
+        label_4->setGeometry(QRect(100, 530, 141, 31));
         label_4->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 10pt \"Showcard Gothic\";\n"
 "	padding: 0 8px;\n"
@@ -253,7 +253,7 @@ public:
 "}"));
         releaseYear = new QSpinBox(FormAddTrack);
         releaseYear->setObjectName(QString::fromUtf8("releaseYear"));
-        releaseYear->setGeometry(QRect(400, 530, 321, 31));
+        releaseYear->setGeometry(QRect(240, 530, 321, 31));
         releaseYear->setStyleSheet(QString::fromUtf8("QSpinBox{\n"
 "	padding: 0 8px;\n"
 "	background:white;\n"
@@ -265,7 +265,7 @@ public:
 ""));
         musicUrl = new QLabel(FormAddTrack);
         musicUrl->setObjectName(QString::fromUtf8("musicUrl"));
-        musicUrl->setGeometry(QRect(260, 250, 461, 31));
+        musicUrl->setGeometry(QRect(100, 250, 461, 31));
         musicUrl->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "\n"
 "	border: 1px solid black;\n"
@@ -276,7 +276,7 @@ public:
 "}"));
         musicImg = new QLabel(FormAddTrack);
         musicImg->setObjectName(QString::fromUtf8("musicImg"));
-        musicImg->setGeometry(QRect(260, 340, 461, 31));
+        musicImg->setGeometry(QRect(100, 340, 461, 31));
         musicImg->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "\n"
 "	border: 1px solid black;\n"

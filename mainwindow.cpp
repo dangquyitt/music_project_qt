@@ -3,6 +3,8 @@
 
 #include"formlogin.h"
 
+#include <QMovie>
+
 
 FormLogin *formLoginMain;
 
@@ -11,13 +13,17 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    cout <<"New window"<<endl;
+    setWindowTitle("Music");
     ui->setupUi(this);
     ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-while.webp"));
     ui->bgContent->setPixmap(QPixmap(":/resources/img/background-while.webp"));
 
     this->setFixedSize(this->geometry().width(),this->geometry().height());
 
+
+//    QMovie* movie = new QMovie(":/resources/img/background.gif");
+//    ui->imgMusic->setMovie(movie);
+//    movie->start();
     loadCategory();
     updateList();
 
@@ -50,7 +56,7 @@ void MainWindow::renderIcon(){
      ui->roleInfo->setText(QString::fromStdString(Session::ROLE_SYSTEM->getDescription()));
      ui->addMusic->setIcon(QIcon(":/resources/img/add-music.png"));
      ui->deleteMusic->setIcon(QIcon(":/resources/img/delete.png"));
-     ui->pushButton->setIcon(QIcon(":/resources/img/add-music.png"));
+     ui->btnChangePassword->setIcon(QIcon(":/resources/img/key.png"));
      ui->editMusic->setIcon(QIcon(":/resources/img/fix.png"));
      ui->btnListUser->setIcon(QIcon(":/resources/img/manager-user.png"));
      ui->btnProfile->setIcon(QIcon(":/resources/img/profile.png"));
@@ -377,10 +383,14 @@ void MainWindow::on_deleteMusic_clicked()
         int index = getIndex();
         if(index != -1)
         {
-           playlist.remove(index);
-           updateList();
-           ui->listWidget->setCurrentRow(index);
-           if(shuffle) shufflePlaylist();
+           QMessageBox::StandardButton reply;
+           reply = QMessageBox::question(this, "Message", "Bạn có muốn xóa bài hát không ?", QMessageBox::Yes|QMessageBox::No);
+           if(reply == QMessageBox::Yes) {
+               playlist.remove(index);
+               updateList();
+               ui->listWidget->setCurrentRow(index);
+               if(shuffle) shufflePlaylist();
+           }
         }
      }else {
          QMessageBox::warning(this, "Message", "Không có quyền truy cập");
@@ -445,5 +455,12 @@ void MainWindow::on_btnListUser_clicked()
          return;
      }
 
+}
+
+
+void MainWindow::on_btnChangePassword_clicked()
+{
+    formChangePassword = new FormChangePassword;
+    formChangePassword->show();
 }
 

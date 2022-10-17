@@ -9,6 +9,11 @@ FormAddTrack::FormAddTrack(QWidget *parent) :
     ui(new Ui::FormAddTrack)
 {
     ui->setupUi(this);
+    if(MainWindow::musicEdit.getId() != 0) {
+        setWindowTitle("Sửa nhạc");
+    } else {
+        setWindowTitle("Thêm nhạc");
+    }
     ui->btnImgUrl->setIcon(QIcon(":/resources/img/folder.png"));
     ui->btnMusicUrl->setIcon(QIcon(":/resources/img/folder.png"));
     ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-bule.jpg"));
@@ -178,5 +183,18 @@ void FormAddTrack::renderMusicEdit() {
 void FormAddTrack::on_btnCancel_clicked()
 {
     close();
+}
+
+void FormAddTrack::keyPressEvent(QKeyEvent *event) {
+    switch (event->key()) {
+    case Qt::Key_Return :
+    {
+        ui->btnAddMusic->click();
+        break;
+    }
+    case Qt::Key_Escape:
+        ui->btnCancel->click();
+        break;
+    }
 }
 

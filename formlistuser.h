@@ -31,6 +31,10 @@ private:
     void updateListUser();
     vector<Role> roles;
     int sizeRoles;    
+
+protected:
+    void keyPressEvent(QKeyEvent *event);
+
 };
 
 #endif // FORMLISTUSER_H

@@ -28,6 +28,9 @@ private:
     void updateProfile();
     Ui::FormProfile *ui;
 
+protected:
+    void keyPressEvent(QKeyEvent *event);
+
 };
 
 #endif // FORMPROFILE_H

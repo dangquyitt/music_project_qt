@@ -456,7 +456,7 @@ font: 12pt &quot;Showcard Gothic&quot;;
   <widget class="QLabel" name="stataus">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>400</x>
      <y>110</y>
      <width>141</width>
      <height>20</height>
@@ -467,8 +467,9 @@ font: 12pt &quot;Showcard Gothic&quot;;
 	
 	padding: 0 8px;
 
-	color:rgb(10,100,180);
+	color: rgb(191, 0, 0);
 	font: 8pt &quot;Showcard Gothic&quot;;
+
 }
 </string>
    </property>

@@ -6,6 +6,7 @@
 #include"formlistuser.h"
 #include"formprofile.h"
 #include"formaddcategory.h"
+#include "formchangepassword.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -18,6 +19,8 @@ int main(int argc, char *argv[])
 //  formRegister.show();
  FormLogin f;
  f.show();
+//    FormChangePassword f;
+//    f.show();
 //    FormAddTrack f;
 //    f.show();
 //  f.show();

@@ -42,6 +42,9 @@ private:
     Ui::FormAddTrack *ui;
 
     void renderCategory();
+
+protected:
+    void keyPressEvent(QKeyEvent *event);
 };
 
 #endif // FORMADDTRACK_H

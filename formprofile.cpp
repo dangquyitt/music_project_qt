@@ -1,4 +1,5 @@
 #include "formprofile.h"
+#include "qevent.h"
 #include "session.h"
 #include "ui_formprofile.h"
 #include "utildao.h"
@@ -8,6 +9,7 @@ FormProfile::FormProfile(QWidget *parent) :
     ui(new Ui::FormProfile)
 {
     ui->setupUi(this);
+    setWindowTitle("Hồ sơ");
     setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
     updateProfile();
     ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-bule.jpg"));
@@ -109,8 +111,8 @@ void FormProfile::updateProfile() {
     ui->name->setText(QString::fromStdString(Session::USER_INFO->getName()));
     ui->name->setReadOnly(true);
 
-    ui->password->setText(QString::fromStdString(Session::USER_INFO->getPassword()));
-    ui->password->setReadOnly(true);
+    ui->roleName->setText(QString::fromStdString(Session::ROLE_SYSTEM->getDescription()));
+    ui->roleName->setReadOnly(true);
 }
 
 FormProfile::~FormProfile()
@@ -128,5 +130,18 @@ void FormProfile::on_btnCancel_clicked()
 void FormProfile::on_btnSave_clicked()
 {
 
+}
+
+void FormProfile::keyPressEvent(QKeyEvent *event) {
+    switch (event->key()) {
+    case Qt::Key_Return :
+    {
+//        ui->btnAddMusic->click();
+        break;
+    }
+    case Qt::Key_Escape:
+        ui->btnCancel->click();
+        break;
+    }
 }
 

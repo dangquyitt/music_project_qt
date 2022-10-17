@@ -135,8 +135,8 @@
    <widget class="QLabel" name="currentSong">
     <property name="geometry">
      <rect>
-      <x>84</x>
-      <y>11</y>
+      <x>40</x>
+      <y>10</y>
       <width>881</width>
       <height>31</height>
      </rect>
@@ -312,10 +312,10 @@
    <widget class="QLabel" name="imgMusic">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>40</y>
+      <x>40</x>
+      <y>50</y>
       <width>871</width>
-      <height>391</height>
+      <height>371</height>
      </rect>
     </property>
     <property name="text">
@@ -344,7 +344,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btnChangePassword">
     <property name="geometry">
      <rect>
       <x>960</x>
@@ -669,7 +669,7 @@ color:black;</string>
    <zorder>volumeBar</zorder>
    <zorder>mute</zorder>
    <zorder>btnLogout</zorder>
-   <zorder>pushButton</zorder>
+   <zorder>btnChangePassword</zorder>
    <zorder>userOnl</zorder>
    <zorder>label</zorder>
    <zorder>selectCategory</zorder>

@@ -6,6 +6,7 @@
 #include <QtMultimedia/QMediaPlayer>
 #include "QTimer"
 #include "QPalette"
+#include "formchangepassword.h"
 #include <vector>
 #include "QKeyEvent"
 #include "QLineEdit"
@@ -75,6 +76,8 @@ private slots:
 
     void on_btnListUser_clicked();
 
+    void on_btnChangePassword_clicked();
+
 private:
     void renderIcon();
     void loadCategory();
@@ -116,6 +119,8 @@ private:
     FormProfile *formProfileMain;
 
     FormListUser *formListUserMain;
+
+    FormChangePassword *formChangePassword;
 
 protected:
     void keyPressEvent(QKeyEvent *event);

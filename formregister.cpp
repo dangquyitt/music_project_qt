@@ -8,6 +8,7 @@ FormRegister::FormRegister(QWidget *parent) :
     ui(new Ui::FormRegister)
 {
     ui->setupUi(this);
+    setWindowTitle("Đăng ký");
     setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
     hidePassword = true;
     ui->password->setEchoMode(QLineEdit::Password);
@@ -213,7 +214,11 @@ void FormRegister::on_btnRegister_clicked()
             userRole.setRoleId(2);
             userRole.setUserId(newUser.getId());
             UtilDAO::getUserRoleDAO()->save(userRole);
-            ui->stataus->setText("Register success");
+            QMessageBox::information(this,"Message", "Tạo tài khoản thành công");
+                formLoginRegister = new FormLogin;
+                formLoginRegister->show();
+                close();
+
         } else {
             // Tao tai khoan that bai
             ui->stataus->setText("Register error");
@@ -289,3 +294,15 @@ void FormRegister::on_btnHidenPassword_clicked()
     }
 }
 
+void FormRegister::keyPressEvent(QKeyEvent *event) {
+    switch (event->key()) {
+    case Qt::Key_Return :
+    {
+        ui->btnRegister->click();
+        break;
+    }
+    case Qt::Key_Escape:
+        ui->btnBack->click();
+        break;
+    }
+}

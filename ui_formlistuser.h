@@ -32,17 +32,17 @@ public:
     {
         if (FormListUser->objectName().isEmpty())
             FormListUser->setObjectName(QString::fromUtf8("FormListUser"));
-        FormListUser->resize(1002, 777);
+        FormListUser->resize(1002, 744);
         tableWidget = new QTableWidget(FormListUser);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
-        tableWidget->setGeometry(QRect(30, 170, 941, 481));
+        tableWidget->setGeometry(QRect(30, 140, 941, 481));
         bgContent = new QLabel(FormListUser);
         bgContent->setObjectName(QString::fromUtf8("bgContent"));
-        bgContent->setGeometry(QRect(30, 70, 941, 661));
+        bgContent->setGeometry(QRect(30, 40, 941, 661));
         bgContent->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
         label_3 = new QLabel(FormListUser);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(420, 80, 211, 51));
+        label_3->setGeometry(QRect(420, 50, 211, 51));
         label_3->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 24pt \"Showcard Gothic\";\n"
 "	padding: 0 8px;\n"
@@ -51,11 +51,11 @@ public:
 "}"));
         bgContainer = new QLabel(FormListUser);
         bgContainer->setObjectName(QString::fromUtf8("bgContainer"));
-        bgContainer->setGeometry(QRect(-60, -10, 1201, 811));
+        bgContainer->setGeometry(QRect(-60, -40, 1201, 791));
         bgContainer->setPixmap(QPixmap(QString::fromUtf8("../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg")));
         btnCancel = new QPushButton(FormListUser);
         btnCancel->setObjectName(QString::fromUtf8("btnCancel"));
-        btnCancel->setGeometry(QRect(80, 680, 841, 29));
+        btnCancel->setGeometry(QRect(80, 650, 841, 29));
         bgContainer->raise();
         bgContent->raise();
         label_3->raise();

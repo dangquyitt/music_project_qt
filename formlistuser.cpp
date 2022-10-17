@@ -1,7 +1,9 @@
 #include "formlistuser.h"
+#include "qevent.h"
 #include "ui_formlistuser.h"
 #include "utildao.h"
 
+#include <QMessageBox>
 #include <qboxlayout.h>
 #include <qcombobox.h>
 #include <qpushbutton.h>
@@ -13,6 +15,7 @@ FormListUser::FormListUser(QWidget *parent) :
     ui->setupUi(this);
     roles = UtilDAO::getRoleDAO()->findAll();
     sizeRoles = roles.size();
+    setWindowTitle("Danh sách thành viên trong ứng dụng");
     updateListUser();
     setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
     ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-bule.jpg"));
@@ -112,14 +115,20 @@ void FormListUser::updateListUser() {
 
 void FormListUser::onClicked() {
 
-    QWidget *w = qobject_cast<QWidget *>(sender()->parent());
-        if(w){
-            int row = ui->tableWidget->indexAt(w->pos()).row();
-            UtilDAO::getUserDAO()->remove(listUser[row].getId());
-            listUser.erase(listUser.begin() + row);
-            ui->tableWidget->removeRow(row);
-            ui->tableWidget->setCurrentCell(0, 0);
-       }
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Message", "Bạn có muốn xóa không ?",
+                                   QMessageBox::Yes|QMessageBox::No);
+    if(reply == QMessageBox::Yes) {
+        QWidget *w = qobject_cast<QWidget *>(sender()->parent());
+            if(w){
+                int row = ui->tableWidget->indexAt(w->pos()).row();
+                UtilDAO::getUserDAO()->remove(listUser[row].getId());
+                listUser.erase(listUser.begin() + row);
+                ui->tableWidget->removeRow(row);
+                ui->tableWidget->setCurrentCell(0, 0);
+           }
+          }
+
 }
 
 void FormListUser::onComboIndexChanged() {
@@ -143,5 +152,18 @@ void FormListUser::onComboIndexChanged() {
 void FormListUser::on_btnCancel_clicked()
 {
     close();
+}
+
+void FormListUser::keyPressEvent(QKeyEvent *event) {
+    switch (event->key()) {
+    case Qt::Key_Return :
+    {
+
+        break;
+    }
+    case Qt::Key_Escape:
+        ui->btnCancel->click();
+        break;
+    }
 }
 

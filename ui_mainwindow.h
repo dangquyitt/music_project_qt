@@ -38,7 +38,7 @@ public:
     QPushButton *mute;
     QLabel *imgMusic;
     QPushButton *btnLogout;
-    QPushButton *pushButton;
+    QPushButton *btnChangePassword;
     QLabel *userOnl;
     QPushButton *btnListUser;
     QPushButton *btnProfile;
@@ -108,7 +108,7 @@ public:
 "}"));
         currentSong = new QLabel(centralWidget);
         currentSong->setObjectName(QString::fromUtf8("currentSong"));
-        currentSong->setGeometry(QRect(84, 11, 881, 31));
+        currentSong->setGeometry(QRect(40, 10, 881, 31));
         currentSong->setStyleSheet(QString::fromUtf8("font: 600 12pt \"Segoe UI Variable Text Semibold\";"));
         currentSong->setAlignment(Qt::AlignCenter);
         listWidget = new QListWidget(centralWidget);
@@ -168,7 +168,7 @@ public:
         mute->setFlat(false);
         imgMusic = new QLabel(centralWidget);
         imgMusic->setObjectName(QString::fromUtf8("imgMusic"));
-        imgMusic->setGeometry(QRect(50, 40, 871, 391));
+        imgMusic->setGeometry(QRect(40, 50, 871, 371));
         btnLogout = new QPushButton(centralWidget);
         btnLogout->setObjectName(QString::fromUtf8("btnLogout"));
         btnLogout->setGeometry(QRect(960, 400, 41, 29));
@@ -177,11 +177,11 @@ public:
 "	border-radius:10px;\n"
 "	background:white;\n"
 "}"));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(960, 200, 41, 31));
-        pushButton->setCursor(QCursor(Qt::OpenHandCursor));
-        pushButton->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        btnChangePassword = new QPushButton(centralWidget);
+        btnChangePassword->setObjectName(QString::fromUtf8("btnChangePassword"));
+        btnChangePassword->setGeometry(QRect(960, 200, 41, 31));
+        btnChangePassword->setCursor(QCursor(Qt::OpenHandCursor));
+        btnChangePassword->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border-radius:10px;\n"
 "	background:white;\n"
 "}"));
@@ -297,7 +297,7 @@ public:
         volumeBar->raise();
         mute->raise();
         btnLogout->raise();
-        pushButton->raise();
+        btnChangePassword->raise();
         userOnl->raise();
         label->raise();
         selectCategory->raise();
@@ -327,7 +327,7 @@ public:
         mute->setText(QString());
         imgMusic->setText(QString());
         btnLogout->setText(QString());
-        pushButton->setText(QString());
+        btnChangePassword->setText(QString());
         userOnl->setText(QCoreApplication::translate("MainWindow", "User:", nullptr));
         btnListUser->setText(QString());
         btnProfile->setText(QString());

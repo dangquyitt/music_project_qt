@@ -253,13 +253,14 @@ public:
         bgContent->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
         stataus = new QLabel(FormRegister);
         stataus->setObjectName(QString::fromUtf8("stataus"));
-        stataus->setGeometry(QRect(390, 110, 141, 20));
+        stataus->setGeometry(QRect(400, 110, 141, 20));
         stataus->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	\n"
 "	padding: 0 8px;\n"
 "\n"
-"	color:rgb(10,100,180);\n"
+"	color: rgb(191, 0, 0);\n"
 "	font: 8pt \"Showcard Gothic\";\n"
+"\n"
 "}\n"
 ""));
         errorPassword = new QLabel(FormRegister);

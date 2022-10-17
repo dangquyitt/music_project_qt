@@ -10,6 +10,7 @@ FormAddCategory::FormAddCategory(QWidget *parent) :
     ui(new Ui::FormAddCategory)
 {
     ui->setupUi(this);
+    setWindowTitle("Thêm thể loại");
 //    animation = new QPropertyAnimation(ui->label,"geometry");
 //    animation -> setDuration(1000);
 //    animation-> setStartValue(QRect(200,200,100,50));

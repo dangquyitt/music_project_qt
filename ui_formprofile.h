@@ -25,24 +25,23 @@ public:
     QLabel *label_3;
     QLabel *label_4;
     QLineEdit *name;
-    QLabel *label_5;
     QLabel *bgContainer;
     QLabel *bgContent;
     QLabel *label_10;
     QLineEdit *userName;
     QLineEdit *email;
-    QLineEdit *password;
     QPushButton *btnCancel;
-    QPushButton *btnSave;
+    QLabel *label;
+    QLineEdit *roleName;
 
     void setupUi(QWidget *FormProfile)
     {
         if (FormProfile->objectName().isEmpty())
             FormProfile->setObjectName(QString::fromUtf8("FormProfile"));
-        FormProfile->resize(1013, 623);
+        FormProfile->resize(642, 623);
         label_2 = new QLabel(FormProfile);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(340, 200, 118, 22));
+        label_2->setGeometry(QRect(120, 190, 118, 31));
         label_2->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	\n"
 "	padding: 0 8px;\n"
@@ -53,7 +52,7 @@ public:
 ""));
         label_3 = new QLabel(FormProfile);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(340, 350, 83, 22));
+        label_3->setGeometry(QRect(120, 360, 83, 31));
         label_3->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	\n"
 "	padding: 0 8px;\n"
@@ -64,7 +63,7 @@ public:
 ""));
         label_4 = new QLabel(FormProfile);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(340, 280, 121, 22));
+        label_4->setGeometry(QRect(120, 280, 121, 31));
         label_4->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	\n"
 "	padding: 0 8px;\n"
@@ -75,7 +74,7 @@ public:
 ""));
         name = new QLineEdit(FormProfile);
         name->setObjectName(QString::fromUtf8("name"));
-        name->setGeometry(QRect(530, 200, 141, 24));
+        name->setGeometry(QRect(340, 190, 201, 31));
         name->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
 "\n"
 "\n"
@@ -83,28 +82,17 @@ public:
 "	background:white;\n"
 "	color:rgb(10,100,180);\n"
 "}"));
-        label_5 = new QLabel(FormProfile);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(340, 430, 128, 22));
-        label_5->setStyleSheet(QString::fromUtf8("QLabel{\n"
-"	\n"
-"	padding: 0 8px;\n"
-"\n"
-"	color:rgb(10,100,180);\n"
-"	font: 10pt \"Showcard Gothic\";\n"
-"}\n"
-""));
         bgContainer = new QLabel(FormProfile);
         bgContainer->setObjectName(QString::fromUtf8("bgContainer"));
-        bgContainer->setGeometry(QRect(-10, 0, 1021, 631));
+        bgContainer->setGeometry(QRect(-10, 0, 701, 631));
         bgContainer->setPixmap(QPixmap(QString::fromUtf8("../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg")));
         bgContent = new QLabel(FormProfile);
         bgContent->setObjectName(QString::fromUtf8("bgContent"));
-        bgContent->setGeometry(QRect(250, 20, 541, 581));
+        bgContent->setGeometry(QRect(50, 20, 541, 581));
         bgContent->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
         label_10 = new QLabel(FormProfile);
         label_10->setObjectName(QString::fromUtf8("label_10"));
-        label_10->setGeometry(QRect(420, 80, 200, 51));
+        label_10->setGeometry(QRect(230, 80, 200, 51));
         label_10->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	\n"
 "	padding: 0 8px;\n"
@@ -115,7 +103,7 @@ public:
 ""));
         userName = new QLineEdit(FormProfile);
         userName->setObjectName(QString::fromUtf8("userName"));
-        userName->setGeometry(QRect(530, 280, 141, 24));
+        userName->setGeometry(QRect(340, 280, 201, 31));
         userName->setCursor(QCursor(Qt::ForbiddenCursor));
         userName->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
 "\n"
@@ -126,18 +114,8 @@ public:
 "}"));
         email = new QLineEdit(FormProfile);
         email->setObjectName(QString::fromUtf8("email"));
-        email->setGeometry(QRect(530, 350, 141, 24));
+        email->setGeometry(QRect(340, 360, 201, 31));
         email->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
-"\n"
-"\n"
-"	padding: 0 8px;\n"
-"	background:white;\n"
-"	color:rgb(10,100,180);\n"
-"}"));
-        password = new QLineEdit(FormProfile);
-        password->setObjectName(QString::fromUtf8("password"));
-        password->setGeometry(QRect(530, 430, 141, 24));
-        password->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
 "\n"
 "\n"
 "	padding: 0 8px;\n"
@@ -146,7 +124,7 @@ public:
 "}"));
         btnCancel = new QPushButton(FormProfile);
         btnCancel->setObjectName(QString::fromUtf8("btnCancel"));
-        btnCancel->setGeometry(QRect(280, 500, 171, 71));
+        btnCancel->setGeometry(QRect(250, 510, 171, 71));
         btnCancel->setCursor(QCursor(Qt::OpenHandCursor));
         btnCancel->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 14pt \"Showcard Gothic\";\n"
@@ -155,30 +133,40 @@ public:
 "	color:rgb(10,100,180);\n"
 "border:10px;\n"
 "}"));
-        btnSave = new QPushButton(FormProfile);
-        btnSave->setObjectName(QString::fromUtf8("btnSave"));
-        btnSave->setGeometry(QRect(600, 500, 161, 71));
-        btnSave->setCursor(QCursor(Qt::OpenHandCursor));
-        btnSave->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	font: 14pt \"Showcard Gothic\";\n"
+        label = new QLabel(FormProfile);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(120, 450, 63, 31));
+        label->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"	\n"
+"	padding: 0 8px;\n"
+"\n"
+"	color:rgb(10,100,180);\n"
+"	font: 10pt \"Showcard Gothic\";\n"
+"}\n"
+""));
+        roleName = new QLineEdit(FormProfile);
+        roleName->setObjectName(QString::fromUtf8("roleName"));
+        roleName->setGeometry(QRect(340, 450, 201, 31));
+        roleName->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
+"\n"
+"\n"
 "	padding: 0 8px;\n"
 "	background:white;\n"
 "	color:rgb(10,100,180);\n"
-"border:10px;\n"
-"}"));
+"}\n"
+""));
         bgContainer->raise();
         bgContent->raise();
         label_2->raise();
         label_3->raise();
         label_4->raise();
-        label_5->raise();
         label_10->raise();
         btnCancel->raise();
-        btnSave->raise();
         name->raise();
         userName->raise();
         email->raise();
-        password->raise();
+        label->raise();
+        roleName->raise();
 
         retranslateUi(FormProfile);
 
@@ -192,15 +180,13 @@ public:
         label_3->setText(QCoreApplication::translate("FormProfile", "Email:", nullptr));
         label_4->setText(QCoreApplication::translate("FormProfile", "Username:", nullptr));
         name->setText(QString());
-        label_5->setText(QCoreApplication::translate("FormProfile", "Password:", nullptr));
         bgContainer->setText(QString());
         bgContent->setText(QString());
         label_10->setText(QCoreApplication::translate("FormProfile", "PROFILE", nullptr));
         userName->setText(QString());
         email->setText(QString());
-        password->setText(QString());
         btnCancel->setText(QCoreApplication::translate("FormProfile", "Cancel", nullptr));
-        btnSave->setText(QCoreApplication::translate("FormProfile", "Save", nullptr));
+        label->setText(QCoreApplication::translate("FormProfile", "Role", nullptr));
     } // retranslateUi
 
 };
