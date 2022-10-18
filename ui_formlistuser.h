@@ -25,37 +25,41 @@ public:
     QTableWidget *tableWidget;
     QLabel *bgContent;
     QLabel *label_3;
-    QLabel *bgContainer;
     QPushButton *btnCancel;
+    QLabel *bgContainer;
 
     void setupUi(QWidget *FormListUser)
     {
         if (FormListUser->objectName().isEmpty())
             FormListUser->setObjectName(QString::fromUtf8("FormListUser"));
-        FormListUser->resize(1002, 744);
+        FormListUser->resize(1000, 663);
         tableWidget = new QTableWidget(FormListUser);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
-        tableWidget->setGeometry(QRect(30, 140, 941, 481));
+        tableWidget->setGeometry(QRect(28, 90, 941, 481));
         bgContent = new QLabel(FormListUser);
         bgContent->setObjectName(QString::fromUtf8("bgContent"));
-        bgContent->setGeometry(QRect(30, 40, 941, 661));
+        bgContent->setGeometry(QRect(28, 21, 941, 621));
         bgContent->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
         label_3 = new QLabel(FormListUser);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(420, 50, 211, 51));
+        label_3->setGeometry(QRect(418, 30, 211, 51));
         label_3->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 24pt \"Showcard Gothic\";\n"
 "	padding: 0 8px;\n"
 "\n"
 "	color:rgb(10,100,180);\n"
 "}"));
-        bgContainer = new QLabel(FormListUser);
-        bgContainer->setObjectName(QString::fromUtf8("bgContainer"));
-        bgContainer->setGeometry(QRect(-60, -40, 1201, 791));
-        bgContainer->setPixmap(QPixmap(QString::fromUtf8("../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg")));
         btnCancel = new QPushButton(FormListUser);
         btnCancel->setObjectName(QString::fromUtf8("btnCancel"));
-        btnCancel->setGeometry(QRect(80, 650, 841, 29));
+        btnCancel->setGeometry(QRect(78, 580, 841, 51));
+        btnCancel->setStyleSheet(QString::fromUtf8("#QPushButton{\n"
+"\n"
+"border:20px;\n"
+"}"));
+        bgContainer = new QLabel(FormListUser);
+        bgContainer->setObjectName(QString::fromUtf8("bgContainer"));
+        bgContainer->setGeometry(QRect(0, -40, 1001, 741));
+        bgContainer->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/Tong-hop-cac-hinh-anh-background-dep-nhat-21.jpg")));
         bgContainer->raise();
         bgContent->raise();
         label_3->raise();
@@ -72,8 +76,8 @@ public:
         FormListUser->setWindowTitle(QCoreApplication::translate("FormListUser", "Form", nullptr));
         bgContent->setText(QString());
         label_3->setText(QCoreApplication::translate("FormListUser", "UserList", nullptr));
-        bgContainer->setText(QString());
         btnCancel->setText(QCoreApplication::translate("FormListUser", "Cancel", nullptr));
+        bgContainer->setText(QString());
     } // retranslateUi
 
 };

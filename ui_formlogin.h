@@ -39,15 +39,15 @@ public:
     {
         if (FormLogin->objectName().isEmpty())
             FormLogin->setObjectName(QString::fromUtf8("FormLogin"));
-        FormLogin->resize(452, 546);
+        FormLogin->resize(661, 546);
         bgContainer = new QLabel(FormLogin);
         bgContainer->setObjectName(QString::fromUtf8("bgContainer"));
-        bgContainer->setGeometry(QRect(-360, -30, 1581, 621));
+        bgContainer->setGeometry(QRect(-250, -30, 1581, 621));
         bgContainer->setStyleSheet(QString::fromUtf8("border-radius:10px;"));
         bgContainer->setPixmap(QPixmap(QString::fromUtf8("../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg")));
         inputUserName = new QLineEdit(FormLogin);
         inputUserName->setObjectName(QString::fromUtf8("inputUserName"));
-        inputUserName->setGeometry(QRect(190, 200, 161, 31));
+        inputUserName->setGeometry(QRect(300, 200, 161, 31));
         QFont font;
         font.setFamily(QString::fromUtf8("Sitka Banner Semibold"));
         font.setPointSize(10);
@@ -64,7 +64,7 @@ public:
 "}"));
         labelpassword = new QLabel(FormLogin);
         labelpassword->setObjectName(QString::fromUtf8("labelpassword"));
-        labelpassword->setGeometry(QRect(80, 270, 111, 31));
+        labelpassword->setGeometry(QRect(190, 270, 111, 31));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Showcard Gothic"));
         font1.setPointSize(9);
@@ -79,7 +79,7 @@ public:
 "}"));
         title = new QLabel(FormLogin);
         title->setObjectName(QString::fromUtf8("title"));
-        title->setGeometry(QRect(100, 90, 281, 51));
+        title->setGeometry(QRect(210, 90, 281, 51));
         QFont font2;
         font2.setFamily(QString::fromUtf8("Showcard Gothic"));
         font2.setPointSize(24);
@@ -94,7 +94,7 @@ public:
 "}"));
         btnRegister = new QPushButton(FormLogin);
         btnRegister->setObjectName(QString::fromUtf8("btnRegister"));
-        btnRegister->setGeometry(QRect(270, 350, 111, 51));
+        btnRegister->setGeometry(QRect(380, 350, 111, 51));
         btnRegister->setFont(font1);
         btnRegister->setCursor(QCursor(Qt::OpenHandCursor));
         btnRegister->setStyleSheet(QString::fromUtf8("QPushButton{\n"
@@ -108,7 +108,7 @@ public:
 ""));
         question = new QLabel(FormLogin);
         question->setObjectName(QString::fromUtf8("question"));
-        question->setGeometry(QRect(90, 360, 181, 31));
+        question->setGeometry(QRect(200, 360, 181, 31));
         question->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 9pt \"Segoe UI\";\n"
 "	border-radius:20px;\n"
@@ -118,7 +118,7 @@ public:
 "}"));
         btnLogin = new QPushButton(FormLogin);
         btnLogin->setObjectName(QString::fromUtf8("btnLogin"));
-        btnLogin->setGeometry(QRect(144, 410, 171, 61));
+        btnLogin->setGeometry(QRect(254, 410, 171, 61));
         QFont font3;
         font3.setFamily(QString::fromUtf8("Stencil"));
         font3.setPointSize(20);
@@ -136,7 +136,7 @@ public:
 "}"));
         errorPassword = new QLabel(FormLogin);
         errorPassword->setObjectName(QString::fromUtf8("errorPassword"));
-        errorPassword->setGeometry(QRect(190, 300, 161, 16));
+        errorPassword->setGeometry(QRect(300, 300, 161, 16));
         errorPassword->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 6pt \"Segoergb(255, 21, 72) UI\";\n"
 "	\n"
@@ -146,7 +146,7 @@ public:
 "}"));
         errorUserName = new QLabel(FormLogin);
         errorUserName->setObjectName(QString::fromUtf8("errorUserName"));
-        errorUserName->setGeometry(QRect(190, 230, 161, 16));
+        errorUserName->setGeometry(QRect(300, 230, 161, 16));
         errorUserName->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 6pt \"Segoergb(255, 21, 72) UI\";\n"
 "	\n"
@@ -156,7 +156,7 @@ public:
 "}"));
         labelUserName = new QLabel(FormLogin);
         labelUserName->setObjectName(QString::fromUtf8("labelUserName"));
-        labelUserName->setGeometry(QRect(80, 200, 111, 31));
+        labelUserName->setGeometry(QRect(190, 200, 111, 31));
         labelUserName->setFont(font1);
         labelUserName->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	font: 9pt \"Showcard Gothic\";\n"
@@ -166,7 +166,7 @@ public:
 "}"));
         inputPassword = new QLineEdit(FormLogin);
         inputPassword->setObjectName(QString::fromUtf8("inputPassword"));
-        inputPassword->setGeometry(QRect(190, 270, 161, 31));
+        inputPassword->setGeometry(QRect(300, 270, 161, 31));
         inputPassword->setFont(font);
         inputPassword->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
 "	\n"
@@ -177,14 +177,14 @@ public:
 "}"));
         hidePasswordbt = new QPushButton(FormLogin);
         hidePasswordbt->setObjectName(QString::fromUtf8("hidePasswordbt"));
-        hidePasswordbt->setGeometry(QRect(320, 275, 24, 21));
+        hidePasswordbt->setGeometry(QRect(430, 275, 24, 21));
         hidePasswordbt->setCursor(QCursor(Qt::OpenHandCursor));
         hidePasswordbt->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background:white;\n"
 "}"));
         bgContent = new QLabel(FormLogin);
         bgContent->setObjectName(QString::fromUtf8("bgContent"));
-        bgContent->setGeometry(QRect(40, 30, 371, 481));
+        bgContent->setGeometry(QRect(150, 30, 371, 481));
         bgContent->setStyleSheet(QString::fromUtf8("QPixmap{\n"
 "border-radius:10px;\n"
 "}"));

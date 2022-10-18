@@ -11,10 +11,11 @@ FormChangePassword::FormChangePassword(QWidget *parent) :
     ui(new Ui::FormChangePassword)
 {
     ui->setupUi(this);
-    ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-bule.jpg"));
+    ui->bgContainer->setPixmap(QPixmap(":/resources/img/Tong-hop-cac-hinh-anh-background-dep-nhat-21.jpg"));
     ui->bgContent->setPixmap(QPixmap(":/resources/img/background-while.webp"));
 
     ui->newPassword->setEchoMode(QLineEdit::Password);
+    ui->confirmPassword->setEchoMode(QLineEdit::Password);
     ui->btnHidenNewPassword->setIcon(QIcon(":/resources/img/hidden.png"));
 
     ui->oldPassword->setEchoMode(QLineEdit::Password);
@@ -123,10 +124,10 @@ void FormChangePassword::on_btnHidenOldPassword_clicked()
     hidenOldPassword = !hidenOldPassword;
     if(hidenOldPassword) {
         ui->oldPassword->setEchoMode(QLineEdit::Password);
-        ui->btnHidenNewPassword->setIcon(QIcon(":/resources/img/hidden.png"));
+        ui->btnHidenOldPassword->setIcon(QIcon(":/resources/img/hidden.png"));
     } else {
         ui->oldPassword->setEchoMode(QLineEdit::Normal);
-        ui->btnHidenNewPassword->setIcon(QIcon(":/resources/img/show.png"));
+        ui->btnHidenOldPassword->setIcon(QIcon(":/resources/img/show.png"));
     }
 }
 

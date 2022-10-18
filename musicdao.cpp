@@ -129,8 +129,15 @@ bool MusicDAO::save(Music instance) {
     return false;
 }
 bool MusicDAO::update(Music instance) {
-    string sql = "UPDATE music SET music_name = :musicName, music_url = :musicUrl, img_url = :imgUrl, ratting = :ratting, category_id = :categoryId, release_year = :realseYear WHERE id = :id";
+    string sql = "UPDATE music SET music_name = :musicName, music_url = :musicUrl, img_url = :imgUrl, ratting = :ratting, category_id = :categoryId, release_year = :relseYear WHERE id = :id";
 
+    cout << "Music name in db"<<instance.getMusicName()<<endl;
+    cout << "Music url in db"<<instance.getMusicUrl()<<endl;
+    cout << "Music img in db"<<instance.getImgUrl()<<endl;
+    cout << "Music ratting in db"<<instance.getRatting()<<endl;
+    cout << "Music category in db"<<instance.getCategoryId()<<endl;
+    cout << "Music release in db"<<instance.getReleaseYear()<<endl;
+    cout << "Music id in db"<<instance.getId()<<endl;
     if(db.transaction()) {
         QSqlQuery query(db);
         query.prepare(QString::fromStdString(sql));
@@ -139,7 +146,7 @@ bool MusicDAO::update(Music instance) {
         query.bindValue(":imgUrl", QString::fromStdString(instance.getImgUrl()));
         query.bindValue(":ratting", instance.getRatting());
         query.bindValue(":categoryId", instance.getCategoryId());
-        query.bindValue(":realaseYear", instance.getReleaseYear());
+        query.bindValue(":relseYear", instance.getReleaseYear());
         query.bindValue(":id", instance.getId());
         query.exec();
         if(!db.commit()) {

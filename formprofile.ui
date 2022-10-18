@@ -117,7 +117,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg</pixmap>
+    <pixmap>../../Image/Tong-hop-cac-hinh-anh-background-dep-nhat-21.jpg</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="bgContent">
@@ -133,7 +133,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../../Image/Hinh-Nen-Trang-10.webp</pixmap>
+    <pixmap>../../Image/mau-background-dep.jpg</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="label_10">

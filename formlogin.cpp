@@ -13,7 +13,7 @@ FormLogin::FormLogin(QWidget *parent) :
         setWindowTitle("Đăng nhập");
         ui->inputPassword->setEchoMode(QLineEdit::Password);
         ui->hidePasswordbt->setIcon(QIcon(":/resources/img/hidden.png"));
-        ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-bule.jpg"));
+        ui->bgContainer->setPixmap(QPixmap(":/resources/img/Tong-hop-cac-hinh-anh-background-dep-nhat-21.jpg"));
         ui->bgContent->setPixmap(QPixmap(":/resources/img/background-while.webp"));
 //        animation = new QPropertyAnimation(ui->btnLogin,"geometry");
 //        animation -> setDuration(1000);
@@ -84,7 +84,7 @@ void FormLogin::on_btnLogin_clicked()
     string password = ui->inputPassword->text().toStdString();
 
     if(password.empty()) {
-        ui->errorPassword->setText("Password is empty");
+        ui->errorPassword->setText("Không được để trống");
     }
     if(!userName.empty()) {
         vector<User> users = UtilDAO::getUserDAO()->findByProperties("user_name", userName);
@@ -125,16 +125,16 @@ void FormLogin::on_btnLogin_clicked()
                         mainWindowLogin->show();
 
                     }else {
-                        ui->errorPassword->setText("Invalid password");
+                        ui->errorPassword->setText("Sai mật khẩu");
 
                     }
                 }
                 else {
-                    ui->errorUserName->setText("Invalid username");
+                    ui->errorUserName->setText("Tên đăng nhập không tồn tại");
 
                 }
     } else {
-        ui->errorUserName->setText("User name is empty");
+        ui->errorUserName->setText("Không được để trống");
     }
 }
 

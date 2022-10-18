@@ -18,7 +18,7 @@ FormListUser::FormListUser(QWidget *parent) :
     setWindowTitle("Danh sách thành viên trong ứng dụng");
     updateListUser();
     setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
-    ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-bule.jpg"));
+    ui->bgContainer->setPixmap(QPixmap(":/resources/img/Tong-hop-cac-hinh-anh-background-dep-nhat-21.jpg"));
     ui->bgContent->setPixmap(QPixmap(":/resources/img/background-while.webp"));
 //    animation = new QPropertyAnimation(ui->label,"geometry");
 //    animation -> setDuration(1000);

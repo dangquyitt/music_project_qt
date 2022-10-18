@@ -16,7 +16,7 @@ FormAddTrack::FormAddTrack(QWidget *parent) :
     }
     ui->btnImgUrl->setIcon(QIcon(":/resources/img/folder.png"));
     ui->btnMusicUrl->setIcon(QIcon(":/resources/img/folder.png"));
-    ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-bule.jpg"));
+    ui->bgContainer->setPixmap(QPixmap(":/resources/img/Tong-hop-cac-hinh-anh-background-dep-nhat-21.jpg"));
     ui->bgContent->setPixmap(QPixmap(":/resources/img/background-while.webp"));
     setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
     connect(ui->btnCancel, SIGNAL(clicked()), this, SLOT(close()));
@@ -112,6 +112,7 @@ void FormAddTrack::on_btnAddMusic_clicked()
 
     if(!isError)  {
         Music music;
+
         music.setMusicName(ui->musicName->text().trimmed().toStdString());
         music.setMusicUrl(ui->musicUrl->text().trimmed().toStdString());
         music.setCategoryId(ui->category->itemData(ui->category->currentIndex()).value<int>());
@@ -120,8 +121,11 @@ void FormAddTrack::on_btnAddMusic_clicked()
         music.setReleaseYear(ui->releaseYear->value());
         if(MainWindow::musicEdit.getId() != 0) {
             music.setId(MainWindow::musicEdit.getId());
+
             if(UtilDAO::getMusicDAO()->update(music)) {
-                ui->statusInsert->setText("Update bài hát thành công");
+                QMessageBox::information(this, "Message", "Update bài hát thành công");
+                ui->btnCancel->click();
+
             } else {
                 ui->statusInsert->setText("Update bài hát thất bại");
             }
@@ -145,14 +149,14 @@ void FormAddTrack::on_btnAddMusic_clicked()
 
 void FormAddTrack::on_btnMusicUrl_clicked()
 {
-       QString file = QFileDialog::getOpenFileName(this, tr("Select Music Files"), "~", tr("Audio Files (*.wav *.mp3)"));
+       QString file = QFileDialog::getOpenFileName(this, tr("Select Music Files"), "D:\\ListMusic\\music", tr("Audio Files (*.wav *.mp3)"));
        ui->musicUrl->setText(file);
 }
 
 
 void FormAddTrack::on_btnImgUrl_clicked()
 {
-    QString file = QFileDialog::getOpenFileName(this, tr("Open Image"), "~", tr("Image Files (*.png *.jpg *.bmp)"));
+    QString file = QFileDialog::getOpenFileName(this, tr("Open Image"), "D:\\ListMusic\\img", tr("Image Files (*.png *.jpg *.bmp)"));
     ui->musicImg->setText(file);
 }
 
@@ -166,14 +170,13 @@ void FormAddTrack::renderCategory() {
 }
 
 void FormAddTrack::renderMusicEdit() {
-    Music music =MainWindow::musicEdit;
-    if(music.getId() != 0) {
-        ui->musicImg->setText(QString::fromStdString(music.getImgUrl()));
-        ui->musicUrl->setText(QString::fromStdString(music.getMusicUrl()));
-        ui->musicName->setText(QString::fromStdString(music.getMusicName()));
-        ui->releaseYear->setValue(music.getReleaseYear());
-        ui->ratting->setValue(music.getRatting());
-        ui->category->setCurrentIndex(music.getCategoryId());
+    if(MainWindow::musicEdit.getId() != 0) {
+        ui->musicImg->setText(QString::fromStdString(MainWindow::musicEdit.getImgUrl()));
+        ui->musicUrl->setText(QString::fromStdString(MainWindow::musicEdit.getMusicUrl()));
+        ui->musicName->setText(QString::fromStdString(MainWindow::musicEdit.getMusicName()));
+        ui->releaseYear->setValue(MainWindow::musicEdit.getReleaseYear());
+        ui->ratting->setValue(MainWindow::musicEdit.getRatting());
+        ui->category->setCurrentIndex(MainWindow::musicEdit.getCategoryId());
     }
 }
 

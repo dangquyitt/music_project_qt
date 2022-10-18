@@ -15,8 +15,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     setWindowTitle("Music");
     ui->setupUi(this);
-    ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-while.webp"));
-    ui->bgContent->setPixmap(QPixmap(":/resources/img/background-while.webp"));
+//    ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-while.webp"));
+//    ui->bgContent->setPixmap(QPixmap(":/resources/img/background-while.webp"));
+     ui->bgContent->setPixmap(QPixmap(":/resources/img/Tong-hop-cac-hinh-anh-background-dep-nhat-21.jpg"));
+//     ui->bgContainer->setPixmap(QPixmap(":/resources/img/Tong-hop-cac-hinh-anh-background-dep-nhat-21.jpg"));
+
 
     this->setFixedSize(this->geometry().width(),this->geometry().height());
 
@@ -91,13 +94,14 @@ void MainWindow::on_play_clicked()
         if(player->state() == QMediaPlayer::PlayingState)
         {
             player->pause();
+
             ui->play->setIcon(QIcon(":/resources/img/pause.png"));
+
         }
         else
         {
             player->play();
             ui->play->setIcon(QIcon(":/resources/img/play.png"));
-            updater->start();
         }
     }
 }
@@ -197,7 +201,7 @@ void MainWindow::update()
 
 void MainWindow::updateList()
 {
-
+    playlist.musics.clear();
     ui->listWidget->clear();
     if(idCateogry == 0) {
         playlist.musics = UtilDAO::getMusicDAO()->findAll();
@@ -270,8 +274,9 @@ void MainWindow::next()
 
     ui->searchBar->clear();
 
-    loadTrack();
+    loadTrack();    
     player->play();
+    ui->play->setIcon(QIcon(":/resources/img/play.png"));
 
 }
 
@@ -290,6 +295,7 @@ void MainWindow::back()
 
      loadTrack();
      player->play();
+     ui->play->setIcon(QIcon(":/resources/img/play.png"));
 }
 
 void MainWindow::shufflePlaylist()
@@ -307,10 +313,16 @@ void MainWindow::shufflePlaylist()
 void MainWindow::loadTrack()
 {
      QString qstr = QString::fromStdString(playlist.musics[getIndex()].getMusicUrl());
+
      player->setMedia(QUrl::fromLocalFile(qstr));
      qstr = QString::fromStdString(playlist.musics[getIndex()].getMusicName());
+
      ui->currentSong->setText(qstr);
-     ui->imgMusic->setPixmap(QPixmap(QString::fromStdString(playlist.musics[getIndex()].getImgUrl())));
+     QString imgUrl = QString::fromStdString(playlist.musics[getIndex()].getImgUrl());
+     ui->imgMusic->setPixmap(QPixmap(imgUrl));
+     ui->imgMusic->setAlignment(Qt::Alignment());
+     ui->imgMusic->setBackgroundRole(QPalette::Base);
+     ui->imgMusic->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
 }
 
 void MainWindow::on_searchBar_textChanged(const QString &arg1)
@@ -362,23 +374,26 @@ void MainWindow::on_btnLogout_clicked()
 
 void MainWindow::on_editMusic_clicked()
 {
-    if(::find(Session::LIST_URL_MENU.begin(), Session::LIST_URL_MENU.end(), "edit") != Session::LIST_URL_MENU.end()) {
-        musicEdit = UtilDAO::getMusicDAO()->findById(playlist.musics[getIndex()].getId());
-        formAddTrackMain = new FormAddTrack();
-        formAddTrackMain->show();
-     }else {
-         QMessageBox::warning(this, "Message", "Không có quyền truy cập");
-         return;
-     }
+    if(getIndex() != -1) {
+        if(::find(Session::LIST_URL_MENU.begin(), Session::LIST_URL_MENU.end(), "edit") != Session::LIST_URL_MENU.end()) {
+            musicEdit = UtilDAO::getMusicDAO()->findById(playlist.musics[getIndex()].getId());
+            cout<<"Id music edit"<<musicEdit.getId()<<endl;
+            formAddTrackMain = new FormAddTrack();
+            formAddTrackMain->show();
+         }else {
+             QMessageBox::warning(this, "Message", "Không có quyền truy cập");
+             return;
+         }
+
+    } else {
+        QMessageBox::information(this, "Message", "Danh sách nhạc trống");
+    }
 
 }
 
 
 void MainWindow::on_deleteMusic_clicked()
 {
-    for(string item : Session::LIST_URL_MENU) {
-        cout << item<<endl;
-    }
     if(::find(Session::LIST_URL_MENU.begin(), Session::LIST_URL_MENU.end(), "remove") != Session::LIST_URL_MENU.end()) {
         int index = getIndex();
         if(index != -1)
@@ -390,7 +405,10 @@ void MainWindow::on_deleteMusic_clicked()
                updateList();
                ui->listWidget->setCurrentRow(index);
                if(shuffle) shufflePlaylist();
+               loadTrack();
            }
+        } else {
+            QMessageBox::information(this, "Message", "Danh sách trống");
         }
      }else {
          QMessageBox::warning(this, "Message", "Không có quyền truy cập");
@@ -423,6 +441,7 @@ void MainWindow::on_selectCategory_currentIndexChanged(int index)
 void MainWindow::on_btnReload_clicked()
 {
     updateList();
+    ui->listWidget->setCurrentRow(0);
     bool startUpdater = false;
     if(ui->listWidget->count() == 0) {
         startUpdater = true;
@@ -433,8 +452,8 @@ void MainWindow::on_btnReload_clicked()
     if(startUpdater){
         updater->start();
     }
+
     ui->searchBar->setFocus();
-    ui->listWidget->setCurrentRow(0);
 }
 
 

@@ -12,7 +12,7 @@ FormProfile::FormProfile(QWidget *parent) :
     setWindowTitle("Hồ sơ");
     setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
     updateProfile();
-    ui->bgContainer->setPixmap(QPixmap(":/resources/img/background-bule.jpg"));
+    ui->bgContainer->setPixmap(QPixmap(":/resources/img/Tong-hop-cac-hinh-anh-background-dep-nhat-21.jpg"));
     ui->bgContent->setPixmap(QPixmap(":/resources/img/background-while.webp"));
 //    animation = new QPropertyAnimation(ui->label_2,"geometry");
 //    animation -> setDuration(1000);

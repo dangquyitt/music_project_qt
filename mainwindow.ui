@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1447</width>
+    <width>1417</width>
     <height>560</height>
    </rect>
   </property>
@@ -31,7 +31,7 @@
      <rect>
       <x>20</x>
       <y>460</y>
-      <width>971</width>
+      <width>920</width>
       <height>20</height>
      </rect>
     </property>
@@ -142,7 +142,8 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 600 12pt &quot;Segoe UI Variable Text Semibold&quot;;</string>
+     <string notr="true">font: 600 italic 12pt &quot;Sitka Display Semibold&quot;;
+color:rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Song</string>
@@ -154,7 +155,7 @@
    <widget class="QListWidget" name="listWidget">
     <property name="geometry">
      <rect>
-      <x>1010</x>
+      <x>1000</x>
       <y>50</y>
       <width>401</width>
       <height>421</height>
@@ -312,10 +313,10 @@
    <widget class="QLabel" name="imgMusic">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>50</y>
-      <width>871</width>
-      <height>371</height>
+      <x>20</x>
+      <y>59</y>
+      <width>921</width>
+      <height>381</height>
      </rect>
     </property>
     <property name="text">
@@ -325,8 +326,8 @@
    <widget class="QPushButton" name="btnLogout">
     <property name="geometry">
      <rect>
-      <x>960</x>
-      <y>400</y>
+      <x>950</x>
+      <y>390</y>
       <width>41</width>
       <height>29</height>
      </rect>
@@ -347,8 +348,8 @@
    <widget class="QPushButton" name="btnChangePassword">
     <property name="geometry">
      <rect>
-      <x>960</x>
-      <y>200</y>
+      <x>950</x>
+      <y>190</y>
       <width>41</width>
       <height>31</height>
      </rect>
@@ -377,7 +378,7 @@
     </property>
     <property name="styleSheet">
      <string notr="true">font: 600 italic 12pt &quot;Sitka Display Semibold&quot;;
-color:black;</string>
+color:rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>User:</string>
@@ -386,8 +387,8 @@ color:black;</string>
    <widget class="QPushButton" name="btnListUser">
     <property name="geometry">
      <rect>
-      <x>960</x>
-      <y>350</y>
+      <x>950</x>
+      <y>340</y>
       <width>41</width>
       <height>31</height>
      </rect>
@@ -408,8 +409,8 @@ color:black;</string>
    <widget class="QPushButton" name="btnProfile">
     <property name="geometry">
      <rect>
-      <x>960</x>
-      <y>300</y>
+      <x>950</x>
+      <y>290</y>
       <width>41</width>
       <height>31</height>
      </rect>
@@ -430,8 +431,8 @@ color:black;</string>
    <widget class="QPushButton" name="addMusic">
     <property name="geometry">
      <rect>
-      <x>960</x>
-      <y>100</y>
+      <x>950</x>
+      <y>80</y>
       <width>41</width>
       <height>31</height>
      </rect>
@@ -452,8 +453,8 @@ color:black;</string>
    <widget class="QPushButton" name="deleteMusic">
     <property name="geometry">
      <rect>
-      <x>960</x>
-      <y>150</y>
+      <x>950</x>
+      <y>140</y>
       <width>41</width>
       <height>31</height>
      </rect>
@@ -474,8 +475,8 @@ color:black;</string>
    <widget class="QPushButton" name="editMusic">
     <property name="geometry">
      <rect>
-      <x>960</x>
-      <y>250</y>
+      <x>950</x>
+      <y>240</y>
       <width>41</width>
       <height>31</height>
      </rect>
@@ -491,22 +492,6 @@ color:black;</string>
     </property>
     <property name="text">
      <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="bgContainer">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>450</y>
-      <width>2391</width>
-      <height>201</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../../Image/Hinh-Nen-Trang-10.webp</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -525,23 +510,23 @@ color:black;</string>
    <widget class="QLabel" name="bgContent">
     <property name="geometry">
      <rect>
-      <x>1010</x>
+      <x>1000</x>
       <y>0</y>
       <width>441</width>
-      <height>451</height>
+      <height>561</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../Image/Hinh-Nen-Trang-10.webp</pixmap>
+     <pixmap>../../Image/Tong-hop-cac-hinh-anh-background-dep-nhat-21.jpg</pixmap>
     </property>
    </widget>
    <widget class="QComboBox" name="selectCategory">
     <property name="geometry">
      <rect>
-      <x>1020</x>
+      <x>1000</x>
       <y>10</y>
       <width>131</width>
       <height>31</height>
@@ -557,7 +542,7 @@ color:black;</string>
    <widget class="QLineEdit" name="searchBar">
     <property name="geometry">
      <rect>
-      <x>1170</x>
+      <x>1140</x>
       <y>10</y>
       <width>191</width>
       <height>31</height>
@@ -579,10 +564,10 @@ color:black;</string>
    <widget class="QPushButton" name="btnReload">
     <property name="geometry">
      <rect>
-      <x>1372</x>
-      <y>20</y>
-      <width>24</width>
-      <height>21</height>
+      <x>1340</x>
+      <y>10</y>
+      <width>31</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="cursor">
@@ -609,7 +594,7 @@ color:black;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 600 italic 12pt &quot;Sitka Display Semibold&quot;;
-color:black;</string>
+color:rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string/>
@@ -626,8 +611,7 @@ color:black;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 600 italic 12pt &quot;Sitka Display Semibold&quot;;
-color:black;
-</string>
+color:rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Role:</string>
@@ -644,15 +628,31 @@ color:black;
     </property>
     <property name="styleSheet">
      <string notr="true">font: 600 italic 12pt &quot;Sitka Display Semibold&quot;;
-color:black;</string>
+color:rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="bgContaier">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-1</y>
+      <width>1011</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/resources/img/Tong-hop-cac-hinh-anh-background-dep-nhat-21.jpg</pixmap>
+    </property>
+   </widget>
+   <zorder>bgContaier</zorder>
    <zorder>bgContent</zorder>
    <zorder>imgMusic</zorder>
-   <zorder>bgContainer</zorder>
    <zorder>btnListUser</zorder>
    <zorder>btnProfile</zorder>
    <zorder>addMusic</zorder>
@@ -681,6 +681,8 @@ color:black;</string>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

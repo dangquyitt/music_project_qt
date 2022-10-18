@@ -45,7 +45,6 @@ public:
     QPushButton *addMusic;
     QPushButton *deleteMusic;
     QPushButton *editMusic;
-    QLabel *bgContainer;
     QLabel *label;
     QLabel *bgContent;
     QComboBox *selectCategory;
@@ -54,12 +53,13 @@ public:
     QLabel *userInfo;
     QLabel *label_3;
     QLabel *roleInfo;
+    QLabel *bgContaier;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1447, 560);
+        MainWindow->resize(1417, 560);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -71,7 +71,7 @@ public:
         centralWidget->setSizePolicy(sizePolicy);
         seekBar = new QSlider(centralWidget);
         seekBar->setObjectName(QString::fromUtf8("seekBar"));
-        seekBar->setGeometry(QRect(20, 460, 971, 20));
+        seekBar->setGeometry(QRect(20, 460, 920, 20));
         seekBar->setMouseTracking(true);
         seekBar->setFocusPolicy(Qt::NoFocus);
         seekBar->setAcceptDrops(false);
@@ -109,11 +109,12 @@ public:
         currentSong = new QLabel(centralWidget);
         currentSong->setObjectName(QString::fromUtf8("currentSong"));
         currentSong->setGeometry(QRect(40, 10, 881, 31));
-        currentSong->setStyleSheet(QString::fromUtf8("font: 600 12pt \"Segoe UI Variable Text Semibold\";"));
+        currentSong->setStyleSheet(QString::fromUtf8("font: 600 italic 12pt \"Sitka Display Semibold\";\n"
+"color:rgb(255, 255, 255);"));
         currentSong->setAlignment(Qt::AlignCenter);
         listWidget = new QListWidget(centralWidget);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
-        listWidget->setGeometry(QRect(1010, 50, 401, 421));
+        listWidget->setGeometry(QRect(1000, 50, 401, 421));
         listWidget->setFocusPolicy(Qt::NoFocus);
         listWidget->setContextMenuPolicy(Qt::NoContextMenu);
         listWidget->setEditTriggers(QAbstractItemView::DoubleClicked);
@@ -168,10 +169,10 @@ public:
         mute->setFlat(false);
         imgMusic = new QLabel(centralWidget);
         imgMusic->setObjectName(QString::fromUtf8("imgMusic"));
-        imgMusic->setGeometry(QRect(40, 50, 871, 371));
+        imgMusic->setGeometry(QRect(20, 59, 921, 381));
         btnLogout = new QPushButton(centralWidget);
         btnLogout->setObjectName(QString::fromUtf8("btnLogout"));
-        btnLogout->setGeometry(QRect(960, 400, 41, 29));
+        btnLogout->setGeometry(QRect(950, 390, 41, 29));
         btnLogout->setCursor(QCursor(Qt::OpenHandCursor));
         btnLogout->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border-radius:10px;\n"
@@ -179,7 +180,7 @@ public:
 "}"));
         btnChangePassword = new QPushButton(centralWidget);
         btnChangePassword->setObjectName(QString::fromUtf8("btnChangePassword"));
-        btnChangePassword->setGeometry(QRect(960, 200, 41, 31));
+        btnChangePassword->setGeometry(QRect(950, 190, 41, 31));
         btnChangePassword->setCursor(QCursor(Qt::OpenHandCursor));
         btnChangePassword->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border-radius:10px;\n"
@@ -189,10 +190,10 @@ public:
         userOnl->setObjectName(QString::fromUtf8("userOnl"));
         userOnl->setGeometry(QRect(1010, 480, 130, 31));
         userOnl->setStyleSheet(QString::fromUtf8("font: 600 italic 12pt \"Sitka Display Semibold\";\n"
-"color:black;"));
+"color:rgb(255, 255, 255);"));
         btnListUser = new QPushButton(centralWidget);
         btnListUser->setObjectName(QString::fromUtf8("btnListUser"));
-        btnListUser->setGeometry(QRect(960, 350, 41, 31));
+        btnListUser->setGeometry(QRect(950, 340, 41, 31));
         btnListUser->setCursor(QCursor(Qt::OpenHandCursor));
         btnListUser->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border-radius:10px;\n"
@@ -200,7 +201,7 @@ public:
 "}"));
         btnProfile = new QPushButton(centralWidget);
         btnProfile->setObjectName(QString::fromUtf8("btnProfile"));
-        btnProfile->setGeometry(QRect(960, 300, 41, 31));
+        btnProfile->setGeometry(QRect(950, 290, 41, 31));
         btnProfile->setCursor(QCursor(Qt::OpenHandCursor));
         btnProfile->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border-radius:10px;\n"
@@ -208,7 +209,7 @@ public:
 "}"));
         addMusic = new QPushButton(centralWidget);
         addMusic->setObjectName(QString::fromUtf8("addMusic"));
-        addMusic->setGeometry(QRect(960, 100, 41, 31));
+        addMusic->setGeometry(QRect(950, 80, 41, 31));
         addMusic->setCursor(QCursor(Qt::OpenHandCursor));
         addMusic->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border-radius:10px;\n"
@@ -216,7 +217,7 @@ public:
 "}"));
         deleteMusic = new QPushButton(centralWidget);
         deleteMusic->setObjectName(QString::fromUtf8("deleteMusic"));
-        deleteMusic->setGeometry(QRect(960, 150, 41, 31));
+        deleteMusic->setGeometry(QRect(950, 140, 41, 31));
         deleteMusic->setCursor(QCursor(Qt::OpenHandCursor));
         deleteMusic->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border-radius:10px;\n"
@@ -224,38 +225,34 @@ public:
 "}"));
         editMusic = new QPushButton(centralWidget);
         editMusic->setObjectName(QString::fromUtf8("editMusic"));
-        editMusic->setGeometry(QRect(960, 250, 41, 31));
+        editMusic->setGeometry(QRect(950, 240, 41, 31));
         editMusic->setCursor(QCursor(Qt::OpenHandCursor));
         editMusic->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border-radius:10px;\n"
 "	background:white;\n"
 "}"));
-        bgContainer = new QLabel(centralWidget);
-        bgContainer->setObjectName(QString::fromUtf8("bgContainer"));
-        bgContainer->setGeometry(QRect(0, 450, 2391, 201));
-        bgContainer->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
         label = new QLabel(centralWidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(380, 530, 63, 20));
         bgContent = new QLabel(centralWidget);
         bgContent->setObjectName(QString::fromUtf8("bgContent"));
-        bgContent->setGeometry(QRect(1010, 0, 441, 451));
-        bgContent->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
+        bgContent->setGeometry(QRect(1000, 0, 441, 561));
+        bgContent->setPixmap(QPixmap(QString::fromUtf8("../../Image/Tong-hop-cac-hinh-anh-background-dep-nhat-21.jpg")));
         selectCategory = new QComboBox(centralWidget);
         selectCategory->setObjectName(QString::fromUtf8("selectCategory"));
-        selectCategory->setGeometry(QRect(1020, 10, 131, 31));
+        selectCategory->setGeometry(QRect(1000, 10, 131, 31));
         selectCategory->setCursor(QCursor(Qt::OpenHandCursor));
         selectCategory->setStyleSheet(QString::fromUtf8("font: 600 italic 10pt \"Sitka Display Semibold\";"));
         searchBar = new QLineEdit(centralWidget);
         searchBar->setObjectName(QString::fromUtf8("searchBar"));
-        searchBar->setGeometry(QRect(1170, 10, 191, 31));
+        searchBar->setGeometry(QRect(1140, 10, 191, 31));
         searchBar->setCursor(QCursor(Qt::ArrowCursor));
         searchBar->setMouseTracking(false);
         searchBar->setCursorPosition(0);
         searchBar->setReadOnly(false);
         btnReload = new QPushButton(centralWidget);
         btnReload->setObjectName(QString::fromUtf8("btnReload"));
-        btnReload->setGeometry(QRect(1372, 20, 24, 21));
+        btnReload->setGeometry(QRect(1340, 10, 31, 31));
         btnReload->setCursor(QCursor(Qt::OpenHandCursor));
         btnReload->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border-radius:10px;\n"
@@ -265,22 +262,25 @@ public:
         userInfo->setObjectName(QString::fromUtf8("userInfo"));
         userInfo->setGeometry(QRect(1149, 480, 261, 31));
         userInfo->setStyleSheet(QString::fromUtf8("font: 600 italic 12pt \"Sitka Display Semibold\";\n"
-"color:black;"));
+"color:rgb(255, 255, 255);"));
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(1010, 520, 130, 31));
         label_3->setStyleSheet(QString::fromUtf8("font: 600 italic 12pt \"Sitka Display Semibold\";\n"
-"color:black;\n"
-""));
+"color:rgb(255, 255, 255);"));
         roleInfo = new QLabel(centralWidget);
         roleInfo->setObjectName(QString::fromUtf8("roleInfo"));
         roleInfo->setGeometry(QRect(1150, 520, 260, 31));
         roleInfo->setStyleSheet(QString::fromUtf8("font: 600 italic 12pt \"Sitka Display Semibold\";\n"
-"color:black;"));
+"color:rgb(255, 255, 255);"));
+        bgContaier = new QLabel(centralWidget);
+        bgContaier->setObjectName(QString::fromUtf8("bgContaier"));
+        bgContaier->setGeometry(QRect(0, -1, 1011, 561));
+        bgContaier->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/Tong-hop-cac-hinh-anh-background-dep-nhat-21.jpg")));
         MainWindow->setCentralWidget(centralWidget);
+        bgContaier->raise();
         bgContent->raise();
         imgMusic->raise();
-        bgContainer->raise();
         btnListUser->raise();
         btnProfile->raise();
         addMusic->raise();
@@ -334,13 +334,13 @@ public:
         addMusic->setText(QString());
         deleteMusic->setText(QString());
         editMusic->setText(QString());
-        bgContainer->setText(QString());
         label->setText(QString());
         bgContent->setText(QString());
         btnReload->setText(QString());
         userInfo->setText(QString());
         label_3->setText(QCoreApplication::translate("MainWindow", "Role:", nullptr));
         roleInfo->setText(QString());
+        bgContaier->setText(QString());
     } // retranslateUi
 
 };

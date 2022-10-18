@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1002</width>
-    <height>744</height>
+    <width>1000</width>
+    <height>663</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QTableWidget" name="tableWidget">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>140</y>
+     <x>28</x>
+     <y>90</y>
      <width>941</width>
      <height>481</height>
     </rect>
@@ -26,10 +26,10 @@
   <widget class="QLabel" name="bgContent">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>40</y>
+     <x>28</x>
+     <y>21</y>
      <width>941</width>
-     <height>661</height>
+     <height>621</height>
     </rect>
    </property>
    <property name="text">
@@ -42,8 +42,8 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>50</y>
+     <x>418</x>
+     <y>30</y>
      <width>211</width>
      <height>51</height>
     </rect>
@@ -60,33 +60,39 @@
     <string>UserList</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="btnCancel">
+   <property name="geometry">
+    <rect>
+     <x>78</x>
+     <y>580</y>
+     <width>841</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#QPushButton{
+
+border:20px;
+}</string>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
+   </property>
+  </widget>
   <widget class="QLabel" name="bgContainer">
    <property name="geometry">
     <rect>
-     <x>-60</x>
+     <x>0</x>
      <y>-40</y>
-     <width>1201</width>
-     <height>791</height>
+     <width>1001</width>
+     <height>741</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg</pixmap>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btnCancel">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>650</y>
-     <width>841</width>
-     <height>29</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Cancel</string>
+    <pixmap resource="resources.qrc">:/resources/img/Tong-hop-cac-hinh-anh-background-dep-nhat-21.jpg</pixmap>
    </property>
   </widget>
   <zorder>bgContainer</zorder>
@@ -95,6 +101,8 @@
   <zorder>tableWidget</zorder>
   <zorder>btnCancel</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

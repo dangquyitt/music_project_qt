@@ -85,11 +85,11 @@ public:
         bgContainer = new QLabel(FormProfile);
         bgContainer->setObjectName(QString::fromUtf8("bgContainer"));
         bgContainer->setGeometry(QRect(-10, 0, 701, 631));
-        bgContainer->setPixmap(QPixmap(QString::fromUtf8("../../Image/sky_blue_partly_cloudy_sky_blue_azur_azure_bright_blue_light-1239095.jpg")));
+        bgContainer->setPixmap(QPixmap(QString::fromUtf8("../../Image/Tong-hop-cac-hinh-anh-background-dep-nhat-21.jpg")));
         bgContent = new QLabel(FormProfile);
         bgContent->setObjectName(QString::fromUtf8("bgContent"));
         bgContent->setGeometry(QRect(50, 20, 541, 581));
-        bgContent->setPixmap(QPixmap(QString::fromUtf8("../../Image/Hinh-Nen-Trang-10.webp")));
+        bgContent->setPixmap(QPixmap(QString::fromUtf8("../../Image/mau-background-dep.jpg")));
         label_10 = new QLabel(FormProfile);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(230, 80, 200, 51));

@@ -108,6 +108,7 @@ private:
 
     Ui::MainWindow *ui;
 
+
     QTimer *updater = new QTimer(this);
 
     QMediaPlayer *player = new QMediaPlayer();
