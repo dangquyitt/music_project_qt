@@ -5,3 +5,6 @@ vector<Menu> Session::LIST_MENU;
 vector<string> Session::LIST_URL_MENU;
 Role* Session::ROLE_SYSTEM=NULL;
 
+
+
+

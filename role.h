@@ -24,3 +24,5 @@ public:
     void setDescription(string description);
 };
 #endif // ROLE_H
+
+

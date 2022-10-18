@@ -14,6 +14,7 @@ vector<Music> MusicDAO::findAll() {
         }
         while(query.next()) {
             Music music;
+            cout << "DB"<<endl;
             music.setId(query.value("id").toInt());
             music.setMusicName(query.value("music_name").toString().toStdString());
             music.setMusicUrl(query.value("music_url").toString().toStdString());

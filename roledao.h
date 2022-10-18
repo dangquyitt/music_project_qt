@@ -1,9 +1,9 @@
 #ifndef ROLEDAO_H
 #define ROLEDAO_H
 
-#include"BaseDAO.h"
+#include"basedao.h"
 
-#include"Role.h"
+#include"role.h"
 
 class RoleDAO : public BaseDAO<Role> {
 public:
@@ -17,3 +17,10 @@ public:
     bool remove(int id);
 };
 #endif // ROLEDAO_H
+
+
+
+
+
+
+

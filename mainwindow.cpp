@@ -205,12 +205,17 @@ void MainWindow::updateList()
     ui->listWidget->clear();
     if(idCateogry == 0) {
         playlist.musics = UtilDAO::getMusicDAO()->findAll();
+        cout << "Crashed"<<endl;
     } else {
         playlist.musics = UtilDAO::getMusicDAO()->findByIntProperties("category_id", idCateogry);
     }
-    int size = playlist.musics.size();
-    for(int i =0; i < size; i++) {
-        ui->listWidget->addItem(QString::fromStdString(playlist.musics[i].getMusicName()));
+    if(!playlist.musics.empty()) {
+        int size = playlist.musics.size();
+
+        for(int i =0; i < size; i++) {
+            cout << "Loop"<<endl;
+            ui->listWidget->addItem(QString::fromStdString(playlist.musics[i].getMusicName()));
+        }
     }
 }
 
@@ -402,10 +407,10 @@ void MainWindow::on_deleteMusic_clicked()
            reply = QMessageBox::question(this, "Message", "Bạn có muốn xóa bài hát không ?", QMessageBox::Yes|QMessageBox::No);
            if(reply == QMessageBox::Yes) {
                playlist.remove(index);
-               updateList();
+//               updateList();
                ui->listWidget->setCurrentRow(index);
-               if(shuffle) shufflePlaylist();
                loadTrack();
+               if(shuffle) shufflePlaylist();
            }
         } else {
             QMessageBox::information(this, "Message", "Danh sách trống");
