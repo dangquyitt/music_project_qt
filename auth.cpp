@@ -1,5 +1,16 @@
 #include"auth.h"
 
+//getId()
+//setId(int id) {
+//getMenuId()
+//setMenuId(int menuId)
+//getRoleId()
+//setRoleId(int roleId) {
+//getPermission() {
+//setPermission(int permission) {
+
+
+
 int Auth::getId() {
         return id;
 }
