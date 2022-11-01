@@ -5,7 +5,9 @@
 - Nguyễn Ngọc Huy (Trưởng nhóm)
 - Nguyễn Trọng Quý
 
-- Database
+
+
+- * Database
 
 create table music_app.user (
     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
