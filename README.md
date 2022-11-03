@@ -1,4 +1,4 @@
-Ứng dụng nghe nhạc đơn giản
+Ứng dụng nghe nhạc quản lí người dùng đơn giản
 - Nguyễn Đăng Quý
 - Võ Tuấn Hưng
 - Đỗ Đức Phong
