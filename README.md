@@ -9,6 +9,7 @@
 
 - Database
 
+```sql
 create table music_app.user (
     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     user_name VARCHAR(50) NOT NULL,
@@ -72,4 +73,4 @@ INSERT INTO menu(url, name) VALUES("add", "Thêm nhạc"),
 
 INSERT INTO category(category_name) VALUES ("POP"), ("Country"), ("Rock"),
 ("Jazz"),("Blues"), ("Bolero"), ("Rap"), ("Ballad");
-
+```
