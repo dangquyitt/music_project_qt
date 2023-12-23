@@ -5,9 +5,7 @@
 - Nguyễn Ngọc Huy (Trưởng nhóm)
 - Nguyễn Trọng Quý
 
-
-
-- Database
+Database
 
 ```sql
 create table music_app.user (
